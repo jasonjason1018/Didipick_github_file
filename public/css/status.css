@@ -1,0 +1,203 @@
+.main-wrap {
+  text-align: center;
+}
+.status-wrap {
+  width: 50%;
+  background-color: #fff;
+  display: block;
+  margin: 0 auto;
+}
+.cal-wrap {
+  width: 60%;
+  background-color: #fff;
+  display: block;
+  margin: 0 auto;
+}
+.cal-wrap .content,
+.status-wrap .content {
+  padding: 20px;
+  text-align: center;
+}
+.cal-wrap .content form,
+.status-wrap .content form {
+  text-align: left;
+}
+.cal-wrap h1,
+.status h1,
+.cal-wrap .content h1,
+.status-wrap .content h1 {
+  text-align: center;
+  margin: 0;
+}
+.status-wrap .content h1.accent::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f004";
+  margin: auto 10px;
+}
+.cal-wrap .content span,
+.status-wrap .content span {
+  display: block;
+  /* line-height: 1.5; */
+  margin: 5px 0;
+}
+.cal-wrap .content .flexbox,
+.status-wrap .content .flexbox { 
+  border-bottom: 1px solid #efefef;
+}
+.error-status {
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+.status {
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+.status img {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+.status span {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 20px 0;
+  text-align: center;
+}
+.lightheader,
+.remarkheader {
+  width: auto;
+  font-weight: normal;
+  text-align: left;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+.lightheader {
+  background-color: #f06441;
+  color: #fff;
+}
+.remarkheader {
+  background-color: #efefef;
+  color: #747576;
+}
+.areabox {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+#checkboxGroup span {
+  /* line-height: 1!important; */
+}
+#checkboxGroup div,
+#checkboxGroup2 div {
+  line-height: 2;
+}
+#checkboxGroup div,
+#checkboxGroup2 div {
+  display: flex;
+}
+#checkboxGroup label,
+#checkboxGroup2 label {
+  /* margin-left: 10px; */
+  align-self: center;
+}
+.ems-ps,
+.diamond-ps {
+  line-height: 1.5;
+  color: #747576;
+  margin-left: 38px!important;
+}
+.diamond-ps {
+  color: #f06441;
+  font-weight: bold;
+  display: block;
+  background-color: #f6f7f8;
+}
+.cal-wrap label {
+  display: block;
+  font-weight: 500;
+  text-align: left;
+}
+.sign_ad img {
+  width: 100%;
+  overflow: hidden;
+}
+.signText {
+  margin: 10px 0;
+  padding: 0 40px;
+  text-align: center;
+}
+h1.caution {
+  font-size: 22px;
+  margin: 0;
+  line-height: 1;
+}
+.signText li {
+  text-align: left!important;
+}
+.signText li>strong {
+  font-size: 16px!important;
+}
+h3.txtitle {
+  margin-top: 10px;
+  text-align: left;
+}
+#checkboxGroup5 div {
+  display: flex;
+  margin-right: 0;
+  line-height: 2;
+}
+#checkboxGroup5 label {
+  margin-left: 5px;
+}
+#checkboxGroup5 span {
+  display: inline-block;
+  margin-right: 5px;
+}
+.error-text {
+  color: #ccc;
+  font-size: xxx-large;
+  font-weight: bold;
+  padding: 200px 0;
+  text-align: left;
+}
+.footer-wrap.z-compact {
+  position: absolute;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .cal-wrap,
+  .status-wrap {
+    width: 100%;
+  }
+  .status {
+    display: block;
+    width: 90%;
+    margin: auto;
+  }
+  .areabox {
+    width: 75%;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

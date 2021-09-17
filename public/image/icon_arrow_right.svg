@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="20px" viewBox="0 0 12 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>arrow-point-to-right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="member" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="member/dashboard1-copy" transform="translate(-1140.000000, -283.000000)" fill="#AAAAAA" fill-rule="nonzero">
+            <g id="arrow-point-to-right" transform="translate(1140.000000, 283.000000)">
+                <path d="M11.5839243,11.0026858 L2.50591017,19.5971352 C1.93853428,20.1342883 0.992907801,20.1342883 0.425531915,19.5971352 C-0.141843972,19.0599821 -0.141843972,18.1647269 0.425531915,17.6275739 L8.4822695,10 L0.425531915,2.37242614 C-0.141843972,1.83527305 -0.141843972,0.940017905 0.425531915,0.402864816 C0.992907801,-0.134288272 1.93853428,-0.134288272 2.50591017,0.402864816 L11.5839243,8.99731423 C11.8865248,9.28379588 12,9.64189794 12,10 C12,10.3581021 11.8865248,10.7162041 11.5839243,11.0026858 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

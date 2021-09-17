@@ -1,0 +1,211 @@
+body {
+  background-color: #fff!important;
+}
+main {
+  display: block;
+}
+.qa-banner {
+  background-color: #fcb722;
+  background-image: url(../image/qa-bn.svg);
+  background-repeat: repeat-x;
+  background-position: center;
+  display: block;
+  padding: 40px 10px;
+}
+.qa-banner>h1 {
+  color: #fff;
+  font-size: 2.5em;
+  line-height: 1;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+input.search-bar {
+  margin: auto;
+  display: block;
+  background-color: #fff;
+  border: 0;
+  border-radius: 100px;
+  width: 50%;
+  max-width: 700px;
+  height: 50px;
+  outline: none;
+  font-size: 16px;
+  color: #404042;
+  padding: 20px;
+}
+input.search-bar {
+  background: #fff url(../image/icon-qa-search.svg) no-repeat 20px center;
+  padding: 0px 50px;
+}
+search-bar::-webkit-input-placeholder { color: #0c0202; } /* Chrome/Opera/Safari */
+search-bar::-moz-placeholder { color: #d8d8d8; } /* Firefox 19+ */
+search-bar:-ms-input-placeholder { color: #d8d8d8; } /* IE 10+ */
+search-bar:-moz-placeholder { color: #d8d8d8; } /* Firefox 18- */
+
+.collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .35s ease;
+  -o-transition: height .35s ease;
+  transition: height .35s ease
+}
+.panel {
+  display: block;
+}
+.panel p {
+  width: 100%;
+  color: #747576;
+  font-size: 16px;
+  margin: 20px 0;
+  float: unset;
+}
+.panel a {
+  display: block;
+  color: #747576;
+}
+.panel a:hover {
+  color: #404042;
+  transition: .1s;
+}
+.panel-group {
+  width: 100%;
+}
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #efefef;
+}
+.panel-heading a {
+  color: #404042;
+}
+.panel-heading .accordion-toggle::before {  
+  content: "－"; 
+}
+.panel-heading .accordion-toggle.collapsed::before {
+  content: "＋";
+}
+.panel-body a {
+  line-height: 2;
+}
+.video-wrapper {
+  font-family: 'Roboto';
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.video-wrapper div {
+  width: calc(100%/3 - 20px);
+  height: 100%;
+  margin: 10px;
+}
+.video-wrapper h3 {
+  margin: 0;
+  max-height: 3rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.5;
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+.help-container {
+  padding: 30px 0;
+  display: block;
+  word-break: break-word;
+}
+.help-container img {
+  max-width: 992px;
+}
+
+.extend-box-last,
+.extend-box-next {
+  max-width: calc(100%/2 - 200px);
+  background-color: #efefef;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  color: #747576;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  word-break: break-word;
+  opacity: 0.7;
+}
+.extend-box-last:hover,
+.extend-box-next:hover {
+  transition: .1s;
+  opacity: 1;
+}
+.extend-box-last {
+  float: left;
+}
+.extend-box-last::before {
+  content: '<<';
+}
+.extend-box-next {
+  float: right;
+}
+.extend-box-next::after {
+  content: '>>';
+}
+.extend-box-last a,
+.extend-box-next a {
+  color: #4d87e5;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  main {
+    display: block;
+    width: 90%;
+    margin: 40px auto;
+  }
+  .pcOnly { 
+    display: none!important; 
+  }
+  input.search-bar {
+    width: 95%;
+  }
+  .video-wrapper div {
+    width: calc(100%/2 - 10px);
+  }
+  .panel-group img {
+    width: 100%;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  input.search-bar {
+    width: 95%;
+  }
+  .video-wrapper div {
+    width: 100%;
+  }
+  .extend-box-last,
+  .extend-box-next {
+    max-width: calc(100%/2 - 50px);
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

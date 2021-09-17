@@ -1,0 +1,192 @@
+.add-box {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.add-box .remark {
+  width: auto;
+  margin-right: 10px;
+}
+.add-box .add {
+  width: 62%;
+  margin-right: 10px;
+}
+.add-box button {
+  position: absolute;
+  width: auto;
+  bottom: 0;
+  margin: 0;
+  float: right;
+  justify-content: space-between;
+}
+.ask,
+.check {
+  text-align: left;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.5;
+  /* padding: 0 10px; */
+}
+.ask {
+  color: #747576;
+}
+.check {
+  color: #4d87e5;
+}
+.shop-button-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.shop-button-box a {
+  width: calc(100%/3 - 10px);
+}
+.shop-button-box .shop-button {
+  height: 40px;
+  justify-content: space-between;
+  border: 1px solid #d8d8d8;
+  margin: 0 auto;
+}
+.shop-button-box img {
+  height: 24px;
+  margin: auto;
+  vertical-align: middle;
+}
+.bargain-box {
+  display: block;
+  margin-bottom: 20px;
+}
+.bargain-box .input-box {
+  position: relative;
+  width: 100%;
+}
+.bargain-box .remark {
+  width: calc(50% - 10px);
+}
+.bargain-box .add {
+  width: 100%;
+}
+.bargain-box .twobtn-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+}
+.bargain-box .twobtn-box a {
+  width: calc(50% - 5px);
+}
+.bargain-box .twobtn-box div {
+  /* width: calc(100% - 0px); */
+  bottom: 0;
+  margin: 0;
+}
+.product .pd-ask::before {
+  content: '提問時間：';
+  color: #404042;
+  font-weight: 500;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  main {
+    display: block;
+    margin: 0 auto;
+  }
+  .add-box {
+    display: inline-block;
+  }
+  .add-box .remark {
+    width: 100%;
+  }
+  .add-box .add {
+    width: 100%;
+  }
+  .add-box button {
+    position: relative;
+    width: 100%;
+    margin: 10px auto;
+    justify-content: space-between;
+  }
+  .shop-button-box {
+    display: block;
+    padding: 5px 0;
+    margin-bottom: 0;
+  }
+  .shop-button-box .shop-button {
+    width: 90%;
+    height: 40px;
+    justify-content: space-between;
+    border: 1px solid #d8d8d8;
+    display: block;
+    margin: 10px auto;
+  }
+  .bargain-box {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .bargain-box .input-box {
+    display: block;
+    position: relative;
+    width: 95%;
+    margin-bottom: 0;
+    margin: auto;
+  }
+  .bargain-box .remark {
+    width: auto;
+    margin-right: 0;
+  }
+  .bargain-box .add {
+    width: auto;
+  }
+  .bargain-box .twobtn-box {
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0;
+    position: relative;
+    right: 0;
+    bottom: 0;
+  }
+  .bargain-box .twobtn-box a {
+    margin: 0;
+    display: block;
+  }
+  .bargain-box button {
+    width: calc(50% - 5px);
+    bottom: 0;
+    margin: 5px 0px;
+  }
+  .ask,
+  .check {
+    width: 90%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    height: 20px;
+    padding: 0;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

@@ -1,0 +1,205 @@
+body {
+  background-color: #fff!important;
+}
+main {
+  margin: 20px auto;
+}
+.qa-banner {
+  background-color: #fcb722;
+  background-image: url(../image/qa-bn.svg);
+  background-repeat: repeat-x;
+  background-position: center;
+  display: block;
+  padding: 10px;
+}
+.qa-banner>h1 {
+  color: #fff;
+  font-size: 48px;
+  line-height: 4;
+  margin: 0;
+  text-align: center;
+}
+.qa-banner>input {
+  margin: auto;
+  display: block;
+  background-color: #fff;
+  border: 0;
+  width: 60%;
+  height: 50px;
+  outline: none;
+  font-size: 18px;
+  color: #404042;
+  padding: 20px;
+}
+::-webkit-input-placeholder { color: #d8d8d8; } /* Chrome/Opera/Safari */
+::-moz-placeholder { color: #d8d8d8; } /* Firefox 19+ */
+:-ms-input-placeholder { color: #d8d8d8; } /* IE 10+ */
+:-moz-placeholder { color: #d8d8d8; } /* Firefox 18- */
+
+.fa-caret-right {
+  float: right;
+  transition: all .4s ease;
+}
+.active .fa-caret-right {
+  transform: rotate(90deg);
+  line-height: 2;
+}
+
+.collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .35s ease;
+  -o-transition: height .35s ease;
+  transition: height .35s ease
+}
+
+/*tab切頁*/
+ul.qa-tab-list {
+  padding: 0 10px;
+}
+.qa-tab-list {
+  display: flex;
+  margin: 10px 0px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #efefef;
+}
+.qa-tab-list .active a {
+  border-bottom: 3px solid #ffda45;
+  color: #000;
+}
+
+.qa-tab-list li {
+  display: inline-block;
+  width: calc(100% - 0px);
+  text-align: center;
+  margin: 0 10px;
+}
+.qa-tab-list li a {
+  display: block;
+  line-height: 3;
+  color: #404042!important;
+}
+
+.qa-tab-panel {
+  display: none;
+}
+.qa-tab-panel a {
+  color: #404042;
+}
+.qa-tab-panel a:hover {
+  color: #f06441;
+}
+.qa-tab-panel.active {
+  display: block;
+}
+.qa-tab-panel .tab-wrap, .page-wrap {
+  background-color: #fff;
+  padding: 20px;
+}
+.panel-group {
+  counter-reset:num;
+  letter-spacing: 0.5px;
+}
+.panel-group>.panel-default:not(:first-child){
+  border-top: 1px solid #d8d8d8;
+}
+.panel-default>.panel-heading {
+  padding: 0px 20px;
+}
+.panel-default>.panel-heading h3 {
+  line-height: 2;
+}
+.panel-default>.panel-heading h3::before {
+  counter-increment:num; 
+  content:'Q' counter(num) ;
+  margin-right: 8px;
+}
+.panel-default .panel-body {
+  padding: 0px 20px 20px;
+  color: #404042;
+  line-height: 24px;
+}
+.panel-default .panel-body>span {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+  overflow-x: scroll;
+  border: 1px solid #d8d8d8;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th {
+  background-color: #F9F9F9;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px 10px;
+  border: 1px solid #EFEFEF;
+}
+td {
+  max-width: 100px;
+  text-align: center;
+  padding: 10px 10px;
+  border: 1px solid #EFEFEF;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  main {
+    margin: 0;
+  }
+  /*tab切頁*/
+  .qa-tab-list {
+    overflow: scroll;
+  }
+  .qa-tab-list span {
+  }
+  .qa-tab-list li a {
+    display: block;
+  }
+  .panel-default>.panel-heading h3::before {
+    counter-increment: num;
+    content: 'Q' counter(num);
+    margin-right: 8px;
+  }
+  .panel-default .panel-body {
+    padding: 0px 20px 20px;
+    color: #404042;
+  }
+  .panel-default .panel-body span {
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

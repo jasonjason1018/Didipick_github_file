@@ -1,0 +1,38 @@
+@charset "utf-8";
+.tt1 {
+	color: #000000;
+	text-decoration: none;
+	font-size: 12px;
+}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	color: #F03677;
+	text-decoration: none;
+}
+a:active {
+	color: #000000;
+	text-decoration: none;
+}
+/* ul li{ */
+/* /* list-style-type:none; */ */
+/* } */
+.leftItem {
+	/* list-style-type:none; */
+}
+.leftNoItem {
+	list-style-type:none;
+	margin-left: -20;
+}
+.leftItem-font {
+	font-size: 12px;
+}
+.leftItem-title {
+	font-size: 16px;
+}

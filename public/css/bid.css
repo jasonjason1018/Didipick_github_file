@@ -1,0 +1,167 @@
+.bid-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.bid-wrap .content-wrap {
+  width: calc(65% - 10px);
+  background-color: transparent;
+}
+.inside-wrap {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.merch__bid_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.merch__bid_wrap .left-wrap {
+  display: block;
+  width: 60%;
+}
+.pdBox,
+.memBox {
+  display: block;
+}
+.product {
+  width: 100%;
+  display: flex;
+  float: unset;
+}
+.item__img {
+  width: 100px!important;
+  height: 100px!important;
+  background-image: url(https://tokukai.com/image2/product_empty.svg);
+  background-position: center center;
+  object-fit: cover;
+  background-size: cover;
+}
+.item__info {
+  margin-left: 10px;
+  text-align: left;
+  min-width: 160px;
+}
+.pd-name {
+  color: #404042;
+  text-align: left;
+  font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 40px;
+}
+.noticeBox {
+  margin-top: 40px;
+  margin-bottom: 0!important;
+}
+.panelTitle {
+  display: block;
+  color: #848484;
+  padding-bottom: 10px;
+}
+.memBox .memitem {
+  float: left;
+  width: 50%;
+  line-height: 2;
+}
+.merch__bid_wrap .merch_action_row {
+  display: inline-flex;
+  width: 40%;
+}
+.box_wrap {
+  margin-left: 20px;
+  padding: 30px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.panel.totalList {
+  font-weight: bold;
+  line-height: 28px;
+}
+.price_jpy {
+  display: block;
+  color: #333!important;
+}
+.price_ntd {
+  color: #aaa!important;
+}
+
+.fake_input {
+  display: flex;
+  width: 100%;
+  border: 1px solid #AAA;
+  border-radius: 4px;
+}
+.fake_input input {
+  padding: 0 20px;
+  border: 0;
+  width: calc(100% - 110px);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 36px;
+}
+.merch_action_row .fake_input input:focus {
+  outline: 0;
+}
+
+.calPrice {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  text-align: right;
+  float: right;
+  color: #848484;
+}
+.calPrice::before {
+  content: 'NT$ ';
+}
+.option {
+  margin: 5px 0px;
+  display: block;
+}
+
+.option span {
+  vertical-align: super;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .bid-wrap {
+    display: block;
+  }
+  .bid-wrap .content-wrap {
+    width: 100%;
+  }
+  .action-wrap {
+    width: 100%!important;
+  }
+  .memBox .memitem {
+    display: block;
+    width: 100%;
+    line-height: 2;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

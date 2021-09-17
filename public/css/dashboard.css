@@ -1,0 +1,161 @@
+.msgBox {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #efefef;
+}
+.msgBox span,
+.msgBox i {
+  font-weight: bold;
+}
+.d-Box {
+  background-color: #FACAD0;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  opacity: 0.9;
+}
+.d-Box:hover {
+  opacity: 1;
+}
+.d-Box span,
+.d-Box i {
+  color: #E6193C;
+  font-weight: bold;
+}
+.d-Box span {
+  text-decoration: underline;
+}
+.s-Box {
+  background-color: #cfebdc;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.s-Box span,
+.s-Box i {
+  color: #47a375;
+  font-weight: bold;
+}
+.systemBox {
+  display: flex;
+  padding: 15px 0;
+  color: #404042;
+  border-bottom: 1px solid #efefef;
+}
+.systemBox:hover {
+  color: #111111;
+  border-bottom: 1px solid #d8d8d8;
+  transition: 0.3s;
+}
+.systemBox .time {
+  width: auto;
+  color: #aaaaaa;
+  margin-right: 10px;
+}
+.systemBox .mail {
+  width: 100%;
+}
+.systemBox .mail a {
+  color: #4d87e5;
+}
+.systemBox .todo {
+  font-weight: 500;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .mobileOnly .myaccount .accountbox {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  .mobileOnly .myaccount .name {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 22px;
+    color: #aaaaaa;
+  }
+  .mobileOnly .myaccount .data-item .value {
+    display: block;
+    font-weight: 600;
+  }
+  .mobileOnly .myaccount .value img {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .mobileOnly .myaccount .value {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2;
+  }
+  .mobileOnly .myaccount .flexbox span {
+    display: inline-block;
+    line-height: 30px;
+  }
+  .mobileOnly .myaccount .btnbox {
+    display: flex;
+    width: 25%;
+    line-height: 44px;
+    justify-content: space-between;
+  }
+  .mobileOnly .myaccount .btnbox button {
+    width: 80px;
+  }
+  .mobileOnly .boardbox {
+    background-color: #fff;
+    padding: 5px 0;
+  }
+  .mobileOnly .mem-boardbox {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+  }
+  .mobileOnly .mem-boardbox a {
+    color: #404042;
+    width: calc(100%/4);
+  }
+  .mobileOnly .mem-boardbox .item {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+  .mobileOnly .mem-boardbox .item img {
+    width: 30px;
+  }
+  
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .mobileOnly .myaccount .btnbox {
+    display: flex;
+    width: 50%;
+    line-height: 44px;
+    justify-content: space-between;
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .mobileOnly .myaccount .btnbox {
+    display: flex;
+    width: 60%;
+    line-height: 44px;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,436 @@
+body {
+  background-color: #fff!important;
+  background-image: linear-gradient(45deg, #fcf9f0 25%, transparent 25%, transparent 75%, #fcf9f0 75%, #fcf9f0), 
+                    linear-gradient(45deg, #fcf9f0 26%, transparent 26%, transparent 74%, #fcf9f0 74%, #fcf9f0)!important;
+                    background-image: -webkit-linear-gradient(45deg, #fcf9f0 25%, transparent 25%, transparent 75%, #fcf9f0 75%, #fcf9f0), 
+                    -webkit-linear-gradient(45deg, #fcf9f0 26%, transparent 26%, transparent 74%, #fcf9f0 74%, #fcf9f0)!important;
+  background-image: -moz-linear-gradient(45deg, #fcf9f0 24%, transparent 24%, transparent 76%, #fcf9f0 76%, #fcf9f0), 
+                    -moz-linear-gradient(45deg, #fcf9f0 26%, transparent 26%, transparent 74%, #fcf9f0 74%, #fcf9f0)!important;
+                    background-image: -o-linear-gradient(45deg, #fcf9f0 25%, transparent 25%, transparent 75%, #fcf9f0 75%, #fcf9f0), 
+                    -o-linear-gradient(45deg, #fcf9f0 25%, transparent 25%, transparent 75%, #fcf9f0 75%, #fcf9f0)!important;
+                    background-size: 100px 100px!important;
+                    background-position: 0 0, 50px 50px!important;
+}
+main {
+  display: block!important;
+  max-width: 1440px!important;
+}
+/*首頁banner區塊*/ 
+.banner-wrap {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.banner-wrap .banner {
+  height: 390px;
+  background-image: url(../image/200625_dbf_1440.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover cover;
+  background-color: #FEEEB7;
+}
+.content-wrap {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.content-wrap .content {
+  max-height: 1000px;
+  background-image: url(../image/fukubiki-content.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover cover;
+}
+.member-wrap {
+  display: flex;
+  width: 992px;
+  margin: 0 auto;
+  padding: 180px 0px;
+}
+.memBtn,
+.norBtn {
+  width: 100%;
+  height: 380px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  outline: none;
+  color: #fff;
+  background-color: unset;
+}
+.result-wrap {
+  width: 992px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+/* .memBtn:hover {
+  transition-duration: 200ms;
+  filter:drop-shadow(0px 5px 5px rgba(227, 157, 8, 0.7));
+} */
+.memBtn:hover {
+  transition-duration: 200ms;
+  filter:drop-shadow(0px 5px 5px rgba(181, 51, 51, 0.7));
+}
+/* .norBtn:hover {
+  transition-duration: 200ms;
+  filter:drop-shadow(0px 5px 5px rgba(181, 51, 51, 0.7));
+} */
+.memBtn {
+  background-image: url('../image/fuku-btn1.svg');
+}
+.norBtn {
+  background-image: url('../image/fuku-btn-none.svg');
+  cursor: pointer;
+}
+.vipmember,
+.nolmember {
+  display: inline-table;
+  width: 50%;
+  height: 30%;
+  color: #333;
+}
+.vipmember strong,
+.nolmember strong {
+  font-size: 20px;
+  line-height: 2;
+}
+.vipmember span,
+.nolmember span {
+  font-size: 16px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+.vipmember .caption,
+.nolmember .caption {
+  display: block;
+  margin: auto 15%;
+  text-align: left!important;
+}
+.conBox {
+  position: relative;
+  top: 70px;
+}
+.memBtn>form>span,
+.norBtn>form>span {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+}
+.fcBlack {
+  color: #474644;
+}
+.norBtn>form>input {
+  display: block;
+  margin: 20px auto;
+  width: 50%;
+  height: 60px;
+  border-radius: 100px; 
+  padding: 0px 20px;
+  outline: none;
+  border: 0;
+}
+
+.loginBtn,
+.loginBtn-nol {
+  display: block;
+  margin: 20px auto;
+  width: 50%; 
+  height: 60px;
+  border-radius: 100px; 
+  /* background: #ca4340;  */
+  background: #ffaf00;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 2.5;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.loginBtn-nol {
+  background: #ffb727!important;
+}
+.submitBtn {
+  display: block;
+  margin: 20px auto;
+  width: 50%; 
+  height: 60px; 
+  border-radius: 100px; 
+  background: #ffaf00;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 2;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.notice-wrap {
+  color: #fff;
+  display: block;
+  margin: auto;
+  width: 100%;
+  background-color: #1c936e;
+}
+.notice-wrap .notice-con {
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 0px;
+}
+.txBox {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #b48c50;
+  width: 50%;
+  line-height: 2;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+.notice-wrap .notice-con>ul>li {
+  list-style: disc;
+  font-size: 16px;
+  line-height: 2;
+}
+.notice-wrap .notice-con>ul>li>a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/*籤筒*/
+.fukubiki { 
+  display: block;
+  margin: 40px auto;
+  width: 40%;
+  position: relative;
+}
+
+.fukubiki img {
+  display: block;
+  margin: 0px auto;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.fukubtn {
+  display: block;
+  margin: 20px auto;
+  width: 50%; 
+  height: 50px; 
+  border-radius: 8px; 
+  background: #d7473c; 
+  font-size: 20px; 
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+.fukubtn:hover {
+  background-color: #d7473c;
+  color: #fff;
+  transition-duration: 200ms;
+  -webkit-box-shadow: 0 0 0 4px rgba(215, 71, 60,0.5);
+  box-shadow: 0 0 0 4px rgba(215, 71, 60,0.5);
+}
+
+.fuku-result {
+  display: none; 
+  position: absolute; 
+  top: 25%; 
+  left: 0; 
+  width: 100%; 
+  text-align: center; 
+}
+.fuku-result>h1 {
+  font-weight: bold;
+  color: #000; 
+  line-height: 1;
+}
+.fuku-result>h2 {
+  line-height: 1;
+}
+.againBtn {
+  display: block;
+  margin: 15px auto;
+  width: 70%;
+  height: 50px;
+  background-color: #d82533;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+}
+.againBtn:hover {
+  background-color: #d82533;
+  color: #fff;
+  transition-duration: 200ms;
+  -webkit-box-shadow: 0 0 0 4px rgba(216, 37, 51,0.5);
+  box-shadow: 0 0 0 4px rgba(216, 37, 51,0.5);
+}
+
+/*按鈕*/
+.t-btn {
+  padding: 10px;
+}
+.t-btn>button {
+  width: 100%; 
+  background: #ff4242; 
+  border-radius: 5px; 
+  color: #fff; 
+  line-height: 2; 
+  font-size: 14px;
+}
+/*web device*/
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .banner-wrap .banner {
+    height: auto;
+    min-height: 390px;
+    margin: 0 auto;
+    background-position: center center;
+    background-size: cover;
+  }
+  .content-wrap {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .content-wrap .content {
+    height: auto;
+    min-height: 1600px;
+    background-image: url(../image/fukubiki-content-m.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover cover;
+  }
+  .member-wrap {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 70px 0px;
+  }
+  .vipmember,
+  .nolmember {
+    display: block;
+    width: 80%;
+    height: 30%;
+    color: #333;
+    margin: auto;
+  }
+  .vipmember .caption,
+  .nolmember .caption {
+    display: block;
+    margin: auto 20px;
+    text-align: left!important;
+  }
+  .fukubiki { 
+    display: block;
+    margin: 40px auto;
+    width: 50%;
+    position: relative;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .banner-wrap .banner {
+    height: auto;
+    min-height: 195px;
+  }
+  .content-wrap {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .content-wrap .content {
+    height: auto;
+    min-height: 1200px;
+    background-image: url(../image/fukubiki-content-m.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover cover;
+  }
+  .member-wrap {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 35px 0px;
+  }
+  .vipmember,
+  .nolmember {
+    display: inline-table;
+    width: 100%;
+    height: 30%;
+    color: #333;
+  }
+  .loginBtn, .loginBtn-nol {
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    height: 60px;
+    border-radius: 100px;
+    /* background: #ca4340; */
+    background: #ffaf00;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease 0s;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 2.5;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  .fukubiki { 
+    display: block;
+    margin: 40px auto;
+    width: 90%;
+    position: relative;
+  }
+  .fukubtn {
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    height: 50px;
+    border-radius: 8px;
+    background: #d7473c;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+  .againBtn {
+    display: block;
+    margin: 10px auto;
+    width: 70%;
+    height: 50px;
+    background-color: #d82533;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

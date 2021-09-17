@@ -1,0 +1,153 @@
+.form-success {
+  background-color: #fff;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 500px;
+  margin: 20px auto;
+  padding: 20px 40px;
+}
+.oneBtn-wrap {
+  width: 100%!important;
+  margin: 10px auto;
+}
+.form-success h1 {
+  font-weight: 700;
+  margin: 10px 0;
+  line-height: 2;
+  color: #f06441;
+}
+.text {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+.upload-box {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.upload-btn {
+  width: 100%;
+  margin: 10px 0;
+}
+input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+.custom-file-upload {
+  display: inline-block;
+  width: -webkit-fill-available;
+  margin: 10px 0;
+  padding: 10px 14px;
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form-success .step {
+  display: block;
+  font-weight: 500;
+  margin: 10px 0;
+}
+.step-box {
+  display: flex;
+  justify-content: space-between;
+}
+.step-box .step-1,
+.step-box .step-2 {
+  width: calc(50% - 10px);
+}
+.step1,
+.step2 {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+.step1 img,
+.step2 img {
+  width: 20px;
+  vertical-align: bottom;
+}
+.step-1 img,
+.step-2 img {
+  vertical-align: middle;
+}
+.example img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-height: 400px;
+  vertical-align: top;
+  margin: auto;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .form-success {
+    padding: 20px;
+  }
+  input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  .upload-box {
+    width: 100%;
+  }
+  .upload-btn .btn {
+    margin: 10px 0!important;
+  }
+  .step-box {
+    display: block;
+  }
+  .step-box .step-1,
+  .step-box .step-2 {
+    width: 100%;
+  }
+  .step1 img,
+  .step2 img {
+    width: 20px!important;
+  }
+  .step-1 img,
+  .step-2 img {
+    width: 80%;
+    vertical-align: middle;
+  }
+  .step-2 .example img {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+    margin: auto;
+  }
+  
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

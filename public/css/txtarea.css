@@ -1,0 +1,106 @@
+.half-box {
+  width: calc(50% - 20px);
+  justify-content: space-between;
+  margin: 0;
+}
+form button {
+  width: calc(100% - 0px);
+  margin: 10px 0;
+}
+.input-short {
+  width: calc(100%/3 - 10px);
+}
+.zipcode_box { 
+  display: flex; 
+  justify-content: space-between;
+}
+.zipcode_box .zipcode_genarate { 
+  display: flex; 
+  margin: 10px 0px; 
+}
+.zipcode_box .zipcode { 
+  width: 100%;
+  height: 40px;
+  padding: 0px 10px;
+}
+.zipcode_box .zipcode_genarate,
+.zipcode_box .form_item,
+
+.zipcode_box .address_line,
+.zipcode_box .form_item:not(:last-child) {
+  display: flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+
+.zipcode_box .zipcode {
+  width: 100%;
+  outline: none!important;
+  cursor: pointer;
+}
+.zipcode_box +.address_line {
+  margin-top: 5px;
+}
+.form_item.type_inline .item__name,
+.form_item.type_inline .input_wrap {
+  display: inline-block;
+  vertical-align: top;
+}
+.form_item.type_inline .item__name {
+  margin-top: 5px;
+}
+.form_item .input_tip {
+  color: #adadad;
+}
+.form_item .input_tip .is-error {
+  display: block;
+  color: #fe1234;
+}
+.form_item .input_tip:empty {
+  display: none;
+}
+.form_item1 .is-disable .input {
+  width: 50%;
+  background-color: #d4d4d4;
+  color: #777;
+}
+.form_item1.is-disable .input_wrap .fa-ban {
+  display: block;
+}
+label.depositway {
+  display: block;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  form,
+  .half-box {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+  }
+  label.depositway {
+    display: flex;
+  }
+  .zipcode_box .zipcode_genarate .is-disable { 
+    margin-right: 10px;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

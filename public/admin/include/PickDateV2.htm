@@ -1,0 +1,269 @@
+<HTML>
+<HEAD>
+<META http-equiv=Content-Type content=text/html;CHARSET=utf-8>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<TITLE>月曆程式　　　　　　　　　　</TITLE>
+</HEAD>
+<STYLE>
+.FrmR1
+{
+    FONT-SIZE: 12px;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana;
+    BACKGROUND-COLOR: #fafaeb
+}
+</STYLE>
+<SCRIPT LANGUAGE=vbs>
+<!--
+	dim Today,Start,i,nextMonth,chDate
+	Today=now()
+	swCHT=0
+	
+	'sub window_onLoad()
+		'ReDraw(Today)
+		'ReDrawCht(year(Today)-1911)
+	'end sub
+	
+	sub window_onLoad()
+		ReDrawCht(year(Today)-1911)
+		if window.dialogArguments<>"" then
+			chDate=window.dialogArguments
+			Today=chDate
+			ReDraw(Today)
+			gMSelMon.selectedIndex=month(chDate)-1
+			gMtxtYear.value=year(chDate)
+		else
+			chDate=""
+			ReDraw(Today)
+		end if
+		window.focus
+	end sub
+	
+	sub spnToday_onclick()
+		Today=now()
+		ReDraw(Today)
+		swCHT=0
+		tabM.style.display=""
+		tabCHT.style.display="none"
+		'spnCht.innerText="(民國年)"
+	end sub
+	
+	sub spnCls_onClick()
+		window.returnValue="-1,-1"
+		window.close
+	end sub
+	
+	sub ChgDate(ym,index)
+		Today=dateadd(ym,index,Today)
+		ReDraw(Today)
+	end sub
+	
+	sub gMSelMon_onchange()
+		Today=gMtxtYear.value & "/" & gMSelMon.value & "/01"
+		if not isDate(Today) then Today=now()
+		ReDraw(Today)
+	end sub
+
+	sub gMtxtYear_onkeydown
+		if window.event.keyCode=13 then
+			Today=gMtxtYear.value & "/" & gMSelMon.value & "/01"
+			if not isDate(Today) then Today=now()
+			ReDraw(Today)
+		end if
+	end sub	
+	
+	sub Mout()
+		dim obj
+	    set obj = window.event.srcElement
+	    if obj.tagName = "TD" and IsNumeric(trim(obj.innerText)) and len(trim(obj.innerText))<4 then
+			 if obj.style.backgroundColor<>"#b7aeee" then obj.style.backgroundColor = ""
+	    end if
+	end sub
+
+	sub Mover()
+		dim obj,row
+	    set obj = window.event.srcElement
+	    if obj.tagName = "TD" and IsNumeric(trim(obj.innerText)) and len(trim(obj.innerText))<4 then
+			obj.style.cursor          = "hand"
+			if obj.style.backgroundColor<>"#b7aeee" then
+				obj.style.backgroundColor = "PowderBlue"
+			end if
+	   	end if
+	end sub	
+	
+	sub tabM_onClick()
+		dim obj,gDate,mDate
+		set obj = window.event.srcElement
+		if obj.tagName = "TD" and IsNumeric(trim(obj.innerText)) and len(trim(obj.innerText))<4 then
+			gDate=Year(Today)&right("0"&Month(Today),2)&right("0"&obj.innertext,2)
+			mDate=right("00"&Year(Today)-1911,3)&right("0"&Month(Today),2)&right("0"&obj.innertext,2)
+			window.returnValue=gDate & "," & mDate
+			window.close
+		end if
+	end sub
+	
+	sub tabCHT_onClick()
+		dim obj,gDate,mDate
+		dim chtCh
+		set obj = window.event.srcElement
+		if obj.tagName = "TD" and IsNumeric(trim(obj.innerText)) and len(trim(obj.innerText))<4 then
+			chtCh=trim(obj.innerText)+1911
+			Today=chtCh & "/" & gMSelMon.value & "/01"
+			if not isDate(Today) then Today=now()
+			ReDraw(Today)
+			swCHT=0
+			tabM.style.display=""
+			tabCHT.style.display="none"
+			'spnCht.innerText="(民國年)"
+		end if
+	end sub
+		
+	sub ReDraw(varDate)
+		dim i
+		tdHead.innerText=year(varDate) & "." & right("0"&month(varDate),2)
+		gMSelMon.value=right("0"&month(Today),2)
+		gMtxtYear.innerText=year(Today)
+		ToMonth=cdate(year(varDate)& "/" & Month(varDate) & "/01")
+		Start=weekday(ToMonth)-1
+		nextMonth=year(dateadd("m",+1,varDate))&"/"&month(dateadd("m",+1,varDate)) & "/01"
+		maxDay=day(dateadd("d",-1,nextMonth))
+		for i=0 to Start
+			tabM.rows(2).cells(i).innerHTML="&nbsp;"
+		next
+		for i=1 to 42-Start
+			if i<=maxDay then
+				if month(now())=month(varDate) and year(now())=year(varDate) and day(now())=i then
+					tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.backgroundColor="#b7aeee"
+					tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.color="black"
+				else
+					if chDate<>"" then
+						if	month(chDate)=month(varDate) and year(chDate)=year(varDate) and day(chDate)=i then
+							tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.color="Blue"
+							tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.backgroundColor="#FFFBEF"
+						else
+							tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.color="black"
+							tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.backgroundColor="#FFFBEF"
+						end if
+					else
+						tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.color="black"
+						tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.backgroundColor="#FFFBEF"
+					end if
+				end if
+				tabM.rows(2+(Start \ 7)).cells(Start mod 7).innerText=i
+			else
+				tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.color="black"
+				tabM.rows(2+(Start \ 7)).cells(Start mod 7).innerHTML="&nbsp;"
+				tabM.rows(2+(Start \ 7)).cells(Start mod 7).style.backgroundColor="#FFFBEF"
+			end if
+			Start=Start+1
+		next
+	end sub
+	
+	'==============CHT==============
+	
+	sub spnCht_onClick()
+		if swCHT=0 then
+			swCHT=1
+			tabM.style.display="none"
+			tabCHT.style.display=""
+			spnCht.innerText="(西元年)"
+		else
+			swCHT=0
+			tabM.style.display=""
+			tabCHT.style.display="none"
+			'spnCht.innerText="(民國年)"
+		end if
+	end sub
+	
+	sub ReDrawCHT(TYear)
+		dim i,chtYear,strTmp,ThisYear
+		ThisYear=TYear
+		Start=0
+		for i=1 to 35-Start
+			strTmp=cstr(ThisYear-i)
+			select case len(strTmp)
+				case 1
+					strTmp="&nbsp;&nbsp;&nbsp;&nbsp;"&strTmp
+				case 2
+					strTmp="&nbsp;&nbsp;"&strTmp
+				case else
+			end select
+			
+			if (ThisYear-i)>=-10 then
+				tabCHT.rows(1+(Start \ 5)).cells(Start mod 5).innerHtml=strTmp
+			else
+				tabCHT.rows(1+(Start \ 5)).cells(Start mod 5).innerHtml="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+			end if
+			Start=Start+1
+		next
+	end sub
+	
+	sub ChgCht(var)
+		if var=1 then
+			if cint(trim(tabCHT.rows(1).cells(0).innerText))>120 then exit sub
+			ReDrawCHT tabCHT.rows(1).cells(0).innerText+36
+		else
+			if trim(tabCHT.rows(7).cells(4).innerText)="" then exit sub
+			ReDrawCHT tabCHT.rows(1).cells(0).innerText-34
+		end if
+	end sub
+//-->
+</SCRIPT>
+<BODY bgcolor=#fffff2 topMargin=6 leftmargin=10>
+<table border=0 style="BORDER-RIGHT: thin outset; BORDER-TOP: thin solid; BORDER-LEFT: thin outset; WIDTH: 158px; BORDER-BOTTOM: thin outset; HEIGHT: 200px" bgColor=#d6d3ce align=center>
+<tr><td align=middle>
+<FIELDSET style="VISIBILITY: visible; WIDTH: 168px; HEIGHT: 186px; BACKGROUND-COLOR: #d6d3ce">
+<LEGEND style="FONT-SIZE: 12px; FONT-FAMILY: 細明體"><span id=spnToday style="CURSOR: hand; COLOR: blue">(移到今天)</span><span id=spnCht style="CURSOR: hand; COLOR: blue" ></span><span id=spnCls style="CURSOR: hand; COLOR: blue">(清除)</span></LEGEND>
+<table border=0 align=center><TBODY>
+<tr>
+<td>
+<select class=FrmR1 id=gMSelMon name=gMSelMon>
+	<option value=01>一　月</option>
+	<option value=02>二　月</option>
+	<option value=03>三　月</option>
+	<option value=04>四　月</option>
+	<option value=05>五　月</option>
+	<option value=06>六　月</option>
+	<option value=07>七　月</option>
+	<option value=08>八　月</option>
+	<option value=09>九　月</option>
+	<option value=10>十　月</option>
+	<option value=11>十一月</option>
+	<option value=12>十二月</option>
+</select></td><td>
+<INPUT id=gMtxtYear name=gMtxtYear class=FrmR1 size=4 maxlength=4></td>
+<td><table  cellpadding=0 cellspacing=0>
+<tr><td><INPUT type="button" value="▲" style="FONT-SIZE: 3px; WIDTH: 15px; HEIGHT: 10px" onclick='ChgDate "yyyy",+1' language=VBS></td></tr>
+<tr><td><INPUT type="button" value="▼" style="FONT-SIZE: 3px; WIDTH: 15px; HEIGHT: 10px" onclick='ChgDate "yyyy",-1' language=VBS></td></tr>
+</table>
+</td>
+</tr>
+</tr>
+        <TR><td colspan=3>
+<table id=tabM width='150px' border=0 onMouseOver="Mover()" onMouseOut="Mout()" cellpadding=1 cellspacing=1 style="BORDER-RIGHT: thin inset; BORDER-TOP: thin inset; BORDER-LEFT: thin inset; BORDER-BOTTOM: thin inset">
+	<tr class='FrmR1' align=middle><td colspan=2 style='cursor:hand;' onclick='ChgDate "m",-1' language=VBS><</td><td colspan=3 align=middle id=tdHead>Header</td><td colspan=2 style='cursor:hand;' onclick='ChgDate "m",+1' language=VBS>></td></tr>
+	<tr align=middle bgColor=#848284 style="FONT-SIZE: 12px; COLOR: #d6d3ce"><td style="COLOR: red">日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td></tr>
+	<tr class='FrmR1' align=right><td style="COLOR: red">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td style="COLOR: red">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td style="COLOR: red">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td style="COLOR: red">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td style="COLOR: red">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' id=trLast align=right><td style="COLOR: red">&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+<table id=tabCHT width='150px' border=0 onMouseOver="Mover()" onMouseOut="Mout()" cellpadding=1 cellspacing=1 style="BORDER-RIGHT: thin inset; BORDER-TOP: thin inset; BORDER-LEFT: thin inset; BORDER-BOTTOM: thin inset;display:none">
+	<tr class='FrmR1' align=middle><td colspan=1 style='cursor:hand;' onclick='ChgCht(+1)' language=VBS title='+'><+</td><td colspan=3 align=middle id=tdChtHead></td><td colspan=1 style='cursor:hand;' onclick='ChgCht(-1)' language=VBS title='-'>-></td></tr>
+	<tr class='FrmR1' align=right><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+	<tr class='FrmR1' align=right><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+</td></TR>
+</table></FIELDSET> 
+    </TD></TR></TBODY></TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,144 @@
+table.arrived2 {
+  table-layout: unset!important;
+}
+.last {
+  color: #747576;
+  background-color: #f9f9f9;  
+  padding: 5px 10px;
+}
+.panelheader {
+  display: flex;
+}
+.panelheader a.remark {
+  font-size: 14px;
+  font-weight: normal;
+  color: #f06441;
+  cursor: pointer;
+  width: auto;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+.panelinput .btn-primary {
+  width: 80px;
+  margin: 0;
+}
+label {
+  display: inline-block;
+}
+span.remark {
+  color: #404042;
+  text-decoration: underline;
+}
+.overage {
+  color: #747576;
+  display: block;
+  float: right;
+  line-height: 1.5;
+  cursor: default;
+}
+.panel {
+  overflow: unset;
+}
+.panel p {
+  width: 100%;
+}
+.main-wrap .contentbox {
+  margin: 10px 0;
+}
+.optionbox {
+  display: flex;
+}
+.optionbox div {
+  margin-right: 30px;
+}
+.od-panel-box span {
+  line-height: 2;
+}
+.order-notice ul {
+  margin: 0;
+  margin-left: 25px;
+  line-height: 2;
+}
+.chs-photo-box {
+  background-color: #f6f7f8;
+  padding: 15px;
+}
+.chs-photo-box .pd-box {
+  padding: 15px;
+}
+.chs-photo-box .pd-box .product {
+  margin: 20px 0;
+}
+.chs-photo-box .pd-box .product .item .pd-name {
+  max-width: 100%;
+  color: #404042;
+  text-align: left;
+  font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: auto;
+}
+.half-box {
+  width: calc(50% - 20px);
+  justify-content: space-between;
+  margin: 0;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  table {
+    table-layout: unset!important;
+    font-size: 1;
+  }
+  .order-product div,
+  .order-spec {
+    max-width: 100px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .optionbox {
+    display: block;
+  }
+  .pd-nb {
+    display: flex;
+  }
+  .half-box {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  .panel p {
+    display: block;
+    margin: 0;
+    color: #747576;
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}

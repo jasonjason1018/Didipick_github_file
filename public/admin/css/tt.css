@@ -1,0 +1,75 @@
+@charset "utf-8";
+.tt1 {
+	color: #000000;
+	text-decoration: none;
+	font-size: 12px;
+}
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+a:hover {
+	color: #F03677;
+	text-decoration: none;
+}
+a:active {
+	color: #000000;
+	text-decoration: none;
+}
+/* ul li{ */
+/* /* list-style-type:none; */ */
+/* } */
+.leftItem {
+	/* list-style-type:none; */
+}
+.leftItem1 a:link {
+	/* list-style-type:none; */
+	color: #335555;
+	text-decoration: none;
+}
+.leftItem1 a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+.leftItem1 a:hover {
+	color: #F03677;
+	text-decoration: none;
+}
+.leftItem1 a:active {
+	color: #000000;
+	text-decoration: none;
+}
+.leftItem2 a:link {
+	/* list-style-type:none; */
+	color: #363636;
+	text-decoration: none;
+}
+.leftItem2 a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+.leftItem2 a:hover {
+	color: #F03677;
+	text-decoration: none;
+}
+.leftItem2 a:active {
+	color: #000000;
+	text-decoration: none;
+}
+.leftNoItem {
+	list-style-type:none;
+	margin-left: -20;
+}
+.leftItem-font {
+	font-size: 12px;
+}
+.leftItem-title {
+	font-size: 16px;
+}
+td {
+	height:30px;
+}

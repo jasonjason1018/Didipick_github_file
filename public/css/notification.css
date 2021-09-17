@@ -1,0 +1,376 @@
+form {
+  width: 100%;
+  justify-content: space-between;
+  margin: 0;
+}
+td.col3 {
+  padding: 10px 20px;
+}
+.lightbox {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  -webkit-transition: left 0ms 400ms;
+  -o-transition: left 0ms 400ms;
+  transition: left 0ms 400ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.lightbox .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  -webkit-transition: opacity 400ms 0ms;
+  -o-transition: opacity 400ms 0ms;
+  transition: opacity 400ms 0ms;
+  cursor: default;
+}
+.lightbox .container {
+  position: relative;
+  z-index: 1;
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  opacity: 0;
+  -webkit-transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms;
+  -webkit-transition: opacity 400ms 0ms, -webkit-transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 400ms 0ms, -webkit-transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms;
+  transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms;
+  transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms, -webkit-transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.is-lbOn .lightbox {
+  left: 0;
+  -webkit-transition: left 0ms 0ms;
+  -o-transition: left 0ms 0ms;
+  transition: left 0ms 0ms;
+}
+.is-lbOn .lightbox .mask {
+  opacity: 1;
+  -webkit-transition: opacity 300ms 0ms;
+  -o-transition: opacity 300ms 0ms;
+  transition: opacity 300ms 0ms;
+}
+.is-lbOn .lightbox .container {
+  -webkit-transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms;
+  -webkit-transition: opacity 300ms 200ms, -webkit-transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 300ms 200ms, -webkit-transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms;
+  transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms;
+  transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms, -webkit-transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.lightbox_addtion {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 11;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+}
+.lightbox_addtion.is-on {
+  display: block;
+}
+.lightbox_addtion .content_wrap {
+  padding-top: 8vh;
+}
+.lightbox_addtion .content {
+  margin: 0 auto;
+  padding: 40px;
+  width: 70vw;
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 5px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px 1px rgba(0,0,0,0.3);
+}
+.lightbox_addtion .content_title {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.lightbox_addtion .action_row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.lightbox_addtion .action_row .btn {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+}
+.lightbox_addtion .action_row .btn:last-child {
+  margin-left: 10px;
+}
+.lightbox_addtion .floating-cart-sku-table >table {
+  background-color: #d4d4d4;
+}
+.lightbox_addtion .floating-cart-sku-table td {
+  border: 1px solid #979797;
+  padding: 6px;
+}
+.lightbox_addtion .floating-cart-sku-table .inventory {
+  background-color: #fff;
+  font-size: 14px !important;
+}
+.lightbox_addtion .floating-cart-sku-table .inventory font {
+  font-size: inherit;
+}
+.lightbox_addtion.edit_address .content {
+  width: 80%;
+  max-width: 600px;
+}
+.lightbox_addtion.edit_address .item__name {
+  width: 5em;
+  margin-left: 10px;
+  margin-right: 20px;
+  line-height: 28px;
+}
+/*開關按鈕*/
+.switchBox {
+  display: flex;
+  margin: 20px 0px;
+}
+.switchBox span {
+  line-height: 40px;
+}
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+label {
+	cursor: pointer;
+  text-indent: -9999px;
+  width: 70px;
+  height: 40px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin-right: 10px;
+}
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.2s;
+}
+input:checked + label {
+	background: #f06441;
+}
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+label:active:after {
+	width: 30px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1920px) {}
+@media only screen and (max-width : 991px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+  form {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+  }
+  table {
+    table-layout: unset;
+  }
+  form button {
+    width: calc(100% - 10px);
+    margin: 20px 0;
+  }
+  input {
+    margin-right: 0;
+  }
+  .lightbox {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    -webkit-transition: left 0ms 400ms;
+    -o-transition: left 0ms 400ms;
+    transition: left 0ms 400ms;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .lightbox .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    -webkit-transition: opacity 400ms 0ms;
+    -o-transition: opacity 400ms 0ms;
+    transition: opacity 400ms 0ms;
+    cursor: default;
+  }
+  .lightbox .container {
+    position: relative;
+    z-index: 1;
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+    -webkit-transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms;
+    -webkit-transition: opacity 400ms 0ms, -webkit-transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 400ms 0ms, -webkit-transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms;
+    transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms;
+    transition: transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms 0ms, -webkit-transform 400ms 0ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .is-lbOn .lightbox {
+    left: 0;
+    -webkit-transition: left 0ms 0ms;
+    -o-transition: left 0ms 0ms;
+    transition: left 0ms 0ms;
+  }
+  .is-lbOn .lightbox .mask {
+    opacity: 1;
+    -webkit-transition: opacity 300ms 0ms;
+    -o-transition: opacity 300ms 0ms;
+    transition: opacity 300ms 0ms;
+  }
+  .is-lbOn .lightbox .container {
+    -webkit-transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms;
+    -webkit-transition: opacity 300ms 200ms, -webkit-transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 300ms 200ms, -webkit-transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms;
+    transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms;
+    transition: transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 300ms 200ms, -webkit-transform 600ms 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  .lightbox_addtion {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 11;
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .lightbox_addtion.is-on {
+    display: block;
+  }
+  .lightbox_addtion .content_wrap {
+    padding-top: 8vh;
+  }
+  .lightbox_addtion .content {
+    margin: 0 auto;
+    padding: 20px;
+    width: 80vw;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 5px 1px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.3);
+  }
+  .lightbox_addtion .content_title {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .lightbox_addtion .action_row {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .lightbox_addtion .action_row .btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+  }
+  .lightbox_addtion .action_row .btn:last-child {
+    margin-left: 10px;
+  }
+  .lightbox_addtion .floating-cart-sku-table >table {
+    background-color: #d4d4d4;
+  }
+  .lightbox_addtion .floating-cart-sku-table td {
+    border: 1px solid #979797;
+    padding: 6px;
+  }
+  .lightbox_addtion .floating-cart-sku-table .inventory {
+    background-color: #fff;
+    font-size: 14px !important;
+  }
+  .lightbox_addtion .floating-cart-sku-table .inventory font {
+    font-size: inherit;
+  }
+  .lightbox_addtion.edit_address .content {
+    width: 80vw;
+    max-width: 600px;
+  }
+  .lightbox_addtion.edit_address .item__name {
+    width: 5em;
+    margin-left: 10px;
+    margin-right: 20px;
+    line-height: 28px;
+  }
+}
+/*iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
+/*iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+/*mobile device*/
+@media only screen and (max-width : 480px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
+/*mobile small device*/
+@media only screen and (max-width : 320px) {
+  .pcOnly { 
+    display: none!important; 
+  }
+}
