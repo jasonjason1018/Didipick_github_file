@@ -42,8 +42,13 @@ class DidipickController extends Controller
     	if($num!=1){
     		return redirect('/backstage');
     	}else{
-    		return view('Admin/index');
+    		return redirect('/adminindex');
     	}
+    }
+
+
+    public function logout(){
+    	return redirect('/backstage');
     }
 
 

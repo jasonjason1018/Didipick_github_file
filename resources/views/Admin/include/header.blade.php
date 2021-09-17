@@ -1,7 +1,7 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tt1">
             <tr>
               <td width="10">&nbsp;</td>
-              <td width="80"><a href="index.php" target="_parent" class="tt1">首　　頁</a></td>
+              <td width="80"><a href="/adminindex" target="_parent" class="tt1">首　　頁</a></td>
               <td width="80"><a href="user.php" target="_parent" class="tt1">系統管理</a></td>
               <td width="80"><a href="indexEditNew.php" target="_parent" class="tt1">首頁設定</a></td>
               <td width="80"><a href="akind.php" target="_parent" class="tt1">類別管理</a></td>
@@ -27,6 +27,7 @@
       </td>
 	  <td width="8%" valign="bottom">
 		<form method="POST" action="/logout">
+      @csrf
 			<p align="right"><font size="2" face="微軟正黑體">帳號:</font><br><input type="submit" value="登出" name="B1"></p>
 		</form>		</td>
 	</tr>
