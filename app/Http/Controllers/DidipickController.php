@@ -32,14 +32,20 @@ class DidipickController extends Controller
 		return $returnvar;
 	}
 
-    public function checklogin(){
+    public function checklogin(request $request){
     	$db = new didipick_member;
-    	$data = $db->all();
-    	$data = json_decode($data, true);
-    	//print_r($data);
-    	foreach($data as $k=>$v){
-    		//echo $this->encryptdecode($v->name, 'decryption');
-    		echo $v->name;
+    	$pwd = $this->encryptdecode($request->password, 'encrypt');
+    	$num = $db->all()
+    	->where('mobile', '=', $request->username)
+    	->where('password', '=', $pwd)
+    	->count();
+    	if($num!=1){
+    		return redirect('/backstage');
+    	}else{
+    		return view('Admin/index');
     	}
     }
+
+
+
 }

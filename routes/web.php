@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 //前台
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 //後台
 Route::get('/backstage', function(){
 	return view('Admin.login');
 });
-Route::get('/check_login', 'DidipickController@checklogin');
+Route::post('/check_login', 'DidipickController@checklogin');
