@@ -22,3 +22,4 @@ Route::get('/backstage', function(){
 	return view('Admin.login');
 });
 Route::post('/check_login', 'DidipickController@checklogin');
+Route::post('/logout', 'DidipickController@logout');

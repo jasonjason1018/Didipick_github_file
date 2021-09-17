@@ -26,7 +26,7 @@
           </table>
       </td>
 	  <td width="8%" valign="bottom">
-		<form method="POST" action="./logout.php">
+		<form method="POST" action="/logout">
 			<p align="right"><font size="2" face="微軟正黑體">帳號:</font><br><input type="submit" value="登出" name="B1"></p>
 		</form>		</td>
 	</tr>
