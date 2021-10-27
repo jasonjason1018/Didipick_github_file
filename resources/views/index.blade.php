@@ -125,8 +125,8 @@
 					<div class="header-row justify-content-lg-between">
 
 						<div id="logo" class="PCOnly mx-lg-auto col-auto flex-column order-lg-2 px-0">
-							<a href="index.html" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-							<a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
+							<a href="/" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
+							<a href="/" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
 						</div>
 
 						<div class="col-auto col-lg-3 order-lg-1 d-none d-md-flex px-0">
@@ -148,7 +148,7 @@
 
 						<div class="header-misc col-auto col-lg-3 justify-content-lg-end ml-0 ml-sm-3 px-0">
 
-							<span class="MobileOnly mlogo"><a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a></span>
+							<span class="MobileOnly mlogo"><a href="/" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a></span>
 
 							<div id="top-heart">
 								<!-- 加入前 -->
