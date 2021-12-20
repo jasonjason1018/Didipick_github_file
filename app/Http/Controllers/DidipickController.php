@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\didipick_cart;
 use App\didipick_member;
+use App\didipick_master;
+use App\didipick_category;
 
 class DidipickController extends Controller
 {
@@ -32,25 +35,24 @@ class DidipickController extends Controller
 		return $returnvar;
 	}
 
-    public function checklogin(request $request){
-    	$db = new didipick_member;
-    	$pwd = $this->encryptdecode($request->password, 'encrypt');
-    	$num = $db->all()
-    	->where('mobile', '=', $request->username)
-    	->where('password', '=', $pwd)
-    	->count();
-    	if($num!=1){
-    		return redirect('/backstage');
-    	}else{
-    		return redirect('/adminindex');
-    	}
-    }
+	private function headerfunction(){
+		$db_member = new didipick_member;
+		$member = $db_member->all()->where('mobile', '=', '0988567927');
+		$identity = $member[0]->identity;
+		$db_cart = new didipick_cart;
+		$cart = $db_cart->all()->where('identity', '=', $identity)->where('product_No', '=', '12351');
+		return $cart;
+		/*$db_category = new didipick_category;
+		$db_master = new didipick_master;
+		$data = $db_cart->all()->where('userid', '=', $identity);
+		return $data;*/
+	}
 
-
-    public function logout(){
-    	return redirect('/backstage');
-    }
-
-
+	public function index(request $request){
+		$data = $this->headerfunction();
+		foreach($data as $k=>$v){
+			echo $v->status.'<br>';
+		}
+	}
 
 }

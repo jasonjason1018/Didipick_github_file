@@ -13,16 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //前台
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'DidipickController@index');
 
 //後台
 Route::get('/backstage', function(){
 	return view('Admin.login');
 });
-Route::post('/logout', 'DidipickController@logout');
+Route::post('/logout', 'DidipickBackstageController@logout');
 
 Route::middleware('admin_session')->group(function () {
-	Route::post('/check_login', 'DidipickController@checklogin');
+	Route::post('/check_login', 'DidipickBackstageController@checklogin');
+	Route::get('/adminindex', function(){
+		return view('Admin.index');
+	});
 });
