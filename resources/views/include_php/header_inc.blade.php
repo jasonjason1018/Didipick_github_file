@@ -1,3 +1,4 @@
+
 <header id="header" class="full-header header-size-lg">
 			<div id="header-wrap">
 				<div class="container">
@@ -24,9 +25,9 @@
 								</a>
 							</div> -->
 						</div>
-
+						
 						<div class="header-misc col-auto col-lg-3 justify-content-lg-end ml-0 ml-sm-3 px-0">
-
+							@if($login == '1')
 							<span class="MobileOnly mlogo"><a href="/" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a></span>
 
 							<div id="top-heart">
@@ -41,12 +42,13 @@
 
 							<div id="top-account">
 								<a href="cart.html" >
-									<img src="images/topicon_cart.svg" alt=""><span class="top-cart-number">1</span>
+									<img src="images/topicon_cart.svg" alt=""><span class="top-cart-number">{{$data[1]}}</span>
 								</a>
 							</div>
-
+							
 							<div id="top-cart" class=" header-misc-icon">
 								<a href="#" id="top-cart-trigger"><img src="images/topicon_user.svg" alt=""></a>
+								
 								<div class="top-cart-content">
 									<div class="top-cart-ul center">
 										<ul>
@@ -65,15 +67,16 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- <div id="top-login">
+							@endif
+							@if($login == 0)
+							 <div id="top-login">
 								<a href="login.html" class="button button-border button-rounded button-green">登入</a>
 							</div>
 
 							<div id="top-signup">
 								<a href="signup.html" class="button button-rounded">註冊</a>
 							</div>
- 							-->
+							@endif
 							<!-- <div id="top-search" class="header-misc-icon">
 								<a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
 							</div> -->
@@ -83,7 +86,6 @@
 							<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
 						</div>
 					</div>
-				
 					<div class="container">
 						<div class="header-row justify-content-lg-center header-border">
 
@@ -108,18 +110,22 @@
 										</ul>
 									</li>
 
-									<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="product.html"><div>所有分類</div></a>
+									<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="/product"><div>所有分類</div></a>
 										<div class="mega-menu-content mega-menu-style-2">
 											<div class="container">
 												<div class="row">
 													<ul class="sub-menu-container mega-menu-column col-lg-6">
 														<ul class="sub-menu-container">
-															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_all.svg" alt=""> 全部商品</div></a></li>
+															
+															@foreach($data[2] as $k=>$v)
+																<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_{{$ary[$k]}}.svg" alt=""> {{$v->name}}</div></a></li>
+															@endforeach
+															<!--<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_all.svg" alt=""> 全部商品</div></a></li>
 															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_medicine.svg" alt=""> 保健品</div></a></li>
 															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_makeups.svg" alt=""> 美妝</div></a></li>
 															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_maintenance.svg" alt=""> 保養</div></a></li>
 															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_hair.svg" alt=""> 美髮</div></a></li>
-															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_life.svg" alt=""> 生活雜貨</div></a></li>
+															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_life.svg" alt=""> 生活雜貨</div></a></li>-->
 														</ul>
 													</ul>
 													<ul class="sub-menu-container mega-menu-column col-lg-6">

@@ -36,23 +36,37 @@ class DidipickController extends Controller
 	}
 
 	private function headerfunction(){
-		$db_member = new didipick_member;
+		$db_member = new didipick_member;//ok
+		$db_category = new didipick_category;
+		//$db_master = new didipick_master;
+		$db_cart = new didipick_cart;//ok
 		$member = $db_member->all()->where('mobile', '=', '0988567927');
 		$identity = $member[0]->identity;
-		$db_cart = new didipick_cart;
-		$cart = $db_cart->all()->where('identity', '=', $identity)->where('product_No', '=', '12351');
-		return $cart;
-		/*$db_category = new didipick_category;
-		$db_master = new didipick_master;
-		$data = $db_cart->all()->where('userid', '=', $identity);
-		return $data;*/
+		$cart = $db_cart->all()
+		->where('identity', '=', $identity)
+		->count();
+		//$master = $db_master->all();
+		$category = $db_category->all();
+		$data = array($member, $cart, $category);
+		return $data;
 	}
 
 	public function index(request $request){
 		$data = $this->headerfunction();
-		foreach($data as $k=>$v){
-			echo $v->status.'<br>';
+		$value = $request->session()->get('user');
+		if($value == 1){
+			$login = '1';
+		}else{
+			$login = '0';
 		}
+		$request->session()->put('username', 'Test');
+		$name = $request->session()->get('username');
+		$ary = array('all', 'medicine', 'makeups', 'maintenance', 'hair', 'life');
+		return view('index', ['data'=>$data, 'ary'=>$ary, 'name'=>$name, 'login'=>$login]);
+	}
+
+	public function product(request $request){
+		return view('product');
 	}
 
 }

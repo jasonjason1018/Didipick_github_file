@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class didipick_product extends Model
 {
-    //
+    protected $table = 'didipick_product';
+	    protected $timestamp = false;
 }

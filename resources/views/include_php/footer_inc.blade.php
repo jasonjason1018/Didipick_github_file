@@ -11,8 +11,11 @@
 								<h4 class="ls0 mb-2 nott">購物體驗</h4>
 
 								<ul class="list-unstyled iconlist ml-0">
+									@if($login == 1)
 									<li><a href="cart.html">購物車</a></li>
+									@endif
 									<li><a href="qa.html">常見問題</a></li>
+									<li><a href="shoppingprocess.html">購物流程</a></li>
 								</ul>
 
 							</div>
@@ -23,11 +26,14 @@
 								<h4 class="ls0 mb-2 nott">會員中心</h4>
 
 								<ul class="list-unstyled iconlist ml-0">
+									@if($login == 0)
 									<li><a href="login.html">登入/註冊</a></li>
 									<li><a href="member_password.html">忘記密碼</a></li>
+									@else
 									<li><a href="notice.html">通知總覽</a></li>
 									<li><a href="order_info.html">訂單查詢</a></li>
 									<li><a href="product_desire.html">我的收藏</a></li>
+									@endif
 								</ul>
 
 							</div>
