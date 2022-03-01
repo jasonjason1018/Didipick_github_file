@@ -19,7 +19,7 @@ class Admin_session
         if($value==1){
             return $next($request);    
         }else{
-            return redirect('/');
+            return redirect('/backstage');
         }
     }
 }

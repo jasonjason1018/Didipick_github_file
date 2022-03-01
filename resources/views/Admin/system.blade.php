@@ -35,31 +35,45 @@
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
   <tr>
     <td width="100%">
-    	<b>HOME</b>&nbsp;&nbsp;
-		<input type="button" value="新增訂單" name="new" onclick="window.location='inorder_new1.php'"><hr>
+    	<b>系統管理</b><hr>
     </td>
   </tr>
-  <tr>
-    <td width="100%"><input type="button" value="新增" name="new" onclick="window.location='./home_new.php'"></td>
+  <!--<tr>
+    <td width="100%"><input type="button" value="新增" name="new" onclick="window.location=''"></td>
   </tr>
-  <tr>
+  <tr>-->
+    <tr>
     <td width="100%">
     <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
-      <!--
       <tr>
-        <td width="25%" bgcolor="#C0C0C0" align="center"><font size="2">圖片</font></td>
-        <td width="25%" bgcolor="#C0C0C0" align="center"><font size="2">說明</font></td>
-        <td width="25%" bgcolor="#C0C0C0" align="center"><font size="2">超連結</font></td>
-        <td width="10%" bgcolor="#C0C0C0" align="center"><font size="2">狀態</font></td>
-        <td width="15%" bgcolor="#C0C0C0" align="center">&nbsp;</td>
+        <td width="15%" bgcolor="#C0C0C0" align="center"><font size="2">姓名</font></td>
+        <td width="15%" bgcolor="#C0C0C0" align="center"><font size="2">帳號</font></td>
+        <td width="10%" bgcolor="#C0C0C0" align="center"><font size="2">群組</font></td>
+        <td width="25%" bgcolor="#C0C0C0" align="center"><font size="2">EMAIL</font></td>
+        <td width="15%" bgcolor="#C0C0C0" align="center"><font size="2">狀態</font></td>
+        <!--<td width="20%" bgcolor="#C0C0C0" align="center">&nbsp;</td>-->
       </tr>
-      -->
-	  <!--<tr>
-        <td width="25%" height="45" bgcolor="#E0E0E0" align="center"><font size="2">會員數</font></td>
-        <td width="75%" align="center" bgcolor="#E0E0E0" align="center"><font size="4" color="#A03636"><a href="member.php"></a>&nbsp;人</font>(VIP :人;&nbsp;&nbsp;一般 :人)</td>
-      </tr>-->
-      <h1><center>後台</center></h1>
+      @foreach($data as $v)
+      <tr>
+        <td width="15%" align="center"><font size="2">{{$v->user_name}}</font></td>
+        <td width="15%" align="center"><font size="2">{{$v->user_account}}</font></td>
+        <td width="10%" align="center"><font size="2">{{$v->user_group}}</font></td>
+        <td width="25%" align="center"><font size="2">
+        	@if($v->user_email == '')
+        		{{'-'}}
+        	@endif
+        </font></td>
+        @if($v->user_status == 1)
+        	<td width="25%" align="center"><font size="2" style="color:green">使用中</font></td>
+        @else
+        	<td width="25%" align="center"><font size="2" style="color:red">已停用</font></td>
+        @endif
+      </tr>
+      @endforeach
     </table>
+    	
+    </td>
+  </tr>
     </td>
   </tr>
 </table>

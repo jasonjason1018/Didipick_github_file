@@ -70,7 +70,7 @@
 							@endif
 							@if($login == 0)
 							 <div id="top-login">
-								<a href="login.html" class="button button-border button-rounded button-green">登入</a>
+								<a href="/login" class="button button-border button-rounded button-green">登入</a>
 							</div>
 
 							<div id="top-signup">

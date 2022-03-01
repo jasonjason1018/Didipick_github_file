@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class didipick_category extends Model
+class didipick_brand extends Model
 {
-    protected $table = 'didipick_category';
+    protected $table = 'didipick_brand';
 	public $timestamps = false;
 }

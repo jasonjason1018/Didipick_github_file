@@ -66,7 +66,19 @@ class DidipickController extends Controller
 	}
 
 	public function product(request $request){
-		return view('product');
+		$data = $this->headerfunction();
+		$value = $request->session()->get('user');
+		if($value == 1){
+			$login = '1';
+		}else{
+			$login = '0';
+		}
+		$ary = array('all', 'medicine', 'makeups', 'maintenance', 'hair', 'life');
+		return view('product', ['data'=>$data, 'login'=>$login, 'ary'=>$ary]);
+	}
+
+	public function login(request $request){
+		return view('login');
 	}
 
 }

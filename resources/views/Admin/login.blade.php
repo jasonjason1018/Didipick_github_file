@@ -99,6 +99,19 @@ body {
 </body>
 </html>
 <script>
+   function keyFunction() {
+       //alert("Key code = " + event.keyCode);
+       if(event.keyCode==13){
+         username = $("#username").val();
+         password = $("#password").val();
+         if(username != '' && password != ''){
+           $("#acpwform").submit();
+         }
+       }
+     }
+     document.onkeydown=keyFunction;
+</script>
+<script>
     $("#button").click(function(){
       $("#username").val('');
       $("#password").val('');
