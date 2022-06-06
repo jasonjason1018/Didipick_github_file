@@ -49,6 +49,28 @@
     <td width="100%"><input type="button" value="新增" name="new" onclick="window.location='/product_new'"></td>
   </tr>
   <tr>
+    <td width="100%">
+      <form method="POST" action="/category_search" name="Links" id="Links">
+        @csrf
+        <font size="2">類別:
+          <select name="kind" id="kind" size="1">
+            <option value="all">全部項目</option>
+            @foreach($cdata as $v)
+              @if($v->name != '全部商品')
+                @if($c == $v->sno)
+                  <option value="{{$v->sno}}" selected>{{$v->name}}</option>
+                @else
+                  <option value="{{$v->sno}}">{{$v->name}}</option>
+                @endif
+              @endif
+            @endforeach
+          </select>
+        </font>
+        <input type="submit" value="查詢">
+      </form>
+    </td>
+  </tr>
+  <tr>
     <tr>
     <td width="100%">
     <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">

@@ -6,8 +6,12 @@
                 <td width="80"><a href="/bc_index" target="_parent" class="tt1">首　　頁</a></td>
                 <td width="80"><a href="/system" target="_parent" class="tt1">系統管理</a></td>
                 <td width="80"><a href="/product" target="_parent" class="tt1">商品管理</a></td>
-                <td width="80"><a href="" target="_parent" class="tt1">會員管理</a></td>
-                <td width="80"><a href="" target="_parent" class="tt1">會員管理</a></td>
+                <td width="80"><a href="/member" target="_parent" class="tt1">會員管理</a></td>
+                <td width="80"><a href="/adver" target="_parent" class="tt1">廣告管理</a></td>
+                <td width="80"><a href="/master" target="_parent" class="tt1">達人勸敗</a></td>
+                <td width="80"><a href="/feedback" target="_parent" class="tt1">好評推薦</a></td>
+                <!--href="/feedback" -->
+                <td width="80"><a href="/help" target="_parent" class="tt1">&nbsp;&nbsp;公告<br>幫助中心</a></td>
 			  <!--<td width="110"><a href="product.php" target="_parent" class="tt1">直購商品管理</a></td>
 			  <td width="80"><a href="member.php" target="_parent" class="tt1">會員管理</a></td>
 			  <td width="110"><a href="inorder.php" target="_parent" class="tt1">代購/代標 管理</a></td>

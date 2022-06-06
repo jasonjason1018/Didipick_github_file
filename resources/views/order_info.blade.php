@@ -1,57 +1,7 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
-<head>
-
-	<title>訂單查詢｜直直買 didipick</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-
-	<meta property="og:title" content=""/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:description" content=""/>
-
-	<link rel="shortcut icon" href="images/favicon.png"/>
-
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/didipick.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-
-	<link rel="stylesheet" href="demos/shop/shop.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
-
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PTLHLW4');</script>
-	<!-- End Google Tag Manager -->
-
-</head>
-
-<body class="stretched">
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTLHLW4"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+<?
+require_once "include_php/css_inc.php";
+require_once "require_inc.php";
+?>
 
 
 	<div id="wrapper" class="clearfix">
@@ -117,159 +67,7 @@
 			</div>
 		</div>
 
-		<header id="header" class="full-header header-size-lg">
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row justify-content-lg-between">
-
-					<div id="logo" class="PCOnly mx-lg-auto col-auto flex-column order-lg-2 px-0">
-						<a href="index.html" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-						<a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-					</div>
-
-					<div class="col-auto col-lg-3 order-lg-1 d-none d-md-flex px-0">
-						<!-- <div class="social-icons">
-							<a href="https://facebook.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-facebook" target="_blank">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
-							<a href="https://twitter.com/__semicolon" class="social-icon si-rounded si-dark si-mini si-twitter" target="_blank">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-							<a href=" https://instagram.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-instagram" target="_blank">
-								<i class="icon-instagram"></i>
-								<i class="icon-instagram"></i>
-							</a>
-						</div> -->
-					</div>
-
-					<div class="header-misc col-auto col-lg-3 justify-content-lg-end ml-0 ml-sm-3 px-0">
-
-							<span class="MobileOnly mlogo"><a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a></span>
-
-							<div id="top-heart">
-								<!-- 加入前 -->
-								<a href="product_desire.html">
-									<img src="images/topicon_heart.svg" alt="">
-								</a>
-								
-								<!-- 加入後 -->
-								<!-- <a href="#"><img src="images/topicon_heart_add.svg" alt=""></a> -->
-							</div>
-
-							<div id="top-account">
-								<a href="cart.html" >
-									<img src="images/topicon_cart.svg" alt=""><span class="top-cart-number">5</span>
-								</a>
-							</div>
-
-							<div id="top-cart" class=" header-misc-icon">
-								<a href="#" id="top-cart-trigger"><img src="images/topicon_user.svg" alt=""></a>
-								<div class="top-cart-content">
-									<div class="top-cart-ul center">
-										<ul>
-											<li><a href="member.html" title="會員中心">會員中心</a></li>
-											<li><a href="notice.html" title="訂單通知">訂單通知</a></li>
-											<li><a href="#" title="主題活動">主題活動</a></li>
-											<li><a href="#" title="訊息公告">訊息公告</a></li>
-											<li><a href="product_desire.html" title="慾望清單">慾望清單</a></li>
-											<li><a href="favorite.html" title="最愛文章">最愛文章</a></li>
-										</ul>
-									</div>
-									
-									<div class="top-cart-action center">
-										<a href="order_addvalue.html" class="button button-border button-rounded button-green">儲值</a>
-										<a href="#" class="button button-rounded">登出</a>
-									</div>
-								</div>
-							</div>
-
-							<!-- <div id="top-login">
-								<a href="login.html" class="button button-border button-rounded button-green">登入</a>
-							</div>
-
-							<div id="top-signup">
-								<a href="signup.html" class="button button-rounded">註冊</a>
-							</div>
- 							-->
-							<!-- <div id="top-search" class="header-misc-icon">
-								<a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
-							</div> -->
-						</div>
-
-					<div id="primary-menu-trigger">
-						<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
-					</div>
-				</div>
-				
-				<div class="container">
-					<div class="header-row justify-content-lg-center header-border">
-
-						<nav class="primary-menu with-arrows ">
-
-							<ul class="menu-container justify-content-between">
-								<li class="menu-item mega-menu-one">
-									<a class="menu-link" href="master.html"><div>達人勸敗</div></a>
-									<ul class="sub-menu-container">
-										<li class="card p-0 bg-transparent border-0">
-											<a href="master_info.html"><img class="card-img-top" src="images/navimg_2.jpg" alt=""></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>水水約會提案｜30秒擺脫扁塌頭！<small>NEW</small></div></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>乾燥唇救星｜日妞激推滋潤NO.1<small>HOT</small></div></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>百搭零廢色｜日本SNS超夯眼影<small>HOT</small></div></a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="product.html"><div>所有分類</div></a>
-									<div class="mega-menu-content mega-menu-style-2">
-										<div class="container">
-											<div class="row">
-												<ul class="sub-menu-container mega-menu-column col-lg-6">
-													<ul class="sub-menu-container">
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_all.svg" alt=""> 全部商品</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_medicine.svg" alt=""> 保健品</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_makeups.svg" alt=""> 美妝</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_maintenance.svg" alt=""> 保養</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_hair.svg" alt=""> 美髮</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_life.svg" alt=""> 生活雜貨</div></a></li>
-													</ul>
-												</ul>
-												<ul class="sub-menu-container mega-menu-column col-lg-6">
-													<li class="card p-0 bg-transparent border-0">
-														<a href="#"><img class="card-img-top" src="images/navimg_1.jpg" alt=""></a>
-													</li>
-												</ul>
-												
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="menu-item"><a class="menu-link" href="product_top20.html"><div>熱銷排行</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="feedback.html"><div>好評推薦</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="qa.html"><div>常見問題</div></a></li>
-							</ul>
-
-						</nav>
-
-						<form class="top-search-form" action="search.html" method="get">
-							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
-						</form>
-
-					</div>
-				</div>
-
-				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header>
-
+		<?require_once "include_php/header_inc.php";?>
 	
 		<section id="content">
 			<div class="content-wrap">
@@ -281,8 +79,35 @@
 							<li class="breadcrumb-item active" aria-current="page">訂單查詢</li>
 						</ol>
 					</div>
+					
+					<!-- <ul class="process-steps process-5 row col-mb-30 justify-content-center mb-0">
+						<li class="col-sm-6 col-lg-3 process-step-con">
+							<a href="#" class="i-bordered i-circled mx-auto icon-ok"></a>
+							<h5 class="t_gray">待付款</h5>
+						</li>
+						<li class="col-sm-6 col-lg-3 process-step-con">
+							<a href="#" class="i-bordered i-circled mx-auto icon-ok"></a>
+							<h5 class="t_gray">處理中</h5>
+						</li>
+						<li class="col-sm-6 col-lg-3 process-step-con">
+							<a href="#" class="i-bordered i-circled mx-auto icon-ok"></a>
+							<h5 class="t_gray">已訂購</h5>
+						</li>
+						<li class="col-sm-6 col-lg-3 process-step-con">
+							<a href="#" class="i-bordered i-circled mx-auto icon-ok"></a>
+							<h5 class="t_gray">日本到貨</h5>
+						</li>
+						<li class="col-sm-6 col-lg-3 process-step-con">
+							<a href="#" class="i-bordered i-circled mx-auto icon-ok"></a>
+							<h5 class="t_gray">國際運輸</h5>
+						</li>
+						<li class="col-sm-6 col-lg-3 process-step-con">
+							<a href="#" class="i-bordered i-circled mx-auto icon-ok"></a>
+							<h5 class="t_gray">已完成</h5>
+						</li>
+					</ul> -->
 
-					<div id="page-menu" class="no-sticky mb-4 pageleftmenubox MobileOnly">
+					<!-- <div id="page-menu" class="no-sticky mb-4 pageleftmenubox MobileOnly">
 						<div id="page-menu-wrap">
 							<div class="container">
 								<div class="page-menu-row">
@@ -305,24 +130,24 @@
 										</ul>
 									</nav>
 
-									<div id="page-menu-trigger" class="leftmenu"><i class="icon-line-more-vertical animated infinite pulse"></i></div>
+									<div id="page-menu-trigger" class="leftmenu"><i class="icon-line-menu"></i></div>
 
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 
-					<div class="row justify-content-between align-items-center post-navigation mt-4 mb-5">
+					<div class="row justify-content-between align-items-center post-navigation mt-3 mb-3">
 						<div class="col-12 col-md-auto text-center desiretitle">
 						</div>
 
 						<div class="col-12 col-md-auto text-center">
 							<div class="input-group mx-auto">
-								<input type="text" id="icons-filter" class="form-control" value="" placeholder="請輸入您的訂單編號...">
+								<input type="text" id="ordernumber" class="form-control" value="" placeholder="請輸入您的訂單編號...">
 								<div class="input-group-prepend">
 									<span class="input-group-text">
-										<i class="icon-line-search"></i>
+										<i class="icon-line-search" id="searchorder"></i>
 									</span>
 								</div>
 							</div>
@@ -330,178 +155,504 @@
 						</div>
 					</div>
 
+
 					<div class="row gutter-40 col-mb-40">
 						
 						<div class="postcontent col-lg-9 order-lg-last">
+							
 							<div class="tabs tabs-bb clearfix orderinfo_box" >
-
+								<?if(!isset($_GET['o_no'])){?>
 								<ul class="tab-nav clearfix">
-									<!-- <li><a href="#notpaidyet">尚未付款</a></li> -->
-									<li><a href="#processing">處理中</a></li>
-									<!-- <li><a href="#tobereceived">出貨中</a></li> -->
-									<li><a href="#completed">已完成</a></li>
-									<li><a href="#Cancelled">已取消</a></li>
-									
+										<li><a href="#notpaidyet">待付款</a></li>
+										<li><a href="#processing">處理中</a></li>
+										<li><a href="#tobereceived">日本到貨</a></li>
+										<li><a href="#shipping">國際運輸</a></li>
+										<li><a href="#completed">已完成</a></li>
+										<li><a href="#Cancelled">已取消</a></li>
 								</ul>
-		
+
 								<div class="tab-container pt-2">
-		
-									<div class="tab-content clearfix" id="processing">
+									
+									<?
+										$status_ary = array('notpaidyet','processing','tobereceived','shipping','completed','Cancelled');
+										array('待付款','處理中','日本到貨','國際運輸','已完成','已取消');
+										for($i=0;$i<=5;$i++){
+									?>
+									<div class="tab-content clearfix" id="<?=$status_ary[$i]?>">
 										<div class="postcontent">
 											<div class="tablescoll mb-4">
 												<table class="table center">
 													
 													<tbody>
+													<?
+														if(isset($_GET['np_pagen'])){	
+															$np_pagen = $_GET['np_pagen']-1;
+														}else{
+															$np_pagen = 0;
+														}
+														if(isset($_GET['ps_pagen'])){	
+															$ps_pagen = $_GET['ps_pagen']-1;
+														}else{
+															$ps_pagen = 0;
+														}
+														if(isset($_GET['tob_pagen'])){	
+															$tob_pagen = $_GET['tob_pagen']-1;
+														}else{
+															$tob_pagen = 0;
+														}
+														if(isset($_GET['sp_pagen'])){	
+															$sp_pagen = $_GET['sp_pagen']-1;
+														}else{
+															$sp_pagen = 0;
+														}
+														if(isset($_GET['cp_pagen'])){	
+															$cp_pagen = $_GET['cp_pagen']-1;
+														}else{
+															$cp_pagen = 0;
+														}
+														if(isset($_GET['cn_pagen'])){	
+															$cn_pagen = $_GET['cn_pagen']-1;
+														}else{
+															$cn_pagen = 0;
+														}
+														$np_limit = 1;
+														$np_page = $np_pagen*$np_limit;
+														$ps_limit = 1;
+														$ps_page = $ps_pagen*$ps_limit;
+														$tob_limit = 1;
+														$tob_page = $tob_pagen*$tob_limit;
+														$sp_limit = 1;
+														$sp_page = $sp_pagen*$sp_limit;
+														$cp_limit = 1;
+														$cp_page = $cp_pagen*$cp_limit;
+														$cn_limit = 1;
+														$cn_page = $cn_pagen*$cn_limit;
+														if($i==0){
+															$sql = "select * from didipick_order where process='1' and identity='$userid' order by insert_time desc limit $np_page, $np_limit";
+														}else if($i==1){
+															$sql = "select * from didipick_order where process='2' and identity='$userid' or process='3' and identity='$userid' order by insert_time desc limit $ps_page, $ps_limit";
+														}else if($i==2){
+															$sql = "select * from didipick_order where process='4' and identity='$userid' order by insert_time desc limit $tob_page, $tob_limit";
+														}else if($i==3){
+															$sql = "select * from didipick_order where process='5' and identity='$userid' order by insert_time desc limit $sp_page, $sp_limit";
+														}else if($i==4){
+															$sql = "select * from didipick_order where process='6' and identity='$userid' order by insert_time desc limit $cp_page, $cp_limit";
+														}else if($i==5){
+															$sql = "select * from didipick_order where process='0' and identity='$userid' order by insert_time desc limit $cn_page, $cn_limit";
+														}
+														$result = $mysql->query($sql);
+														$size = $result->size();
+														for($a=1;$a<=$size;$a++){
+															$row = $result->fetch();
+															$id = $row['id'];
+															$sql1 = "select * from didipick_product where name in(select p_name from didipick_order_item where id='$id')";
+															$result1 = $mysql->query($sql1);
+															$row1 = $result1->fetch();
+													?>
 													<tr>
 														<td class="cart-product-thumbnail noborder">
-															<a href="order_info_details.html"><img width="64" height="64" src="images/product_img/proimg_1.jpg" alt=""></a>
-															<div><a href="order_info_details.html">didi123</a></div>
+															<a href="order_info_details.php?id=<?=$id?>" target="_blank"><img width="64" height="64" src="didipick_Admin/images/admin_upload_img/<?echo $row1['img1'];?>" alt=""></a>
+															<div><a href="order_info_details.php?id=<?=$id?>" target="_blank"><?=$row['order_No']?></a></div>
 														</td>
-														<td class="noborder text-decoration_u"><a href="order_info_details.html">資生堂MOILIP藥用護唇</a></td>
-														<td class="noborder">$300<br><span>信用卡付款</span></td>
-														<td class="noborder">2021/05/05<br>15:00</td>
-														<td class="noborder t_didi_t">已出貨<div><a href="#" class="prbtn">查看物流狀態</a></div></td>
+														<td class="noborder text-decoration_u"><a href="order_info_details.php?id=<?=$id?>" target="_blank"><?=$row1['name']?></a></td>
+														<td class="noborder">$<?=$row['total']+$row['handlefee']?><br><span><?if($row['pay_type']==1){echo "儲值金付款";}else{echo "信用卡線上付款";}?></span></td>
+														<td class="noborder"><?
+																$time = explode(' ', $row['insert_time']);
+																$tm = explode(':', $time[1]);
+																echo $time[0].'<br>'.$tm[0].':'.$tm[1];
+															?></td>
+														<td class="noborder t_highlight"></td>
 														<td class="noborder">
+															<?if($i=='0'){?>
 															<span><a href="#" class="button button-border button-gray btn_circle">取消<br/>訂單</a></span>
+															<?}?>
 															<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
 														</td>
 													</tr>
-													<tr>
-														<td class="cart-product-thumbnail">
-															<a href="order_info_details.html"><img width="64" height="64" src="images/product_img/proimg_1.jpg" alt=""></a>
-															<div><a href="order_info_details.html">didi123</a></div>
-														</td>
-														<td class="text-decoration_u"><a href="order_info_details.html">資生堂MOILIP藥用護唇膏</a></td>
-														<td>$300<br><span>信用卡付款</span></td>
-														<td>2021/05/05<br>15:00</td>
-														<td>處理中<div><a href="#" class="prbtn">查看物流狀態</a></div></td>
-														<td>
-															<span><a href="#" class="button button-border button-gray btn_circle">取消<br/>訂單</a></span>
-															<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
-														</td>
-													</tr>
-												
+													<?}?>
 													</tbody>
 												</table>
+												<?
+													if($i==0){
+														$sql_size = "select * from didipick_order where process='1' and identity='$userid'";
+												?>
+												<?
+													$result_size = $mysql->query($sql_size);
+													$cp_size = $result_size->size();
+													//echo $cp_size;
+													if($np_limit>$np_size){
+														$np_numpage=0;
+													}else if($np_size%$np_limit == 0){
+														$np_numpage = $np_size/$np_limit;
+													}else{
+														$np_numpage = floor($np_size/$np_limit)+1;
+													}
+													if($np_numpage != 0 && $np_numpage != 1){
+												?>
+
+												<div class="center">
+													<ul class="pagination pagination-transparent pagination-circle">
+														<?
+															$np_pg = $np_pagen+1;
+
+															if($np_pg!=1 && isset($_GET['np_pagen'])){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="np_changepage(<?=$np_pg-1?>)"><span aria-hidden="true">«</span></a></li>
+														<?}?>
+														<?
+															if($np_pg==1 || !isset($_GET['np_pagen'])){
+																$np_a = 1;
+															}else if($np_pg%10==0){
+																$np_a = $np_pg+1;
+															}else{
+																$np_a = $np_pg-($np_pg%10)+1;
+															}
+														?>
+														<?for($i=$np_a;$i<$np_a+10;$i++){
+															if($i<=$np_numpage){
+																if($i == 1){
+																	$np_pno = 1;
+																}else{
+																	$np_pno = $i;
+																}
+															?>
+														<li class="page-item <?if($np_pagen == $i-1){echo 'active';}else if($np_pagen==0 &&$i==1){echo 'active';}?>"><a class="page-link" onclick="np_changepage(<?=$np_pno?>)"><?=$i?></a></li>
+														<?
+															}
+														}
+														if($np_pg != $np_numpage){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="np_changepage(<?=$np_pg+1?>)"><span aria-hidden="true">»</span></a></li>
+														<?}?>
+													</ul>
+												</div>
+												<?}?>
+												<?	}else if($i==1){
+														$sql_size = "select * from didipick_order where process='2' and identity='$userid' or process='3' and identity='$userid'";?>
+												<?
+													$result_size = $mysql->query($sql_size);
+													$ps_size = $result_size->size();
+													//echo $ps_size;
+													if($ps_limit>$ps_size){
+														$ps_numpage=0;
+													}else if($ps_size%$ps_limit == 0){
+														$ps_numpage = $ps_size/$ps_limit;
+													}else{
+														$ps_numpage = floor($ps_size/$ps_limit)+1;
+													}
+													if($ps_numpage != 0 && $ps_numpage != 1){
+												?>
+
+												<div class="center">
+													<ul class="pagination pagination-transparent pagination-circle">
+														<?
+															$ps_pg = $ps_pagen+1;
+
+															if($ps_pg!=1 && isset($_GET['ps_pagen'])){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="ps_changepage(<?=$ps_pg-1?>)"><span aria-hidden="true">«</span></a></li>
+														<?}?>
+														<?
+															if($ps_pg==1 || !isset($_GET['ps_pagen'])){
+																$ps_a = 1;
+															}else if($ps_pg%10==0){
+																$ps_a = $ps_pg+1;
+															}else{
+																$ps_a = $ps_pg-($ps_pg%10)+1;
+															}
+														?>
+														<?for($i=$ps_a;$i<$ps_a+10;$i++){
+															if($i<=$ps_numpage){
+																if($i == 1){
+																	$ps_pno = 1;
+																}else{
+																	$ps_pno = $i;
+																}
+															?>
+														<li class="page-item <?if($ps_pagen == $i-1){echo 'active';}else if($ps_pagen==0 &&$i==1){echo 'active';}?>"><a class="page-link" onclick="ps_changepage(<?=$ps_pno?>)"><?=$i?></a></li>
+														<?
+															}
+														}
+														if($ps_pg != $ps_numpage){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="ps_changepage(<?=$ps_pg+1?>)"><span aria-hidden="true">»</span></a></li>
+														<?}?>
+													</ul>
+												</div>
+												<?}?>
+													<?}else if($i==2){
+														$sql_size = "select * from didipick_order where process='4' and identity='$userid'";?>
+													<?
+													$result_size = $mysql->query($sql_size);
+													$tob_size = $result_size->size();
+													//echo $tob_size;
+													if($tob_limit>$tob_size){
+														$tob_numpage=0;
+													}else if($tob_size%$tob_limit == 0){
+														$tob_numpage = $tob_size/$tob_limit;
+													}else{
+														$tob_numpage = floor($tob_size/$tob_limit)+1;
+													}
+													if($tob_numpage != 0 && $tob_numpage != 1){
+												?>
+
+												<div class="center">
+													<ul class="pagination pagination-transparent pagination-circle">
+														<?
+															$tob_pg = $tob_pagen+1;
+
+															if($tob_pg!=1 && isset($_GET['tob_pagen'])){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="tob_changepage(<?=$tob_pg-1?>)"><span aria-hidden="true">«</span></a></li>
+														<?}?>
+														<?
+															if($tob_pg==1 || !isset($_GET['tob_pagen'])){
+																$tob_a = 1;
+															}else if($tob_pg%10==0){
+																$tob_a = $tob_pg+1;
+															}else{
+																$tob_a = $tob_pg-($tob_pg%10)+1;
+															}
+														?>
+														<?for($i=$tob_a;$i<$tob_a+10;$i++){
+															if($i<=$tob_numpage){
+																if($i == 1){
+																	$tob_pno = 1;
+																}else{
+																	$tob_pno = $i;
+																}
+															?>
+														<li class="page-item <?if($tob_pagen == $i-1){echo 'active';}else if($tob_pagen==0 &&$i==1){echo 'active';}?>"><a class="page-link" onclick="tob_changepage(<?=$tob_pno?>)"><?=$i?></a></li>
+														<?
+															}
+														}
+														if($tob_pg != $tob_numpage){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="tob_changepage(<?=$tob_pg+1?>)"><span aria-hidden="true">»</span></a></li>
+														<?}?>
+													</ul>
+												</div>
+												<?}?>
+													<?}else if($i==3){
+														$sql_size = "select * from didipick_order where process='5' and identity='$userid'";?>
+													<?
+													$result_size = $mysql->query($sql_size);
+													$sp_size = $result_size->size();
+													//echo $sp_size;
+													if($sp_limit>$sp_size){
+														$sp_numpage=0;
+													}else if($sp_size%$sp_limit == 0){
+														$sp_numpage = $sp_size/$sp_limit;
+													}else{
+														$sp_numpage = floor($sp_size/$sp_limit)+1;
+													}
+													if($sp_numpage != 0 && $sp_numpage != 1){
+												?>
+
+												<div class="center">
+													<ul class="pagination pagination-transparent pagination-circle">
+														<?
+															$sp_pg = $sp_pagen+1;
+
+															if($sp_pg!=1 && isset($_GET['sp_pagen'])){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="sp_changepage(<?=$sp_pg-1?>)"><span aria-hidden="true">«</span></a></li>
+														<?}?>
+														<?
+															if($sp_pg==1 || !isset($_GET['sp_pagen'])){
+																$sp_a = 1;
+															}else if($sp_pg%10==0){
+																$sp_a = $sp_pg+1;
+															}else{
+																$sp_a = $sp_pg-($sp_pg%10)+1;
+															}
+														?>
+														<?for($i=$sp_a;$i<$sp_a+10;$i++){
+															if($i<=$sp_numpage){
+																if($i == 1){
+																	$sp_pno = 1;
+																}else{
+																	$sp_pno = $i;
+																}
+															?>
+														<li class="page-item <?if($sp_pagen == $i-1){echo 'active';}else if($sp_pagen==0 &&$i==1){echo 'active';}?>"><a class="page-link" onclick="sp_changepage(<?=$sp_pno?>)"><?=$i?></a></li>
+														<?
+															}
+														}
+														if($sp_pg != $sp_numpage){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="sp_changepage(<?=$sp_pg+1?>)"><span aria-hidden="true">»</span></a></li>
+														<?}?>
+													</ul>
+												</div>
+												<?}?>
+													<?}else if($i==4){
+														$sql_size = "select * from didipick_order where process='6' and identity='$userid'";?>
+													<?
+													$result_size = $mysql->query($sql_size);
+													$cp_size = $result_size->size();
+													//echo $cp_size;
+													if($cp_limit>$cp_size){
+														$cp_numpage=0;
+													}else if($cp_size%$cp_limit == 0){
+														$cp_numpage = $cp_size/$cp_limit;
+													}else{
+														$cp_numpage = floor($cp_size/$cp_limit)+1;
+													}
+													if($cp_numpage != 0 && $cp_numpage != 1){
+												?>
+
+												<div class="center">
+													<ul class="pagination pagination-transparent pagination-circle">
+														<?
+															$cp_pg = $cp_pagen+1;
+
+															if($cp_pg!=1 && isset($_GET['cp_pagen'])){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="cp_changepage(<?=$cp_pg-1?>)"><span aria-hidden="true">«</span></a></li>
+														<?}?>
+														<?
+															if($cp_pg==1 || !isset($_GET['cp_pagen'])){
+																$cp_a = 1;
+															}else if($cp_pg%10==0){
+																$cp_a = $cp_pg+1;
+															}else{
+																$cp_a = $cp_pg-($cp_pg%10)+1;
+															}
+														?>
+														<?for($i=$cp_a;$i<$cp_a+10;$i++){
+															if($i<=$cp_numpage){
+																if($i == 1){
+																	$cp_pno = 1;
+																}else{
+																	$cp_pno = $i;
+																}
+															?>
+														<li class="page-item <?if($cp_pagen == $i-1){echo 'active';}else if($cp_pagen==0 &&$i==1){echo 'active';}?>"><a class="page-link" onclick="cp_changepage(<?=$cp_pno?>)"><?=$i?></a></li>
+														<?
+															}
+														}
+														if($cp_pg != $cp_numpage){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="cp_changepage(<?=$cp_pg+1?>)"><span aria-hidden="true">»</span></a></li>
+														<?}?>
+													</ul>
+												</div>
+												<?}?>
+													<?}else if($i==5){
+														$sql_size = "select * from didipick_order where process='0' and identity='$userid'";?>
+														<?
+													$result_size = $mysql->query($sql_size);
+													$cn_size = $result_size->size();
+													//echo $cn_size;
+													if($cn_limit>$cn_size){
+														$cn_numpage=0;
+													}else if($cn_size%$cn_limit == 0){
+														$cn_numpage = $cn_size/$cn_limit;
+													}else{
+														$cn_numpage = floor($cn_size/$cn_limit)+1;
+													}
+													if($cn_numpage != 0 && $cn_numpage != 1){
+												?>
+
+												<div class="center">
+													<ul class="pagination pagination-transparent pagination-circle">
+														<?
+															$cn_pg = $cn_pagen+1;
+
+															if($cn_pg!=1 && isset($_GET['cn_pagen'])){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="cn_changepage(<?=$cn_pg-1?>)"><span aria-hidden="true">«</span></a></li>
+														<?}?>
+														<?
+															if($cn_pg==1 || !isset($_GET['cn_pagen'])){
+																$cn_a = 1;
+															}else if($cn_pg%10==0){
+																$cn_a = $cn_pg+1;
+															}else{
+																$cn_a = $cn_pg-($cn_pg%10)+1;
+															}
+														?>
+														<?for($i=$cn_a;$i<$cn_a+10;$i++){
+															if($i<=$cn_numpage){
+																if($i == 1){
+																	$cn_pno = 1;
+																}else{
+																	$cn_pno = $i;
+																}
+															?>
+														<li class="page-item <?if($cn_pagen == $i-1){echo 'active';}else if($cn_pagen==0 &&$i==1){echo 'active';}?>"><a class="page-link" onclick="cn_changepage(<?=$cn_pno?>)"><?=$i?></a></li>
+														<?
+															}
+														}
+														if($cn_pg != $cn_numpage){
+														?>
+														<li class="page-item"><a class="page-link" aria-label="Next" onclick="cn_changepage(<?=$cn_pg+1?>)"><span aria-hidden="true">»</span></a></li>
+														<?}?>
+													</ul>
+												</div>
+												<?}?>
+													<?}
+													?>
 											</div>
 										</div>
 									</div>
-									<!-- <div class="tab-content clearfix" id="tobereceived">
-										<div class="postcontent">
-											<table class="table center">
-												
-												<tbody>
-												<tr>
-													<td class="cart-product-thumbnail noborder">
-														<a href="#"><img width="64" height="64" src="images/shop/thumbs/small/dress-3.jpg" alt=""></a>
-														<div><a href="#">12345678</a></div>
-													</td>
-													<td class="noborder">資生堂MOILIP藥用護唇膏</td>
-													<td class="noborder">$300<br><span>信用卡付款</span></td>
-													<td class="noborder">2021/05/05<br>15:00</td>
-													<td class="noborder">處理中<div><a href="#">查看物流狀態</a></div></td>
-													<td class="noborder">
-														<span><a href="#" class="button button-border button-gray btn_circle">取消<br/>訂單</a></span>
-														<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
-													</td>
-												</tr>
-												<tr>
-													<td class="cart-product-thumbnail">
-														<a href="#"><img width="64" height="64" src="images/shop/thumbs/small/dress-3.jpg" alt=""></a>
-														<div><a href="#">12345678</a></div>
-													</td>
-													<td>資生堂MOILIP藥用護唇膏</td>
-													<td>$300<br><span>信用卡付款</span></td>
-													<td>2021/05/05<br>15:00</td>
-													<td>處理中<div><a href="#">查看物流狀態</a></div></td>
-													<td>
-														<span><a href="#" class="button button-border button-gray btn_circle">取消<br/>訂單</a></span>
-														<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
-													</td>
-												</tr>
-											
-												</tbody>
-											</table>
-										</div>
-									</div> -->
-									<div class="tab-content clearfix" id="completed">
-										<div class="postcontent">
-											<div class="tablescoll mb-4">
-												<table class="table center">
-													
-													<tbody>
-													<tr>
-														<td class="cart-product-thumbnail noborder">
-															<a href="order_info_details.html"><img width="64" height="64" src="images/product_img/proimg_1.jpg" alt=""></a>
-															<div><a href="order_info_details.html">didi123</a></div>
-														</td>
-														<td class="noborder text-decoration_u"><a href="order_info_details.html">資生堂MOILIP藥用護唇</a></td>
-														<td class="noborder">$300<br><span>信用卡付款</span></td>
-														<td class="noborder">2021/05/05<br>15:00</td>
-														<td class="noborder t_didi_t">已出貨<div><a href="#" class="prbtn">查看物流狀態</a></div></td>
-														<td class="noborder">
-															<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
-														</td>
-													</tr>
-													<tr>
-														<td class="cart-product-thumbnail">
-															<a href="order_info_details.html"><img width="64" height="64" src="images/product_img/proimg_1.jpg" alt=""></a>
-															<div><a href="order_info_details.html">didi123</a></div>
-														</td>
-														<td class="noborder text-decoration_u"><a href="order_info_details.html">資生堂MOILIP藥用護唇</a></td>
-														<td>$300<br><span>信用卡付款</span></td>
-														<td>2021/05/05<br>15:00</td>
-														<td>處理中<div><a href="#" class="prbtn">查看物流狀態</a></div></td>
-														<td>
-															<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
-														</td>
-													</tr>
-												
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-									<div class="tab-content clearfix" id="Cancelled">
-										<div class="postcontent">
-											<div class="tablescoll mb-4">
-												<table class="table center">
-													
-													<tbody>
-													<tr>
-														<td class="cart-product-thumbnail noborder">
-															<a href="order_info_details.html"><img width="64" height="64" src="images/product_img/proimg_1.jpg" alt=""></a>
-															<div><a href="order_info_details.html">didi123</a></div>
-														</td>
-														<td class="noborder text-decoration_u"><a href="order_info_details.html">資生堂MOILIP藥用護唇</a></td>
-														<td class="noborder">$300<br><span>信用卡付款</span></td>
-														<td class="noborder">2021/05/05<br>15:00</td>
-														<td class="noborder t_didi_t">已出貨<div><a href="#" class="prbtn">查看物流狀態</a></div></td>
-														<td class="noborder">
-															<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
-														</td>
-													</tr>
-													<tr>
-														<td class="cart-product-thumbnail">
-															<a href="order_info_details.html"><img width="64" height="64" src="images/product_img/proimg_1.jpg" alt=""></a>
-															<div><a href="order_info_details.html">didi123</a></div>
-														</td>
-														<td class="noborder text-decoration_u"><a href="order_info_details.html">資生堂MOILIP藥用護唇</a></td>
-														<td>$300<br><span>信用卡付款</span></td>
-														<td>2021/05/05<br>15:00</td>
-														<td>處理中<div><a href="#" class="prbtn">查看物流狀態</a></div></td>
-														<td>
-															<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
-														</td>
-													</tr>
-												
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-		
+									<?
+										}
+									?>
 								</div>
+								<?}?>
+								<?if(isset($_GET['o_no'])){?>
+									<a href="order_info.php#processing">所有訂單</a>
+									<hr />
+								
+								<div class="tab-container pt-2">
+									<div class="tab-content clearfix" id="<?=$status_ary[$i]?>">
+										<div class="postcontent">
+											<div class="tablescoll mb-4">
+												<table class="table center">
+													<tbody>
+									<?
+										$o_no = $_GET['o_no'];
+										$sql = "select * from didipick_order where order_No='$o_no'";
+										$result = $mysql->query($sql);
+										$row = $result->fetch();
+										$id = $row['id'];
+										$sql1 = "select * from didipick_product where name in(select p_name from didipick_order_item where id='$id')";
+										$result1 = $mysql->query($sql1);
+										$row1 = $result1->fetch();
+									?>
+													<tr>
+														<td class="cart-product-thumbnail noborder">
+															<a href="order_info_details.php?id=<?=$row['id']?>" target="_blank"><img width="64" height="64" src="didipick_Admin/images/admin_upload_img/<?echo $row1['img1'];?>" alt=""></a>
+															<div><a href="order_info_details.php?id=<?=$row['id']?>" target="_blank"><?=$row['order_No']?></a></div>
+														</td>
+														<td class="noborder text-decoration_u"><a href="order_info_details.php?id=<?=$row['id']?>" target="_blank"><?=$row1['name']?></a></td>
+														<td class="noborder">$<?=$row['total']+$row['handlefee']?><br><span><?if($row['pay_type']==1){echo "儲值金付款";}else{echo "信用卡線上付款";}?></span></td>
+														<td class="noborder"><?
+																$time = explode(' ', $row['insert_time']);
+																$tm = explode(':', $time[1]);
+																echo $time[0].'<br>'.$tm[0].':'.$tm[1];
+															?></td>
+															<?
+															$sql_process =  "select * from didipick_process where id in(select process from didipick_order where order_No='$o_no')";
+															$result_ps = $mysql->query($sql_process);
+															$row_ps = $result_ps->fetch();
+															?>
+														<td class="noborder"><?=$row_ps['proess_status']?></td>
+														<td class="noborder">
+															<span><a href="#" class="button btn_circle">再次<br/>購買</a></span>
+														</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+													
+													
+								<?}?>
 							</div>
 
 							<div class="clear"></div>
@@ -514,18 +665,7 @@
 								<div class="widget widget_links product_lbox">
 
 									<h4>我的訂單</h4>
-									<ul>
-										<li><a href="member.html" title="會員總覽">會員總覽</a></li>
-										<li><a href="order_info.html" title="訂單查詢" class="active">訂單查詢</a></li>
-										<li><a href="order_addvalue.html" title="儲值金">儲值金</a></li>
-										<li><a href="member_coupon.html" title="專屬優惠券">專屬優惠券<b class="t_danger">・</b></a></li>
-										<li><a href="order_bonus.html" title="紅利點數">紅利點數</a></li>
-										<li><a href="member_edit.html" title="會員資料">會員資料</a></li>
-										<li><a href="#" title="會員制度/等級">會員制度/等級</a></li>
-										<li><a href="member_password.html" title="更改密碼">更改密碼</a></li>
-										<li><a href="member_address.html" title="收件地址管理">收件地址管理</a></li>
-										<li><a href="order_service.html" title="客服中心">客服中心</a></li>
-									</ul>
+									<?require_once "include_php/member_inc.php";?>
 
 								</div>
 
@@ -539,162 +679,14 @@
 				</div>
 
 				<div class="clear"></div>
-				<div class="h_40"></div>
-
-				<div class="container">
-					<div class="fancy-title title-center title-border">
-						<h4>更多值得你 pick! 的日本選物：</h4>
-					</div>
-
-					<div id="oc-images" class="pickjpbox owl-carousel image-carousel carousel-widget" data-autoplay="4000" data-loop="true" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-lg="5" data-items-xl="6">
-
-						<div class="oc-item salehcircle">
-							<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Image 1"></a>
-							<h3><a href="product_info.html">FUTAE NIGHT PACK 夜間二重眼膜</a></h3>
-							<div class="product-price"><ins><small>NT.</small>780</ins></div>
-						</div>
-						<div class="oc-item">
-							<a href="product_info.html"><img src="images/product_img/proimg_1.jpg" alt="Image 1"></a>
-							<h3><a href="product_info.html">FUTAE NIGHT PACK 夜間二重眼膜</a></h3>
-							<div class="product-price"><ins><small>NT.</small>780</ins></div>
-						</div>
-						<div class="oc-item">
-							<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="Image 1"></a>
-							<h3><a href="product_info.html">FUTAE NIGHT PACK 夜間二重眼膜</a></h3>
-							<div class="product-price"><ins><small>NT.</small>780</ins></div>
-						</div>
-						<div class="oc-item salehcircle">
-							<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Image 1"></a>
-							<h3><a href="product_info.html">FUTAE NIGHT PACK 夜間二重眼膜</a></h3>
-							<div class="product-price"><ins><small>NT.</small>780</ins></div>
-						</div>
-						<div class="oc-item">
-							<a href="product_info.html"><img src="images/product_img/proimg_1.jpg" alt="Image 1"></a>
-							<h3><a href="product_info.html">FUTAE NIGHT PACK 夜間二重眼膜</a></h3>
-							<div class="product-price"><ins><small>NT.</small>780</ins></div>
-						</div>
-						<div class="oc-item">
-							<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="Image 1"></a>
-							<h3><a href="product_info.html">FUTAE NIGHT PACK 夜間二重眼膜</a></h3>
-							<div class="product-price"><ins><small>NT.</small>780</ins></div>
-						</div>
-						<div class="oc-item salehcircle">
-							<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Image 1"></a>
-							<h3><a href="product_info.html">FUTAE NIGHT PACK 夜間二重眼膜</a></h3>
-							<div class="product-price"><ins><small>NT.</small>780</ins></div>
-						</div>
-
-					</div>
-				</div>
-
-
-	
-				<div class="clear"></div>
+				
 
 				
 			</div>
 		</section>
 
 		
-		<footer id="footer" class="bg-transparent border-0">
-
-			<div class="container">
-				<div class="footer-widgets-wrap pb-3 ">
-
-					<div class="row">
-
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">購物體驗</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="cart.html">購物車</a></li>
-									<li><a href="qa.html">常見問題</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">會員中心</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="login.html">登入/註冊</a></li>
-									<li><a href="member_password.html">忘記密碼</a></li>
-									<li><a href="notice.html">通知總覽</a></li>
-									<li><a href="order_info.html">訂單查詢</a></li>
-									<li><a href="product_desire.html">我的收藏</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">關於直直買</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="about.html">關於我們</a></li>
-									<li><a href="shoppingprocess.html">購物流程</a></li>
-									<li><a href="about.html">服務條款</a></li>
-									<li><a href="about.html">隱私權政策</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">直購商品</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="master.html">達人勸敗</a></li>
-									<li><a href="feedback.html">好評推薦</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-8 center">
-							<div class="widget footcenter">
-
-								<div class="footlogo">
-									<img src="images/footerlogo.png" alt="直直買 didipik">
-								</div>
-								<div class="widget subscribe-widget mt-2">
-									<ul class="list-unstyled iconlist ml-0">
-										<li>客服信箱：<a href="#">info@didipick.com</a></li>
-									</ul>
-
-									<ul class="list-unstyled socialiconlist ml-0">
-										<li><a href="#"><img src="images/socialicon_fb.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_ig.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_yt.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_line.png" alt=""></a></li>
-									</ul>
-
-									
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			
-			<div id="copyrights" class="bg-transparent center">
-
-				<div class="container">
-					<p>copyright © 2021 直直買 日本好物直購平台 All Rights Reserved.</p>
-				</div>
-
-			</div>
-		</footer>
+		<?require_once "include_php/footer_inc.php";?>
 
 	</div>
 
@@ -705,7 +697,39 @@
 	<script src="js/plugins.min.js"></script>
 
 	<script src="js/functions.js"></script>
-
+	<script>
+		$("#searchorder").click(function(){
+			o_no = $("#ordernumber").val();
+			if(o_no != ''){
+				window.location="order_info.php?o_no="+o_no;
+			}
+		});
+		function np_changepage(pagen){
+	    	window.location="order_info.php?np_pagen="+pagen+"#notpaidyet";
+	    }
+		function ps_changepage(pagen){
+	    	window.location="order_info.php?ps_pagen="+pagen+"#processing";
+	    }
+		function tob_changepage(pagen){
+	    	window.location="order_info.php?tob_pagen="+pagen+"#Cancelled";
+	    }
+		function sp_changepage(pagen){
+	    	window.location="order_info.php?sp_pagen="+pagen+"#completed";
+	    }
+	    function cp_changepage(pagen){
+	    	window.location="order_info.php?cp_pagen="+pagen+"#notpaidyet";
+	    }
+		function cn_changepage(pagen){
+	    	window.location="order_info.php?cn_pagen="+pagen+"#processing";
+	    }
+	    function keyFunction() {
+			//alert("Key code = " + event.keyCode);
+			if(event.keyCode==13){
+				$("#searchorder").click();
+			}
+		}
+		document.onkeydown=keyFunction;
+	</script>
 
 </body>
 </html>

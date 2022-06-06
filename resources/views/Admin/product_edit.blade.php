@@ -244,6 +244,10 @@ jQuery(document).ready(function($)
 		    @endphp
 		    <td width="82%"><input type="text" size="42" name="star" id="star" value="{{$star_tt}}"><font size="2">星</font></td>
 		  </tr>
+		  <tr>
+		  	<td width="18%" bgcolor="#C0C0C0" align="center"><font size="2">瀏覽數</font></td>
+		  	<td width="82%"><input type="text" size="42" name="views" id="views" value="{{$v->views}}"><font size="2"></font></td>
+		  </tr>
 		  <!--<tr>
 		    <td width="18%" bgcolor="#C0C0C0" align="center"><font size="2">觀看數</font></td>
 		    <td width="82%"><input type="text" size="42" name="views" id="views" value="{{$v->views}}"></td>
@@ -251,10 +255,13 @@ jQuery(document).ready(function($)
 		  <tr>
 		    <td width="100%" colspan="2">
 		    	<input type="hidden" name="sno" value="{{$sno}}">
-		    	<input type="button" value="確認修改" name="submit1" id="submit1" onclick="product_edit_form1()"></td>
+		    	<input type="submit" value="確認修改" id="btn"></td>
 		  </tr>
 		  @endforeach
 		</table>
+		 @include('kindeditor::editor',['editor'=>'spec'])
+		 @include('kindeditor::editor',['editor'=>'brief'])
+		 @include('kindeditor::editor',['editor'=>'description'])
     </form>
     </td>
   </tr>
@@ -269,10 +276,11 @@ jQuery(document).ready(function($)
 </body>
 
 </html>
-<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+
+<!--<script src="/js/ckeditor5.js"></script>
 <script>
     ClassicEditor
-        .create( document.querySelector( '#spec' ) )
+        .create( document.querySelector( '#spec' ))
         .catch( error => {
             console.error( error );
         } );
@@ -286,10 +294,9 @@ jQuery(document).ready(function($)
         .catch( error => {
             console.error( error );
         } );
-</script>
+</script>-->
 <script>
-	function product_edit_form1(){
+	$("#btn").click(function(){
 		$("#number").prop('disabled', false);
-		$("#product_edit_form").submit();
-	}
+	});
 </script>

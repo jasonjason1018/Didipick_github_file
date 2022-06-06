@@ -64,12 +64,12 @@
       </tr>
       @foreach($data as $v)
       <tr>
-        <td width="15%" align="center"><font size="3"><img src="" border="0" height="100"></font></td>
-        <td width="15%" align="center"><font size="3"><img src="" border="0" height="100"></font></td>
+        <td width="15%" align="center"><font size="3"><img src="storage/{{$v->icon}}" border="0" height="100"></font></td>
+        <td width="15%" align="center"><font size="3"><img src="storage/{{$v->icon2}}" border="0" height="100"></font></td>
         <td width="5%" align="center"><font size="3">{{$v->name}}</font></td>
         <td width="5%" align="center"><font size="3" color="@if($v->status==1){{'green'}}@else{{'red'}}@endif">@if($v->status==1){{'開啟'}}@else{{'關閉'}}@endif</font></td>
         <td width="15%" align="center">
-        <input type="button" value="商品編輯" name="update" onclick="window.location='/'">
+        <input type="button" value="商品編輯" name="update" onclick="window.location='/brand_edit/{{$v->sno}}'">
         @if($v->status==1)
           <input type="button" value="關閉" name="close" onclick="window.location='/brand_off/{{$v->sno}}'">
         @else

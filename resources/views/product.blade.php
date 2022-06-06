@@ -1,12 +1,5 @@
 @include('include_php.css_inc')
 
-<body class="stretched">
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTLHLW4"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-
 
 	<div id="wrapper" class="clearfix">
 
@@ -71,8 +64,6 @@
 			</div>
 		</div>
 
-		
-
 		@include('include_php.header_inc')
 
 		<section id="content">
@@ -81,17 +72,18 @@
 
 					<div class="heading_box center headw_md">
 						<p>ディディピック !</p>
-						<h3>提供一站式日貨<span>代購＆直送</span>，日本同步限定品<span>直覺</span>買！</h3>
+						<h3>提供一站式日貨<span>日本直送</span>，日本同步限定品<span>直覺</span>買！</h3>
 					</div>
 					<div class="clear"></div>
 					<div class="h_20"></div>
 
 					<div>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+							<li class="breadcrumb-item"><a href="/">首頁</a></li>
 							<li class="breadcrumb-item active" aria-current="page">商品列表</li>
 						</ol>
 					</div>
+					<h1>商品列表</h1>
 
 					<div id="page-menu" class="no-sticky mb-4 pageleftmenubox MobileOnly">
 						<div id="page-menu-wrap">
@@ -102,16 +94,13 @@
 
 									<nav class="page-menu-nav">
 										<ul class="page-menu-container">
-											<li class="page-menu-item"><a href="#" title="全部商品"><img src="images/product_l_icon/product_l_all_w.svg" alt="">全部商品</a></li>
-											<li class="page-menu-item"><a href="#" title="保健藥品"><img src="images/product_l_icon/product_l_medicine_w.svg" alt="">保健藥品</a></li>
-											<li class="page-menu-item"><a href="#" title="美妝"><img src="images/product_l_icon/product_l_makeups_w.svg" alt="">美妝</a></li>
-											<li class="page-menu-item"><a href="#" title="保養"><img src="images/product_l_icon/product_l_maintenance_w.svg" alt="">保養</a></li>
-											<li class="page-menu-item"><a href="#" title="美髮"><img src="images/product_l_icon/product_l_hair_w.svg" alt="">美髮</a></li>
-											<li class="page-menu-item"><a href="#" title="生活雜貨"><img src="images/product_l_icon/product_l_life_w.svg" alt="">生活雜貨</a></li>
+											@foreach($category as $categoryv)
+												<li class="page-menu-item active"><a href="#" title=""><img src="/storage/{{$categoryv->icon}}" alt="">{{$categoryv->name}}</a></li>
+											@endforeach
 										</ul>
 									</nav>
 
-									<div id="page-menu-trigger" class="leftmenu"><i class="icon-line-more-vertical animated infinite pulse"></i></div>
+									<div id="page-menu-trigger" class="leftmenu"><i class="icon-line-menu"></i></div>
 
 								</div>
 							</div>
@@ -124,326 +113,62 @@
 
 							
 							<div id="shop" class="shop row grid-container gutter-20" data-layout="fitRows">
-
+								@foreach($product as $product)
 								<div class="product probox col-md-3 col-sm-6 col-12">
 									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_1.jpg" alt="資生堂MOILIP藥用護唇膏"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart_add.png" alt="" class="active">
-										</div>
+										<a href="/didipick_product_info/{{$product->sno}}"><img src="/storage/{{$product->img1}}" alt="資生堂MOILIP藥用護唇膏"></a>
+										@if(Session::has('didipick_login'))
+												@if(!in_array($product->No, $f_product))
+													<div class="liked" onclick="pfavory('{{$product->No}}')" id="p_star{{$product->No}}"></div>
+												@else
+													<div class="liked clicked" onclick="pcancelfavory('{{$product->No}}')" id="p_star{{$product->No}}"></div>
+												@endif
+										@else
+											<div class="liked" onclick="alert('請先登入');window.location='/didipick_login'"></div>
+										@endif
 									</div>
 									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">資生堂MOILIP藥用護唇膏</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>300</ins></div>
+										<div class="product-title"><h3><a href="/didipick_product_info/{{$product->sno}}" >{{$product->name}}</a></h3></div>
+										@if($product->s_price != $product->o_price)
+												<div class="product-price special-price">
+											@else
+												<div class="product-price">
+											@endif
+												<ins>
+													<small>
+													NT.
+												</small>
+												{{ceil($product->s_price*$rate)}}
+											</ins>
+											@if($product->s_price != $product->o_price)
+												<del>
+													<small>
+													NT.
+												</small>
+												{{ceil($product->o_price*$rate)}}
+											</del>
+											@endif
+										</div>
 										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
+											@php
+												$star = $product->star;
+												$a = explode(',', $star);
+											@endphp
+											@foreach($a as $k=>$v)
+												@for($st=1;$st<=$v;$st++)
+													@if($k==0)
+														<i class="icon-star3"></i>
+													@elseif($k==1)
+														<i class="icon-star-half-full"></i>
+													@else
+														<i class="icon-star-empty"></i>
+													@endif
+												@endfor
+											@endforeach
 										</div>
 									</div>
 								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Fujiko Ponpon Powder 頭髮專用吸油粉撲"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">Fujiko Ponpon Powder 頭髮專用吸油粉撲</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>639</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="EVE止痛藥"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">EVE止痛藥</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>272</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Fujiko Ponpon Powder 頭髮專用吸油粉撲"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">Fujiko Ponpon Powder 頭髮專用吸油粉撲</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>639</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="EVE止痛藥"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">EVE止痛藥</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>272</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_1.jpg" alt="資生堂MOILIP藥用護唇膏"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">資生堂MOILIP藥用護唇膏</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>300</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="EVE止痛藥"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">EVE止痛藥</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>272</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Fujiko Ponpon Powder 頭髮專用吸油粉撲"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">Fujiko Ponpon Powder 頭髮專用吸油粉撲</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>639</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_1.jpg" alt="資生堂MOILIP藥用護唇膏"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">資生堂MOILIP藥用護唇膏</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>300</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="EVE止痛藥"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">EVE止痛藥</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>272</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Fujiko Ponpon Powder 頭髮專用吸油粉撲"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">Fujiko Ponpon Powder 頭髮專用吸油粉撲</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>639</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_1.jpg" alt="資生堂MOILIP藥用護唇膏"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">資生堂MOILIP藥用護唇膏</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>300</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="EVE止痛藥"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">EVE止痛藥</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>272</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_2.jpg" alt="Fujiko Ponpon Powder 頭髮專用吸油粉撲"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">Fujiko Ponpon Powder 頭髮專用吸油粉撲</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>639</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_1.jpg" alt="資生堂MOILIP藥用護唇膏"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">資生堂MOILIP藥用護唇膏</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>300</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
-
-								<div class="product probox col-md-3 col-sm-6 col-12">
-									<div class="product-image">
-										<a href="product_info.html"><img src="images/product_img/proimg_3.jpg" alt="EVE止痛藥"></a>
-										<div class="addheartbox">
-											<img src="images/product_heart.png" alt="">
-										</div>
-									</div>
-									<div class="product-desc center">
-										<div class="product-title"><h3><a href="product_info.html">EVE止痛藥</a></h3></div>
-										<div class="product-price"><ins><small>NT.</small>272</ins></div>
-										<div class="product-rating">
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star3"></i>
-											<i class="icon-star-half-full"></i>
-										</div>
-									</div>
-								</div>
+								@endforeach
 
 								
 
@@ -451,19 +176,49 @@
 							</div>
 
 							<div class="clear"></div>
-
-
+							@php
+								$bsize = count($brand);
+							@endphp
+							@if($totalpage > 1)
 							<div class="center">
+								@if(!isset($nowpage))
+									@php
+										$nowpage = 1;
+									@endphp
+								@endif
 								<ul class="pagination pagination-transparent pagination-circle">
-									<li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-									<li class="page-item active"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">4</a></li>
-									<li class="page-item"><a class="page-link" href="#">5</a></li>
-									<li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+									@if($nowpage != 1)
+										<li class="page-item"><a href="javascript:void(0)" class="page-link" onclick="page('{{$nowpage-1}}', '{{$bsize}}')" aria-label="Next"><span aria-hidden="true">«</span></a></li>
+									@endif
+
+										@if($nowpage<=10)
+											@php
+												$a = 1;
+											@endphp
+										@elseif($nowpage%10==0)
+											@php
+												$a = $nowpage+1;
+											@endphp
+										@else
+											@php
+												$a = $nowpage-($nowpage%10)+1;
+											@endphp
+										@endif
+									@for($i=$a;$i<$a+10;$i++)
+										@if($i<=$totalpage)
+											@if($nowpage == $i)
+												<li class="page-item active"><a href="javascript:void(0)" class="page-link" onclick="page('{{$i}}', '{{$bsize}}')">{{$i}}</a></li>
+											@else
+												<li class="page-item"><a href="javascript:void(0)" class="page-link" onclick="page('{{$i}}', '{{$bsize}}')">{{$i}}</a></li>
+											@endif
+										@endif
+									@endfor
+									@if($nowpage != $totalpage)
+										<li class="page-item"><a href="javascript:void(0)" class="page-link" onclick="page('{{$nowpage+1}}', '{{$bsize}}')" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+									@endif
 								</ul>
 							</div>
+							@endif
 						</div>
 						
 						
@@ -474,12 +229,30 @@
 
 									<h4>所有分類商品</h4>
 									<ul>
-										<li><a href="#" title="全部商品"><img src="images/product_l_icon/product_l_all.svg" alt="">全部商品</a></li>
-										<li><a href="#" title="保健品"><img src="images/product_l_icon/product_l_medicine.svg" alt="">保健品</a></li>
-										<li><a href="#" title="美妝"><img src="images/product_l_icon/product_l_makeups.svg" alt="">美妝</a></li>
-										<li><a href="#" title="保養"><img src="images/product_l_icon/product_l_maintenance.svg" alt="">保養</a></li>
-										<li><a href="#" title="美髮"><img src="images/product_l_icon/product_l_hair.svg" alt="">美髮</a></li>
-										<li><a href="#" title="生活雜貨"><img src="images/product_l_icon/product_l_life.svg" alt="">生活雜貨</a></li>
+										@foreach($category as $v)
+											@if(isset($categorysno))
+												@if($categorysno == $v->sno)
+													<li><a href="javascript:void(0)" title="{{$v->name}}" onclick="category('{{$v->sno}}')" class="active"><img src="/storage/{{$v->icon}}" alt="">{{$v->name}}</a></li>
+												@else
+													@if($v->name == '全部商品')
+														<li><a href="javascript:void(0)" title="{{$v->name}}" onclick="category('all')"><img src="/storage/{{$v->icon}}" alt="">{{$v->name}}</a></li>
+													@else
+														<li><a href="javascript:void(0)" title="{{$v->name}}" onclick="category('{{$v->sno}}')"><img src="/storage/{{$v->icon}}" alt="">{{$v->name}}</a></li>
+													@endif
+												@endif
+											@else
+												@if($v->name == '全部商品')
+													<li><a href="javascript:void(0)" title="{{$v->name}}" onclick="category('all')" class="active"><img src="/storage/{{$v->icon}}" alt="">{{$v->name}}</a></li>
+												@else
+													<li><a href="javascript:void(0)" title="{{$v->name}}" onclick="category('{{$v->sno}}')"><img src="/storage/{{$v->icon}}" alt="">{{$v->name}}</a></li>
+												@endif
+											@endif
+										@endforeach
+										@if(isset($categorysno))
+											<input type="hidden" id="categorysno" value="{{$categorysno}}">
+										@else
+											<input type="hidden" id="categorysno" value="all">
+										@endif
 									</ul>
 
 								</div>
@@ -487,90 +260,24 @@
 								<div class="widget check_box">
 
 									<h4>熱銷品牌</h4>
-									<div class="cb_pad">
-										<label class="control control--checkbox">SHISEIDO資生堂
-											<input type="checkbox" checked="checked"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">FUJIKO
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">COSME DECORTÉ/黛珂
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">ADENOVITAL育髮系列
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">HADA LABO
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">JEMILE FRAN
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">KISSME MEDICATED
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">CUREL/珂潤
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">OPERA
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">EXCEL 眼影系列
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">SHIRO 唇釉系列
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">AVANCE
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">小林製藥
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
-									<div class="cb_pad">
-										<label class="control control--checkbox">PRODUCT大馬士革
-											<input type="checkbox"/>
-											<div class="control__indicator"></div>
-										</label>
-									</div>
+									@foreach($brand as $k=>$v)
+										<div class="cb_pad">
+											<label class="control control--checkbox">{{$v->name}}
+												<!--<input type="checkbox" checked="checked"/>-->
+												@if(isset($brandsno))
+													@if(in_array($v->sno, $brandsno))
+														<input type="checkbox" id="brand{{$k}}" onclick="brand('{{$bsize}}')" value="{{$v->sno}}" checked/>
+													@else
+														<input type="checkbox" id="brand{{$k}}" onclick="brand('{{$bsize}}')" value="{{$v->sno}}"/>
+													@endif
+												@else
+													<input type="checkbox" id="brand{{$k}}" onclick="brand('{{$bsize}}')" value="{{$v->sno}}"/>
+												@endif
+												<div class="control__indicator"></div>
+
+											</label>
+										</div>
+									@endforeach
 									
 								</div>
 
@@ -579,122 +286,69 @@
 					</div>
 
 					<div class="clear"></div>
+					
 		
 				</div>
 				
 			</div>
+			
 		</section>
 		
-		<footer id="footer" class="bg-transparent border-0">
-
-			<div class="container">
-				<div class="footer-widgets-wrap pb-3 ">
-
-					<div class="row">
-
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">購物體驗</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="cart.html">購物車</a></li>
-									<li><a href="qa.html">常見問題</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">會員中心</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="login.html">登入/註冊</a></li>
-									<li><a href="member_password.html">忘記密碼</a></li>
-									<li><a href="notice.html">通知總覽</a></li>
-									<li><a href="order_info.html">訂單查詢</a></li>
-									<li><a href="product_desire.html">我的收藏</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">關於直直買</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="about.html">關於我們</a></li>
-									<li><a href="shoppingprocess.html">購物流程</a></li>
-									<li><a href="about.html">服務條款</a></li>
-									<li><a href="about.html">隱私權政策</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">直購商品</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="master.html">達人勸敗</a></li>
-									<li><a href="feedback.html">好評推薦</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-8 center">
-							<div class="widget footcenter">
-
-								<div class="footlogo">
-									<img src="images/footerlogo.png" alt="直直買 didipik">
-								</div>
-								<div class="widget subscribe-widget mt-2">
-									<ul class="list-unstyled iconlist ml-0">
-										<li>客服信箱：<a href="#">info@didipick.com</a></li>
-									</ul>
-
-									<ul class="list-unstyled socialiconlist ml-0">
-										<li><a href="#"><img src="images/socialicon_fb.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_ig.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_yt.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_line.png" alt=""></a></li>
-									</ul>
-
-									
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			
-			<div id="copyrights" class="bg-transparent center">
-
-				<div class="container">
-					<p>copyright © 2021 直直買 日本好物直購平台 All Rights Reserved.</p>
-				</div>
-
-			</div>
-		</footer>
+		@include('include_php.footer_inc')
 
 	</div>
 
 	
-	<div id="gotoTop"><img src="images/gotop.png" alt=""></div>
+	<div id="gotoTop"><img src="/images/gotop.png" alt=""></div>
 
-	<script src="js/jquery.js"></script>
-	<script src="js/plugins.min.js"></script>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/plugins.min.js"></script>
 
-	<script src="js/functions.js"></script>
+	<script src="/js/functions.js"></script>
+	<script src="/js/acfavory.js"></script>
+	<script type="text/javascript">
+    $('.liked,.keep').click(function(){
+      $(this).toggleClass('clicked');
+    });
+    function brand(size){
+			//alert(no);
+			var brandid = "";
+			for(var i=0;i<=size;i++){
+				if($("#brand"+i).prop("checked")==true){
+					sno = $("#brand"+i).val();
+					brandid = sno+','+brandid;
+				}
+			}
+			category = $("#categorysno").val();
+			if(brandid == "" && category=="all"){
+				window.location="/didipick_product";
+			}else if(brandid == "" && category!="all"){
+				window.location="/category_search/"+category;
+			}else{
+				window.location="/brand_search/"+brandid+"/"+category;
+			}
+		}
 
+		function category(category){
+			window.location="/category_search/"+category;
+		}
+
+		function page(page, size){
+			var brandid = "";
+			for(var i=0;i<=size;i++){
+				if($("#brand"+i).prop("checked")==true){
+					sno = $("#brand"+i).val();
+					brandid = sno+','+brandid;
+				}
+			}
+			if(brandid == ""){
+				brandid = "none";
+			}
+			category = $("#categorysno").val();
+			window.location="/product_page/"+page+"/"+brandid+"/"+category;
+		}
+
+  </script>
 
 </body>
 </html>

@@ -1,3 +1,20 @@
+<?
+function randString($len = 6)
+ {
+    $chars = str_repeat('0123456789', 3);
+    // 位數過長重複字串一定次數
+    $chars = str_shuffle($chars);
+    $str = substr($chars, 0, $len);
+    return $str;
+}
+$auth = randString();
+require_once 'Admin/include/Session.php';
+$session = new Session;
+$session->Session();
+if($session->get('login-status') == 'signing-in'){
+	header("Location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -5,54 +22,23 @@
 	<title>註冊會員｜直直買 didipick</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-
-	<meta property="og:title" content=""/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:description" content=""/>
-
-	<link rel="shortcut icon" href="images/favicon.png"/>
-
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/didipick.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-
-	<link rel="stylesheet" href="demos/shop/shop.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+	<? require_once 'include_php/css_include.php';?>
 
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PTLHLW4');</script>
+	})(window,document,'script','dataLayer','GTM-PKM45FH');</script>
 	<!-- End Google Tag Manager -->
-
 </head>
 
 <body class="stretched">
 
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTLHLW4"
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKM45FH"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-
 	
 	<div id="wrapper" class="clearfix">
 
@@ -123,14 +109,14 @@
 					<div class="header-row justify-content-lg-between">
 
 					<div id="logo" class=" mx-lg-auto col-auto flex-column order-lg-2 px-0">
-						<a href="index.html" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-						<a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
+						<a href="index.php" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
+						<a href="index.php" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
 					</div>
 				</div>
 				
 				</div>
 			</div>
-			<div class="header-wrap-clone"></div>
+			<div class="header-wrap-clone hide-clone"></div>
 		</header>
 
 		
@@ -144,25 +130,24 @@
 						<div class="tab-content" id="tab-login">
 							<div class="card mb-0">
 								<div class="card-body" style="padding: 40px;">
-									<form id="login-form" name="login-form" class="mb-0" action="#" method="post">
+									<form id="authform" name="login-form" class="mb-0" action="signup2.php" method="post">
 
 										<h3>成為新會員</h3>
 
 										<div class="row">
 											<div class="col-12 form-group">
-												<label for="login-form-Email">Email:</label>
-												<input type="text" id="login-form-Email" name="login-form-Email" value="" class="form-control" placeholder="輸入Email"/>
+												<label for="login-form-phone">電話號碼:</label>
+												<input type="text" id="phone" name="phone" value="" class="form-control" placeholder="輸入電話號碼"/>
 											</div>
-											<div class="col-12 form-group loginbtn center">
-												<a href="#" class="button button-border button-rounded button-green m-0">發送驗證碼</a>
+											<div class="col-12 form-group loginbtn center"  id="send">
+												<input type="button"  href="#" id="btn" class="button button-border button-rounded button-green m-0" value="發送驗證碼">
 											</div>
-
 											<div class="col-12 form-group">
-												<label for="login-form-Email">Email 驗證碼:</label>
-												<input type="text" id="login-form-Email" name="login-form-Email" value="" class="form-control" placeholder="輸入Email驗證碼"/>
+												<label for="login-form-phone">簡訊驗證碼:</label>
+												<input type="text" id="userauth" name="userauth" value="" class="form-control" placeholder="輸入簡訊驗證碼"/>
 											</div>
-
-											<div class="col-12 form-group">
+											<input type="hidden" name="mob" id="mob" value="">
+											<!--<div class="col-12 form-group">
 												<label for="login-form-password">密碼:</label>
 												<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" placeholder="6-20 位字元，不含特殊符號"/>
 											</div>
@@ -173,24 +158,20 @@
 											</div>
 
 											<div class="col-12 form-group getnews">
-												<label class="control control--checkbox mb-0">同意 <a href="about.html" class="prbtn">didipick會員服務條款</a>，並同意將會員資料提供給公司做為註冊及認證使用。
-													<input type="checkbox" checked="checked">
+												<label class="control control--checkbox mb-0">同意 <a href="about.php" class="prbtn">didipick會員服務條款</a>，並同意將會員資料提供給公司做為註冊及認證使用。
+													<input type="checkbox">
 													<div class="control__indicator"></div>
 												</label>
-											</div>
+											</div>-->
 
 											<div class="col-12 form-group loginbtn center">
-												<a href="#" class="button button-rounded m-0">註冊</a>
+												<a href="#" id="nextformbtn" class="button button-rounded m-0">下一步</a>
 											</div>
 
 										</div>
 
 									</form>
 									<div class="line line-sm"></div>
-									<div class="w-100 text-center sign_options">
-										<a href="#" class="button button-rounded si-facebook si-colored">Facebook登入</a>
-										<a href="#" class="button button-rounded si-google si-colored">Google登入</a>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -200,15 +181,82 @@
 			</div>
 		</section>
 
-
 	</div>
-
 	<div id="gotoTop"><img src="images/gotop.png" alt=""></div>
 
 	<script src="js/jquery.js"></script>
 	<script src="js/plugins.min.js"></script>
-
 	<script src="js/functions.js"></script>
 
 </body>
+
+<script type="text/javascript">
+			$("#phone").blur(function(){
+				mobile = $("#phone").val();
+				var cellphone = /^09[0-9]{8}$/;
+				if(mobile != ''){
+					if(cellphone.test(mobile)==false){
+						alert('請填寫正確的手機號碼');
+						$("#phone").val('');
+					}else{
+						$("#mob").val(mobile);
+					}
+				}
+			});
+			
+			$("#btn").click(function(){
+				mobile = $("#phone").val();
+				if(mobile == ''){
+					alert('請填入手機號碼');
+				}else{
+					$("#btn").attr('disabled', true);
+					//button.disabled = 'disabled';
+						var time = 120;
+						var timer = setInterval(function() {
+							if (time == -1) {
+								clearInterval(timer)
+								$("#btn").attr('disabled', false);
+								$("#btn").val('發送驗證碼');
+								//button.disabled = '';
+								//button.value = '發送驗證碼';
+							} else {
+								$("#btn").val(time + '秒後重新發送');
+								//button.value = time + '秒後重新發送';
+								time--;
+							}
+						}, 1000)
+						$.ajax({
+							type:"POST",
+							url:"SendSms.php",
+							data:{mobile:mobile},
+							success: function(resp){
+								alert(resp);
+							}
+						});
+				}
+			});
+
+			$("#nextformbtn").click(function(){
+					mob = $("#phone").val();
+					auth = $("#userauth").val();
+						$.ajax({
+							type:"POST",
+				            url:"CheckSms.php",
+				            data: {auth:auth, mob:mob},
+				            //dataType: 'json',
+				            success: function(resp){
+				            	if(resp == 'ok'){
+				            		$("#authform").submit();
+				            	}else if(resp == 'timeout'){
+				            		alert('驗證碼已經過期');
+				            	}else{
+				            		alert(resp);
+				            	}
+				            },
+				            error:function(err){
+				                console.log(err)
+				            },
+						});
+			});
+		</script>
 </html>

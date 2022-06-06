@@ -46,6 +46,10 @@ class Kernel extends HttpKernel
         'admin_session' => [
             \App\Http\Middleware\Admin_session::class,
         ],
+
+        'didipick_session' => [
+            \App\Http\Middleware\Didipick_session::class,
+        ],
     ];
 
     /**
@@ -67,5 +71,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin_session' => \App\Http\Middleware\Admin_session::class,
+        'didipick_session' => \App\Http\Middleware\Didipick_session::class,
     ];
 }

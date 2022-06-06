@@ -1,57 +1,10 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
-<head>
+<?
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
+require_once "include_php/css_inc.php";
+require_once "require_inc.php";
 
-	<title>訂單明細｜直直買 didipick</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-
-	<meta property="og:title" content=""/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:description" content=""/>
-
-	<link rel="shortcut icon" href="images/favicon.png"/>
-
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/didipick.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-
-	<link rel="stylesheet" href="demos/shop/shop.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
-
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PTLHLW4');</script>
-	<!-- End Google Tag Manager -->
-
-</head>
-
-<body class="stretched">
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTLHLW4"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+?>
 
 
 	<div id="wrapper" class="clearfix">
@@ -117,159 +70,7 @@
 			</div>
 		</div>
 
-		<header id="header" class="full-header header-size-lg">
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row justify-content-lg-between">
-
-					<div id="logo" class="PCOnly mx-lg-auto col-auto flex-column order-lg-2 px-0">
-						<a href="index.html" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-						<a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-					</div>
-
-					<div class="col-auto col-lg-3 order-lg-1 d-none d-md-flex px-0">
-						<!-- <div class="social-icons">
-							<a href="https://facebook.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-facebook" target="_blank">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
-							<a href="https://twitter.com/__semicolon" class="social-icon si-rounded si-dark si-mini si-twitter" target="_blank">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-							<a href=" https://instagram.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-instagram" target="_blank">
-								<i class="icon-instagram"></i>
-								<i class="icon-instagram"></i>
-							</a>
-						</div> -->
-					</div>
-
-					<div class="header-misc col-auto col-lg-3 justify-content-lg-end ml-0 ml-sm-3 px-0">
-
-							<span class="MobileOnly mlogo"><a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a></span>
-
-							<div id="top-heart">
-								<!-- 加入前 -->
-								<a href="product_desire.html">
-									<img src="images/topicon_heart.svg" alt="">
-								</a>
-								
-								<!-- 加入後 -->
-								<!-- <a href="#"><img src="images/topicon_heart_add.svg" alt=""></a> -->
-							</div>
-
-							<div id="top-account">
-								<a href="cart.html" >
-									<img src="images/topicon_cart.svg" alt=""><span class="top-cart-number">5</span>
-								</a>
-							</div>
-
-							<div id="top-cart" class=" header-misc-icon">
-								<a href="#" id="top-cart-trigger"><img src="images/topicon_user.svg" alt=""></a>
-								<div class="top-cart-content">
-									<div class="top-cart-ul center">
-										<ul>
-											<li><a href="member.html" title="會員中心">會員中心</a></li>
-											<li><a href="notice.html" title="訂單通知">訂單通知</a></li>
-											<li><a href="#" title="主題活動">主題活動</a></li>
-											<li><a href="#" title="訊息公告">訊息公告</a></li>
-											<li><a href="product_desire.html" title="慾望清單">慾望清單</a></li>
-											<li><a href="favorite.html" title="最愛文章">最愛文章</a></li>
-										</ul>
-									</div>
-									
-									<div class="top-cart-action center">
-										<a href="order_addvalue.html" class="button button-border button-rounded button-green">儲值</a>
-										<a href="#" class="button button-rounded">登出</a>
-									</div>
-								</div>
-							</div>
-
-							<!-- <div id="top-login">
-								<a href="login.html" class="button button-border button-rounded button-green">登入</a>
-							</div>
-
-							<div id="top-signup">
-								<a href="signup.html" class="button button-rounded">註冊</a>
-							</div>
- 							-->
-							<!-- <div id="top-search" class="header-misc-icon">
-								<a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
-							</div> -->
-						</div>
-
-					<div id="primary-menu-trigger">
-						<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
-					</div>
-				</div>
-				
-				<div class="container">
-					<div class="header-row justify-content-lg-center header-border">
-
-						<nav class="primary-menu with-arrows ">
-
-							<ul class="menu-container justify-content-between">
-								<li class="menu-item mega-menu-one">
-									<a class="menu-link" href="master.html"><div>達人勸敗</div></a>
-									<ul class="sub-menu-container">
-										<li class="card p-0 bg-transparent border-0">
-											<a href="master_info.html"><img class="card-img-top" src="images/navimg_2.jpg" alt=""></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>水水約會提案｜30秒擺脫扁塌頭！<small>NEW</small></div></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>乾燥唇救星｜日妞激推滋潤NO.1<small>HOT</small></div></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>百搭零廢色｜日本SNS超夯眼影<small>HOT</small></div></a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="product.html"><div>所有分類</div></a>
-									<div class="mega-menu-content mega-menu-style-2">
-										<div class="container">
-											<div class="row">
-												<ul class="sub-menu-container mega-menu-column col-lg-6">
-													<ul class="sub-menu-container">
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_all.svg" alt=""> 全部商品</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_medicine.svg" alt=""> 保健品</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_makeups.svg" alt=""> 美妝</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_maintenance.svg" alt=""> 保養</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_hair.svg" alt=""> 美髮</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_life.svg" alt=""> 生活雜貨</div></a></li>
-													</ul>
-												</ul>
-												<ul class="sub-menu-container mega-menu-column col-lg-6">
-													<li class="card p-0 bg-transparent border-0">
-														<a href="#"><img class="card-img-top" src="images/navimg_1.jpg" alt=""></a>
-													</li>
-												</ul>
-												
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="menu-item"><a class="menu-link" href="product_top20.html"><div>熱銷排行</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="feedback.html"><div>好評推薦</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="qa.html"><div>常見問題</div></a></li>
-							</ul>
-
-						</nav>
-
-						<form class="top-search-form" action="search.html" method="get">
-							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
-						</form>
-
-					</div>
-				</div>
-
-				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header>
-
+		<?require_once "include_php/header_inc.php"?>
 	
 		<section id="content">
 			<div class="content-wrap">
@@ -306,91 +107,120 @@
 										</ul>
 									</nav>
 
-									<div id="page-menu-trigger" class="leftmenu"><i class="icon-line-more-vertical animated infinite pulse"></i></div>
+									<div id="page-menu-trigger" class="leftmenu"><i class="icon-line-menu"></i></div>
 
 								</div>
 							</div>
 						</div>
 					</div>
-
+					<?
+						$id = $_GET['id'];
+						$sql = "select * from didipick_order where id='$id'";
+						$result = $mysql->query($sql);
+						$row = $result->fetch();
+						$sql_item = "select * from didipick_order_item where id='$id'";
+						$result_item = $mysql->query($sql_item);
+						$size_item = $result_item->size();
+						$orderid = $row['order_No'];
+					?>
 
 					<div class="row gutter-40 col-mb-40">
 						
 						<div class="postcontent col-lg-9 order-lg-last">
-
+							
 
 							<div class="orderdetails">
-								<h4>運送狀態</h4>
-								<ul class="process-steps process-5 row col-mb-30 justify-content-center mb-0 mt-4">
-									<li class="col-sm-6 col-lg-3 active">
-										<a href="#" class="i-circled i-alt mx-auto bg-color icon-ok"></a>
-										<h5>處理中</h5>
-									</li>
-									<li class="col-sm-6 col-lg-3 active">
-										<a href="#" class="i-circled i-alt mx-auto bg-color icon-ok"></a>
-										<h5>已出貨</h5>
-									</li>
-									<li class="col-sm-6 col-lg-3">
-										<a href="#" class="i-bordered i-circled mx-auto icon-ok"></a>
-										<h5 class="t_gray">尚未送達</h5>
-									</li>
-								</ul>
-
+								<h4>訂單狀態</h4>
+								
 								<div>
-									<ul class="timeline">
-						                <li class="timeline-item">
-						                    <div class="timeline-info">
-						                        <span>2021-03-31 09:28</span>
-						                    </div>
-						                    <div class="timeline-marker"></div>
-						                    <div class="timeline-content">
-						                        <p>已出貨<br>
-						                        <span class="prbtn">追蹤編號：</span> 12345678 <a class="prbtn">複製</a>
-						                        </p>
-						                    </div>
-						                </li>
-						                <li class="timeline-item">
-						                    <div class="timeline-info">
-						                        <span>2021-03-31 09:30</span>
-						                    </div>
-						                    <div class="timeline-marker"></div>
-						                    <div class="timeline-content">
-						                        <p>處理中</p>
-						                    </div>
-						                </li>
-						             
-						            </ul>
+									<div class="orderdetails-header">
+										<div class="left">
+											<?if($row['process']==1){?>	
+											<h2 class="ship-title t_highlight">待付款</h2>
+										<?}else if($row['process']==2){?>
+											<h2 class="ship-title t_didi_t">處理中</h2>
+											<p>更新時間: <?=$row['insert_time']?></p>
+										<?}else if($row['process']==3){?>
+											<h2 class="ship-title t_didi_t">已訂購</h2>
+											<?for($i=1;$i<=$size_item;$i++){?>
+												<?$row_item = $result_item->fetch();?>
+												<p>更新時間: <?=$row_item['buy_time']?></p>
+											<?}?>
+										<?}else if($row['process']==4){?>
+											<h2 class="ship-title t_didi_t">已出貨</h2>
+											<?for($i=1;$i<=$size_item;$i++){?>
+												<?$row_item = $result_item->fetch();?>
+												<p>更新時間: <?=$row_item['receipt_time']?></p>
+											<?}?>
+										<?}else if($row['process']==5){?>
+											<h2 class="ship-title t_didi_t">國際運輸中</h2>
+											<p>更新時間: <?=$row['shipment_time']?></p>
+										<?}else if($row['process']==6){?>
+											<h2 class="ship-title t_didi_t">已完成</h2>
+											<p>更新時間: <?=$row['complete_time']?></p>
+										<?}else if($row['process']==0){?>
+											<h2 class="ship-title t_gray">已取消</h2>
+											<p>取消原因:&nbsp;<?=$row['remark1']?></p>
+											<p>更新時間: <?=$row['cancel_time']?></p>
+										<?}?>
+											<!-- <h2 class="ship-title t_highlight">待付款</h2> -->
+											<!-- <h2 class="ship-title t_didi_t">處理中</h2> -->
+											<!-- <h2 class="ship-title t_didi_t">已訂購</h2> -->
+											<!-- <h2 class="ship-title t_didi_t">已出貨</h2> -->
+											<!-- <h2 class="ship-title t_didi_t">國際運輸</h2> -->
+											<!-- <h2 class="ship-title t_didi_t">已完成</h2> 
+											<h2 class="ship-title t_gray">已取消</h2>
+											<p>取消原因: 庫存不足</p>
+											<p>更新時間: 2021-03-31 09:30</p>-->
+										
+										</div>
+										
+										
+									</div>
+									
+									
 								</div>
 							</div>
 
 
 							<div class="orderdetails">
-								<h4>訂單摘要</h4>
+								<h4>訂單摘要：<?=$row['order_No']?></h4>
 
 								<div class="tablescoll mb-0">
 									<div class="table-responsive">
 										<table class="table cart checkdatabox">
 											<tbody>
+												<?
+													$sql1 = "select * from didipick_order_item where id='$id'";
+													$result1 = $mysql->query($sql1);
+													$size1 = $result1->size();
+													for($i=1;$i<=$size1;$i++){
+														$row1 = $result1->fetch();
+														$pname = $row1['p_name'];
+														$sql2 = "select * from didipick_product where name in(select p_name from didipick_order_item where id='$id' and p_name='$pname')";
+														$result2 = $mysql->query($sql2);
+														$row2 = $result2->fetch();
+												?>
 												<tr class="cart_item">
 													<td class="cart-product-thumbnail">
 														<a href="#">
-															<img width="64" height="64" src="images/product_img/proimg_1.jpg" alt="資生堂MOILIP藥用護唇膏">
+															<img width="64" height="64" src="didipick_Admin/images/admin_upload_img/<?=$row2['img1']?>" alt="資生堂MOILIP藥用護唇膏">
 														</a>
 													</td>
 
 													<td class="cart-product-name">
-														<a href="#">資生堂MOILIP藥用護唇膏</a><br>
+														<a href="#"><?=$row1['p_name']?></a><br>
 													</td>
 
 													<td class="cart-product-quantity">
-														<div class="quantity clearfix">×  1</div>
+														<div class="quantity clearfix">×  <?=$row1['quantity']?></div>
 													</td>
 
 													<td class="cart-product-subtotal">
-														<span class="amount">NT. 200</span>
+														<span class="amount">NT.<?=$row1['price']?></span>
 													</td>
 												</tr>
-
+												<?}?>
 											</tbody>
 
 										</table>
@@ -399,11 +229,28 @@
 
 								<div class="pricedetails">
 									<ul>
-										<li><span class="pdeitem_l">小計：</span><span class="pdeitem_r">NT 300<span class="pdeitem_l"></li>
-										<li><span class="pdeitem_l">國際運費：</span><span class="pdeitem_r">NT 60</span></li>
-										<li class="pb-2"><span class="pdeitem_l">刷卡手續費：</span><span class="pdeitem_r">NT 30</span></li>
-
-										<li class="pdtotal pt-2"><span class="pdeitem_l">合計：</span><span class="pdeitem_r">NT 390</span></li>
+										<?
+											$xxx = 0;
+											$sql2 = "select * from didipick_order_item where id='$id'";
+											$result2 = $mysql->query($sql2);
+											$size2 = $result2->size();
+											for($i=1;$i<=$size2;$i++){
+												$row2 = $result2->fetch();
+												$itemprice = $xxx+$row2['price'];
+											}
+										?>
+										<li><span class="pdeitem_l">小計：</span><span class="pdeitem_r">NT <?=$itemprice?><span class="pdeitem_l"></li>
+										<li><span class="pdeitem_l">國際運費：</span><span class="pdeitem_r">NT <?=$row['freight']?></span></li>
+										<?if($row['pay_type'] == 2){?>
+										<li class="pb-2"><span class="pdeitem_l">刷卡手續費：</span><span class="pdeitem_r">NT <?=$row['handlefee']?></span></li>
+										<?}?>
+										<?
+											$sql1 = "select * from didipick_coupon_use where member='$userid' and order_id='$orderid'";
+											$result1 = $mysql->query($sql1);
+											$row1 = $result1->fetch();
+										?>
+										<li class="pb-2"><span class="pdeitem_l">優惠券：</span><span class="pdeitem_r" style="color:red">NT <?=$row1['price']?></span></li>
+										<li class="pdtotal pt-2"><span class="pdeitem_l">合計：</span><span class="pdeitem_r">NT <?if($row['pay_type'] == 2){echo $itemprice+$row['freight']-$row1['price']+$row['handlefee'];}else{echo $itemprice+$row['freight']-$row1['price'];}?></span></li>
 									</ul>
 									
 								</div>
@@ -418,11 +265,11 @@
 								<h4>收件人資訊</h4>
 								<div class="details_list">
 									<ul>
-										<li><span class="mr-3">收件人</span>劉小貝</li>
-										<li><span class="mr-3">收件人地址</span>11166 台北市士林區士林街111號10樓（管理室可代收）</li>
-										<li><span class="mr-3">收件人電話</span>＋886910100100</li>
+										<li><span class="mr-3">收件人</span><?=$row['name']?></li>
+										<li><span class="mr-3">收件人地址</span><?=$row['zipcode'].' '.$row['area'].$row['address']?></li>
+										<li><span class="mr-3">收件人電話</span><?=$row['phone']?></li>
 										<li><span class="mr-3">寄至</span>台灣</li>
-										<li><span class="mr-3">運送方式</span>EMS國際運送（提供追蹤）</li>
+										<li><span class="mr-3">運送方式</span>EMS國際運送</li>
 									</ul>
 								</div>
 							</div>
@@ -431,7 +278,7 @@
 								<h4>付款資訊</h4>
 								<div class="details_list">
 									<ul>
-										<li><span class="mr-3">付款方式</span>信用卡線上付款</li>
+										<li><span class="mr-3">付款方式</span><?if($row['pay_type']==1){echo "儲值金付款";}else{echo "信用卡線上付款";}?></li>
 									</ul>
 								</div>
 							</div>
@@ -447,16 +294,7 @@
 
 									<h4>我的訂單</h4>
 									<ul>
-										<li><a href="member.html" title="會員總覽">會員總覽</a></li>
-										<li><a href="order_info.html" title="訂單查詢" class="active">訂單查詢</a></li>
-										<li><a href="order_addvalue.html" title="儲值金">儲值金</a></li>
-										<li><a href="member_coupon.html" title="專屬優惠券">專屬優惠券<b class="t_danger">・</b></a></li>
-										<li><a href="order_bonus.html" title="紅利點數">紅利點數</a></li>
-										<li><a href="member_edit.html" title="會員資料">會員資料</a></li>
-										<li><a href="#" title="會員制度/等級">會員制度/等級</a></li>
-										<li><a href="member_password.html" title="更改密碼">更改密碼</a></li>
-										<li><a href="member_address.html" title="收件地址管理">收件地址管理</a></li>
-										<li><a href="order_service.html" title="客服中心">客服中心</a></li>
+										<?require_once "include_php/member_inc.php";?>
 									</ul>
 
 								</div>
@@ -477,105 +315,7 @@
 		</section>
 
 		
-		<footer id="footer" class="bg-transparent border-0">
-
-			<div class="container">
-				<div class="footer-widgets-wrap pb-3 ">
-
-					<div class="row">
-
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">購物體驗</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="cart.html">購物車</a></li>
-									<li><a href="qa.html">常見問題</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">會員中心</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="login.html">登入/註冊</a></li>
-									<li><a href="member_password.html">忘記密碼</a></li>
-									<li><a href="notice.html">通知總覽</a></li>
-									<li><a href="order_info.html">訂單查詢</a></li>
-									<li><a href="product_desire.html">我的收藏</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">關於直直買</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="about.html">關於我們</a></li>
-									<li><a href="shoppingprocess.html">購物流程</a></li>
-									<li><a href="about.html">服務條款</a></li>
-									<li><a href="about.html">隱私權政策</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">直購商品</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="master.html">達人勸敗</a></li>
-									<li><a href="feedback.html">好評推薦</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-8 center">
-							<div class="widget footcenter">
-
-								<div class="footlogo">
-									<img src="images/footerlogo.png" alt="直直買 didipik">
-								</div>
-								<div class="widget subscribe-widget mt-2">
-									<ul class="list-unstyled iconlist ml-0">
-										<li>客服信箱：<a href="#">info@didipick.com</a></li>
-									</ul>
-
-									<ul class="list-unstyled socialiconlist ml-0">
-										<li><a href="#"><img src="images/socialicon_fb.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_ig.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_yt.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_line.png" alt=""></a></li>
-									</ul>
-
-									
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			
-			<div id="copyrights" class="bg-transparent center">
-
-				<div class="container">
-					<p>copyright © 2021 直直買 日本好物直購平台 All Rights Reserved.</p>
-				</div>
-
-			</div>
-		</footer>
+		<?require_once "include_php/footer_inc.php"?>
 
 	</div>
 
@@ -586,7 +326,17 @@
 	<script src="js/plugins.min.js"></script>
 
 	<script src="js/functions.js"></script>
-
+	<script type="text/javascript">
+    function CopyTextToClipboard(id) {
+    var TextRange = document.createRange();
+    TextRange.selectNode(document.getElementById(id));
+    sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(TextRange);
+    document.execCommand("copy");
+    // alert("複製完成")  //此行可加可不加
+    }
+  </script>
 
 </body>
 </html>

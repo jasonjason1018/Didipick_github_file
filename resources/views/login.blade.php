@@ -1,12 +1,5 @@
 @include('include_php.css_inc')
 
-<body class="stretched">
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTLHLW4"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-
 	
 	<div id="wrapper" class="clearfix">
 
@@ -84,7 +77,7 @@
 				
 				</div>
 			</div>
-			<div class="header-wrap-clone"></div>
+			<div class="header-wrap-clone hide-clone"></div>
 		</header>
 
 		
@@ -98,38 +91,35 @@
 						<div class="tab-content" id="tab-login">
 							<div class="card mb-0">
 								<div class="card-body" style="padding: 40px;">
-									<form id="login-form" name="login-form" class="mb-0" action="#" method="post">
+									<form id="login" name="login-form" class="mb-0" action="/didipick_check_login" method="post">
+										@csrf
 
 										<h3>會員登入</h3>
 
 										<div class="row">
 											<div class="col-12 form-group">
-												<label for="login-form-Email">電子信箱:</label>
-												<input type="text" id="login-form-Email" name="login-form-Email" value="" class="form-control" placeholder="輸入Email"/>
+												<label for="login-form-phone">手機號碼:</label>
+												<input type="text" id="login-form-phone" name="phone" value="" class="form-control" placeholder="0912345678"/>
 											</div>
 
 											<div class="col-12 form-group">
-												<label for="login-form-password">密碼:</label>
-												<input type="password" id="login-form-password" name="login-form-password" value="" class="form-control" placeholder="6-20 位字元，不含特殊符號"/>
+												<label for="login-form-pw">密碼:</label>
+												<input type="password" id="login-form-pw" name="password" value="" class="form-control" placeholder="6-20 位字元，不含特殊符號"/>
 											</div>
 
 											<div class="col-12 form-group loginbtn center">
-												<a href="#" class="button button-rounded m-0">登入</a>
+												<a href="#" id="loginbtn" class="button button-rounded m-0">登入</a>
 											</div>
 
 											<div class="col-12 center">
 												<a href="signup.php" class="link">立即註冊</a>&nbsp;或&nbsp;<a href="forget.php" class="link">忘記密碼無法登入</a>
 											</div>
+											<div style="color:red;position:relative;left:180px"><?echo $_SESSION['acpwerr'];?></div>
 										</div>
 
 
 
 									</form>
-									<div class="line line-sm"></div>
-									<div class="w-100 text-center sign_options">
-										<a href="#" class="button button-rounded si-facebook si-colored">Facebook登入</a>
-										<a href="#" class="button button-rounded si-google si-colored">Google登入</a>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -144,10 +134,31 @@
 
 	<div id="gotoTop"><img src="images/gotop.png" alt=""></div>
 
-	<script src="js/jquery.js"></script>
-	<script src="js/plugins.min.js"></script>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/plugins.min.js"></script>
 
-	<script src="js/functions.js"></script>
+	<script src="/js/functions.js"></script>
 
 </body>
+	<script>
+		$("#loginbtn").click(function(){
+			ac = $("#login-form-phone").val();
+			pw = $("#login-form-pw").val();
+			if(ac==''){
+				alert('請輸入手機號碼');
+			}else if(pw==''){
+				alert('請輸入密碼');
+			}else{
+				$("#login").submit();
+			}
+		});
+
+		function keyFunction() {
+			//alert("Key code = " + event.keyCode);
+			if(event.keyCode==13){
+				$("#loginbtn").click();
+			}
+		}
+		document.onkeydown=keyFunction;
+	</script>
 </html>

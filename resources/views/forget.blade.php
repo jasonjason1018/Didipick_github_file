@@ -1,57 +1,6 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
-<head>
-
-	<title>忘記密碼｜直直買 didipick</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-
-	<meta property="og:title" content=""/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:description" content=""/>
-
-	<link rel="shortcut icon" href="images/favicon.png"/>
-
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/didipick.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-
-	<link rel="stylesheet" href="demos/shop/shop.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
-
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PTLHLW4');</script>
-	<!-- End Google Tag Manager -->
-
-</head>
-
-<body class="stretched">
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTLHLW4"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+<?
+require_once "include_php/css_inc.php";
+?>
 
 	
 	<div id="wrapper" class="clearfix">
@@ -123,14 +72,14 @@
 					<div class="header-row justify-content-lg-between">
 
 					<div id="logo" class=" mx-lg-auto col-auto flex-column order-lg-2 px-0">
-						<a href="index.html" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-						<a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
+						<a href="index.php" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
+						<a href="index.php" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
 					</div>
 				</div>
 				
 				</div>
 			</div>
-			<div class="header-wrap-clone"></div>
+			<div class="header-wrap-clone hide-clone"></div>
 		</header>
 
 		
@@ -151,11 +100,11 @@
 										<div class="row">
 											<div class="col-12 form-group">
 												<label for="login-form-Email">電子信箱:</label>
-												<input type="text" id="login-form-Email" name="login-form-Email" value="" class="form-control" placeholder="請填入註冊使用的電子信箱"/>
+												<input type="text" id="Email" name="login-form-Email" value="" class="form-control" placeholder="請填入註冊使用的電子信箱"/>
 											</div>
 
 											<div class="col-12 form-group loginbtn center">
-												<a href="#" class="button button-rounded m-0">發送確認信</a>
+												<a href="#" class="button button-rounded m-0" id="mailbtn">發送確認信</a>
 											</div>
 											
 										</div>
@@ -181,6 +130,33 @@
 	<script src="js/plugins.min.js"></script>
 
 	<script src="js/functions.js"></script>
-
+	<script>
+		$("#mailbtn").click(function(){
+			mail = $("#Email").val();
+			var checkmail = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if(mail == ''){
+				alert('請輸入您的電子信箱');
+			}else{
+				if(checkmail.test(mail)==true){
+					$.ajax({
+						type:"POST",
+						url:"mail.php",
+						data:{mail:mail},
+						success: function(resp){
+							if(resp!='該信箱尚未註冊'){
+								//alert('信件已發送');
+								alert(resp);
+							}else{
+								alert(resp);
+							}
+						}
+					});
+				}else{
+					$("#Email").val('');
+					alert('電子信箱格式錯誤');
+				}
+			}
+		});
+	</script>
 </body>
 </html>

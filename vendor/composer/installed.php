@@ -1,16 +1,25 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v7.0.0',
-    'version' => '7.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '854a82365e12bb1da5d64ee4067449d94c06c22c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'aliyuncs/oss-sdk-php' => 
+    array (
+      'pretty_version' => 'v2.4.3',
+      'version' => '2.4.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4ccead614915ee6685bf30016afb01aabd347e46',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => '1.3.0',
@@ -28,6 +37,15 @@
       array (
       ),
       'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
+    ),
+    'chenhua/laravel5-kindeditor' => 
+    array (
+      'pretty_version' => '1.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '19e96cd8bf0ff7615557c412bd73411c3120fb29',
     ),
     'cordoval/hamcrest-php' => 
     array (
@@ -78,6 +96,15 @@
       array (
       ),
       'reference' => '65b2d8ee1f10915efb3b55597da3404f096acba2',
+    ),
+    'ecpay/sdk' => 
+    array (
+      'pretty_version' => '1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5cbb10182652195c6f402a26c4f7749a5920658c',
     ),
     'egulias/email-validator' => 
     array (
@@ -390,6 +417,15 @@
         0 => 'v7.30.4',
       ),
     ),
+    'intervention/image' => 
+    array (
+      'pretty_version' => '2.7.1',
+      'version' => '2.7.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '744ebba495319501b873a4e48787759c72e3fb8c',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -408,12 +444,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v7.0.0',
-      'version' => '7.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '854a82365e12bb1da5d64ee4067449d94c06c22c',
     ),
     'laravel/tinker' => 
     array (
@@ -481,6 +517,15 @@
       array (
         0 => '1.10.2',
       ),
+    ),
+    'myclabs/php-enum' => 
+    array (
+      'pretty_version' => '1.6.6',
+      'version' => '1.6.6.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '32c4202886c51fbe5cc3a7c34ec5c9a4a790345e',
     ),
     'nesbot/carbon' => 
     array (
@@ -696,8 +741,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0|2.0',
-        1 => '1.0.0 || 2.0.0 || 3.0.0',
+        0 => '1.0.0 || 2.0.0 || 3.0.0',
+        1 => '1.0|2.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -717,6 +762,15 @@
       array (
       ),
       'reference' => 'e4573f47750dd6c92dca5aee543fa77513cbd8d3',
+    ),
+    'qiniu/php-sdk' => 
+    array (
+      'pretty_version' => 'v7.4.2',
+      'version' => '7.4.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8414ee6b0027acc682469c7a2e7144f3ed2b7676',
     ),
     'ralouphie/getallheaders' => 
     array (
@@ -1152,6 +1206,15 @@
       array (
       ),
       'reference' => 'b43b05cf43c1b6d849478965062b6ef73e223bb5',
+    ),
+    'unisharp/laravel-filemanager' => 
+    array (
+      'pretty_version' => 'v1.9.2',
+      'version' => '1.9.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'aaf2764f26eb8dcc9356bea1e25010333c2e61f4',
     ),
     'vlucas/phpdotenv' => 
     array (

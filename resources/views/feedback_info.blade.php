@@ -1,57 +1,33 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
-<head>
-
-	<title>【女生小心機】素顏美肌養成術！只需每天這樣做｜好評推薦｜直直買 didipick</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	
-	<meta name="description" content=""/>
-	<meta name="keywords" content=""/>
-
-	<meta property="og:title" content=""/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:description" content=""/>
-
-	<link rel="shortcut icon" href="images/favicon.png"/>
-
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/didipick.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-
-	<link rel="stylesheet" href="demos/shop/shop.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
-
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-PTLHLW4');</script>
-	<!-- End Google Tag Manager -->
-
-</head>
-
-<body class="stretched">
-
-	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTLHLW4"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+<?
+require_once "include_php/css_inc.php";
+require_once "require_inc.php";
+require_once "Admin/include/Session.php";
+$session = new Session;
+$session->Session();
+$userid = $session->get('userid');
+$id = $_GET['id'];
+date_default_timezone_set("Asia/Taipei");
+$today = date("Y-m-d H:i:s");
+$sql = "select * from didipick_article_record where identity='$userid'";
+$result = $mysql->query($sql);
+$usrsize = $result->size();//不超過5筆
+$sql = "select * from didipick_article_record where identity='$userid' and arid='$id'";
+$result = $mysql->query($sql);
+$arsize = $result->size();//不等於1
+if($arsize!=1){
+	if($usrsize < 5){
+		$sql = "insert into didipick_article_record(arid, identity, insert_time)values('$id', '$userid', '$today')";
+		$mysql->query($sql);
+	}else{
+		$sql = "select * from didipick_article_record where identity='$userid' order by insert_time";
+		$result = $mysql->query($sql);
+		$row = $result->fetch();
+		$arreid = $row['id'];
+		$sql = "update didipick_article_record set arid='$id', insert_time='$today' where id='$arreid'";
+		$mysql->query($sql);
+	}
+}
+?>
 
 
 	<div id="wrapper" class="clearfix">
@@ -119,165 +95,31 @@
 
 		
 
-		<header id="header" class="full-header header-size-lg">
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row justify-content-lg-between">
-
-					<div id="logo" class="PCOnly mx-lg-auto col-auto flex-column order-lg-2 px-0">
-						<a href="index.html" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-						<a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-					</div>
-
-					<div class="col-auto col-lg-3 order-lg-1 d-none d-md-flex px-0">
-						<!-- <div class="social-icons">
-							<a href="https://facebook.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-facebook" target="_blank">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
-							<a href="https://twitter.com/__semicolon" class="social-icon si-rounded si-dark si-mini si-twitter" target="_blank">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-							<a href=" https://instagram.com/semicolonweb" class="social-icon si-rounded si-dark si-mini si-instagram" target="_blank">
-								<i class="icon-instagram"></i>
-								<i class="icon-instagram"></i>
-							</a>
-						</div> -->
-					</div>
-
-					<div class="header-misc col-auto col-lg-3 justify-content-lg-end ml-0 ml-sm-3 px-0">
-
-							<span class="MobileOnly mlogo"><a href="index.html" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a></span>
-
-							<div id="top-heart">
-								<!-- 加入前 -->
-								<a href="product_desire.html">
-									<img src="images/topicon_heart.svg" alt="">
-								</a>
-								
-								<!-- 加入後 -->
-								<!-- <a href="#"><img src="images/topicon_heart_add.svg" alt=""></a> -->
-							</div>
-
-							<div id="top-account">
-								<a href="cart.html" >
-									<img src="images/topicon_cart.svg" alt=""><span class="top-cart-number">5</span>
-								</a>
-							</div>
-
-							<div id="top-cart" class=" header-misc-icon">
-								<a href="#" id="top-cart-trigger"><img src="images/topicon_user.svg" alt=""></a>
-								<div class="top-cart-content">
-									<div class="top-cart-ul center">
-										<ul>
-											<li><a href="member.html" title="會員中心">會員中心</a></li>
-											<li><a href="notice.html" title="訂單通知">訂單通知</a></li>
-											<li><a href="#" title="主題活動">主題活動</a></li>
-											<li><a href="#" title="訊息公告">訊息公告</a></li>
-											<li><a href="product_desire.html" title="慾望清單">慾望清單</a></li>
-											<li><a href="favorite.html" title="最愛文章">最愛文章</a></li>
-										</ul>
-									</div>
-									
-									<div class="top-cart-action center">
-										<a href="order_addvalue.html" class="button button-border button-rounded button-green">儲值</a>
-										<a href="#" class="button button-rounded">登出</a>
-									</div>
-								</div>
-							</div>
-
-							<!-- <div id="top-login">
-								<a href="login.html" class="button button-border button-rounded button-green">登入</a>
-							</div>
-
-							<div id="top-signup">
-								<a href="signup.html" class="button button-rounded">註冊</a>
-							</div>
- 							-->
-							<!-- <div id="top-search" class="header-misc-icon">
-								<a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
-							</div> -->
-						</div>
-
-					<div id="primary-menu-trigger">
-						<svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
-					</div>
-				</div>
-				
-				<div class="container">
-					<div class="header-row justify-content-lg-center header-border">
-
-						<nav class="primary-menu with-arrows ">
-
-							<ul class="menu-container justify-content-between">
-								<li class="menu-item mega-menu-one">
-									<a class="menu-link" href="master.html"><div>達人勸敗</div></a>
-									<ul class="sub-menu-container">
-										<li class="card p-0 bg-transparent border-0">
-											<a href="master_info.html"><img class="card-img-top" src="images/navimg_2.jpg" alt=""></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>水水約會提案｜30秒擺脫扁塌頭！<small>NEW</small></div></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>乾燥唇救星｜日妞激推滋潤NO.1<small>HOT</small></div></a>
-										</li>
-										<li class="menu-item">
-											<a class="menu-link" href="master_info.html"><div>百搭零廢色｜日本SNS超夯眼影<small>HOT</small></div></a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="product.html"><div>所有分類</div></a>
-									<div class="mega-menu-content mega-menu-style-2">
-										<div class="container">
-											<div class="row">
-												<ul class="sub-menu-container mega-menu-column col-lg-6">
-													<ul class="sub-menu-container">
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_all.svg" alt=""> 全部商品</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_medicine.svg" alt=""> 保健品</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_makeups.svg" alt=""> 美妝</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_maintenance.svg" alt=""> 保養</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_hair.svg" alt=""> 美髮</div></a></li>
-														<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_life.svg" alt=""> 生活雜貨</div></a></li>
-													</ul>
-												</ul>
-												<ul class="sub-menu-container mega-menu-column col-lg-6">
-													<li class="card p-0 bg-transparent border-0">
-														<a href="#"><img class="card-img-top" src="images/navimg_1.jpg" alt=""></a>
-													</li>
-												</ul>
-												
-											</div>
-										</div>
-									</div>
-								</li>
-								<li class="menu-item"><a class="menu-link" href="product_top20.html"><div>熱銷排行</div></a></li>
-								<li class="menu-item current"><a class="menu-link" href="feedback.html"><div>好評推薦</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="qa.html"><div>常見問題</div></a></li>
-							</ul>
-
-						</nav>
-
-						<form class="top-search-form" action="search.html" method="get">
-							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
-						</form>
-
-					</div>
-				</div>
-
-				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header>
-
+		<?require_once "include_php/header_inc.php";?>
+		<?
+			if(isset($_GET['id'])){
+				$id = $_GET['id'];
+			}else{
+				$sql = "select * from didipick_master where type='2' order by rand()";
+				$result = $mysql->query($sql);
+				$row = $result->fetch();
+				$id = $row['id'];
+			}
+			$sql = "update didipick_master set views=views+1 where id='$id'";
+			$mysql->query($sql);
+			$sql = "select * from didipick_master where id='$id'";
+			$result = $mysql->query($sql);
+			$row = $result->fetch();
+			$date = explode('-', $row['insert_time']);
+			$th = explode(' ', $date[2]);
+			$monthname = array('', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec');
+		?>
 		<section id="page-title">
 
 			<div class="container clearfix">
-				<h1>【女生小心機】素顏美肌養成術！只需每天這樣做</h1>
+				<h1><?=$row['title']?></h1>
 				<div>
-					<span><i class="icon-line-edit-3"></i> by Fujiko</span>
+					<span><i class="icon-line-edit-3"></i> by <?=$row['author']?></span>
 				</div>
 			</div>
 		</section>
@@ -288,9 +130,9 @@
 
 					<div>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="index.html">首頁</a></li>
-							<li class="breadcrumb-item"><a href="feedback.html">好評推薦 / 文章列表</a></li>
-							<li class="breadcrumb-item active" aria-current="page">保健品/分類</li>
+							<li class="breadcrumb-item"><a href="index.php">首頁</a></li>
+							<li class="breadcrumb-item"><a href="feedback.php">好評推薦 / 文章列表</a></li>
+							<!--<li class="breadcrumb-item active" aria-current="page">保健品/分類</li>-->
 						</ol>
 					</div>
 
@@ -308,16 +150,34 @@
 
 									<div class="entry-meta">
 										<ul>
-											<li><i class="icon-calendar3"></i> 20th Feb 2021</li>
-											<li><a href="#"><i class="icon-eye2"></i> 13</a></li>
-											<li><a href="#"><img src="images/topicon_star_p.svg" alt="" class="icon_star"></a></li>
+											<li><i class="icon-calendar3"></i> <?=$th[0]?>th <?=$monthname[$date[1]]?> <?=$date[0]?></li>
+											<li><a href="#"><i class="icon-eye2"></i> <?=$row['views']?></a></li>
+											<li>
+											<?if($session->get('login-status') == "signing-in"){?>
+												<?
+												$sql_master = "select * from didipick_favory_article where identity='$userid' and ar_id='$id'";
+												$result_master = $mysql->query($sql_master);
+												$size_master = $result_master->size();
+												if($size_master == 0){
+												?>
+													<div class="s-keep" onclick="addstar('<?=$i?>')" id="star<?=$i?>"></div>
+													<input type="hidden" id="ar_id<?=$i?>" value="<?=$row['id']?>">
+												<?}else{?>
+													<div class="s-keep clicked" onclick="cancelstar('<?=$i?>')" id="star<?=$i?>"></div>
+													<input type="hidden" id="ar_id<?=$i?>" value="<?=$row['id']?>">
+												<?}?>
+
+											<?}else{?>
+												<div class="s-keep" onclick="alert('請先登入');window.location='login.php'"></div>
+											<?}?>
+											</li>
 										</ul>
 									</div>
 
 									
 									<div class="entry-content mt-0">
-
-										<div class="center">
+										<?=$row['text']?>
+										<!--<div class="center">
 											<img src="images/feedbackimg.png" alt="" class="mb-2 img_stretch">
 											<div class="mt-2"><small class="t_gray">圖／翻攝自 <a href="#" target="_blank">@koki</a>、<a href="#" target="_blank">@haruka.f.official</a></small></div>
 										</div>
@@ -364,19 +224,86 @@
 											雙重玻尿酸長時間保持水分，滋潤彈力肌膚💦<br/>
 											美翻的季節版限定包裝，還能聞到淡淡櫻花香味呢！</p>
 										
-										<br>
+										<br>-->
 
-										
+										<div class="clear"></div>
+										<?
+											$no = explode(',',$row['recommend_item']);
+											$no_size = count($no);
+											if($no_size == 1){
+												$pno = $no[0];
+												date_default_timezone_set("Asia/Taipei");
+		 										$today = date("Ymd");
+												$sql_check_product = "select * from didipick_product where status='1' and TO_DAYS(shelf_on) <= TO_DAYS('$today') and TO_DAYS(shelf_off) >= TO_DAYS('$today') and No='$pno'";
+												$result_check = $mysql->query($sql_check_product);
+												$check_size = $result_check->size();
+											}else{
+												$check_size = $no_size;
+											}
 
+											if($check_size != 0){
+										?>
+										<div class="rec-pro-wrap">
+											<h2>推薦商品：</h2>
+											<?
+												$sql_rate = "select * from exchange_rate order by change_date desc";
+												$result_rate = $mysql->query($sql_rate);
+												$row_rate = $result_rate->fetch();
+												$rate = $row_rate['rate'];
+												date_default_timezone_set("Asia/Taipei");
+		 										$today = date("Ymd");
+												foreach($no as $k=>$v){
+													$sql1 = "select * from didipick_product where No='$v'";
+													$result1 = $mysql->query($sql1);
+													$row1 = $result1->fetch();
+													$ontime = explode('-', $row1['shelf_on']);
+													$ontime = implode('', $ontime);
+													$offtime = explode('-', $row1['shelf_off']);
+													$offtime = implode('', $offtime);
+											?>
+											<?if($today>=$ontime && $today<=$offtime && $row1['status'] == 1){?>
+												<a href="product_info.php?name=<?=$row1['name']?>" target="_blank">
+												<div class="rec-pro-box">
+													<div class="product-image">
+														<img src="didipick_Admin/images/admin_upload_img/<?=$row1['img1']?>" alt="Fujiko Ponpon Powder 頭髮專用吸油粉撲">
+													</div>
+													<div class="product-desc">
+														<div class="product-title"><h3><?=$row1['name']?></h3></div>
+														<div class="product-price"><ins><small>NT.</small><?=ceil($row1['s_price']*$rate)?></ins></div>
+														<div class="product-rating">
+															<?
+																$star = $row1['star'];
+																$a = explode(',', $star);
+																for($s = 1;$s<=$a[0];$s++){
+																	echo '<i class="icon-star3"></i>';
+																}
+																for($o = 1;$o<=$a[1];$o++){
+																	echo '<i class="icon-star-half-full"></i>';
+																}
+																for($b = 1;$b<=$a[2];$b++){
+																	echo '<i class="icon-star-empty"></i>';
+																}
+															?>
+														</div>
+													</div>
+												</div>
+											</a>
+											<?}?>
+											<?}?>
+										</div>
+										<?}?>
 										<div class="clear"></div>
 
 
 										<div class="row justify-content-between align-items-center post-navigation">
 											<div class="col-12 col-md-auto text-center">
 												<div class="tagcloud">
-													<a href="#">保養</a>
-													<a href="#">素顏</a>
-													<a href="#">美肌</a>
+													<?
+														$label = explode(',', $row['label']);
+														foreach($label as $k=>$v){
+													?>
+														<a href="#"><?=$v?></a>
+													<?}?>
 												</div>
 											</div>
 		
@@ -384,13 +311,18 @@
 												<div class="si-share d-flex">
 													<span>分享此項商品</span>
 													<div>
-														<a href="#" class="social-icon si-borderless">
+														<?
+															$URL='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+														?>
+														<!--<a href="https://www.facebook.com/sharer/sharer.php?u＝<?=$URL?>" target="_blank" class="social-icon si-borderless">-->
+														<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?=$URL?>&amp;src=sdkpreparse" class="social-icon si-borderless">
 															<img src="images/share_fb.svg" alt="">
 														</a>
-														<a href="#" class="social-icon si-borderless">
+														<!--</a>-->
+														<!--<a href="http://instagram.com/sharer.php?u=<?=$URL?>&media=didipick_Admin/images/master/<?=$row['img']?>&description=直直買 didipick" target="_blank" class="social-icon si-borderless">
 															<img src="images/share_ig.svg" alt="">
-														</a>
-														<a href="#" class="social-icon si-borderless">
+														</a>-->
+														<a href="https://social-plugins.line.me/lineit/share?url=<?=$URL?>" target="_blank" class="social-icon si-borderless">
 															<img src="images/share_line.svg" alt="">
 														</a>
 													</div>
@@ -404,7 +336,7 @@
 
 								
 								<div class="row justify-content-between align-items-center post-navigation">
-									<div class="col-12 col-md-auto text-center">
+									<!--<div class="col-12 col-md-auto text-center">
 										<p class="mb-2 t_didi_t">我要訂閱，didipick滿足你所有的新奇渴望！</p>
 										<form action="#" class="my-0" novalidate="novalidate">
 											<div class="input-group mx-auto">
@@ -414,10 +346,10 @@
 												</div>
 											</div>
 										</form>
-									</div>
+									</div>-->
 
 									<div class="col-12 col-md-auto text-center">
-										<a href="feedback.html">返回文章列表 &rArr;</a>
+										<a href="feedback.php">返回文章列表 &rArr;</a>
 									</div>
 								</div>
 
@@ -428,8 +360,8 @@
 
 									<h3>喜歡此篇內容的話，歡迎留言！</h3>
 
-									<form class="row" action="#" method="post" id="commentform">
-										<div class="col-md-4 form-group">
+									<form class="row" action="master_send_message.php" method="post" id="commentform">
+										<!--<div class="col-md-4 form-group">
 											<label for="author">姓名</label>
 											<input type="text" name="author" id="author" value="" size="22" tabindex="1" class="sm-form-control" />
 										</div>
@@ -437,7 +369,7 @@
 										<div class="col-md-4 form-group">
 											<label for="email">Email</label>
 											<input type="text" name="email" id="email" value="" size="22" tabindex="2" class="sm-form-control" />
-										</div>
+										</div>-->
 
 										<div class="w-100"></div>
 
@@ -445,7 +377,7 @@
 											<label for="comment">想說的話..</label>
 											<textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
 										</div>
-
+										<input type="hidden" name="master_id" value="<?=$id?>">
 										<div class="col-12 form-group">
 											<button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d m-0">送出</button>
 										</div>
@@ -454,13 +386,37 @@
 								</div>
 
 								<div class="line"></div>
-								
+								<?
+									$sql = "select * from didipick_message where article_id='$id' and status='1'";
+									$result = $mysql->query($sql);
+									$size = $result->size();
+								?>
 
 								<div id="comments" class="clearfix">
 
-									<h3 id="comments-title"><span>2</span> Comments</h3>
+									<h3 id="comments-title"><span><?=$size?></span> Comments</h3>
 									
 									<ol class="commentlist clearfix">
+										<?
+											for($i=1;$i<=$size;$i++){
+												$row = $result->fetch();
+												$date = explode('-', $row['message_date']);
+												$monthname = array('', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec');
+												$th = explode(' ', $date[2]);
+												$time = explode(':', $th[1]);
+												if($time[0]>12){
+													$moraft = 'pm';
+												}else{
+													$moraft = 'am';
+												}
+												$messageuser = $row['user_id'];
+												$sql1 = "select * from member where identity='$messageuser' and webarea='2'";
+												$result1 = $mysql->query($sql1);
+												$row1 = $result1->fetch();
+												$name = $row1['name'];
+												$usrname = mb_substr($name, 0, 1, 'UTF-8');
+												//$usrname = mb_convert_encoding($username[0], "UTF-8");
+										?>
 										<li class="comment even thread-even depth-1" id="li-comment-1">
 											<div id="comment-1" class="comment-wrap clearfix">
 												<div class="comment-meta">
@@ -470,14 +426,14 @@
 													</div>
 												</div>
 												<div class="comment-content clearfix">
-													<div class="comment-author">美美<span><a href="#" title="Permalink to this comment">April 24, 2012 at 10:46 am</a></span></div>
-													<p>我聽說臉朝上睡覺，不只可以預防皺紋這件事，還可以避免水分積在眼袋裡，害妳隔天泡泡眼。P.S. 如果想解決泡泡眼，睡前可以在眼周塗上含有咖啡因的眼霜，然後妳就可以好好安心的去睡美容覺了！</p>
+													<div class="comment-author"><?=$usrname?>XX<span><a href="#" title="Permalink to this comment"><?=$monthname[$date[1]]?> <?=$th[0]?>, <?=$date[0]?> at <?=$time[0]?>:<?=$time[1]?> <?=$moraft?></a></span></div>
+													<p><?=str_replace(chr(13).chr(10),"<br>", $row['message_content']);?></p>
 												</div>
 												<div class="clear"></div>
 											</div>
+											<?}?>
 
-
-											<ul class='children'>
+											<!--<ul class='children'>
 												<li class="comment byuser comment-author-_smcl_admin odd alt depth-2" id="li-comment-3">
 													<div id="comment-3" class="comment-wrap clearfix">
 														<div class="comment-meta">
@@ -495,7 +451,7 @@
 
 												</li>
 
-											</ul>
+											</ul>-->
 
 										</li>
 									</ol>
@@ -517,22 +473,41 @@
 									<div class="tabs mb-0" id="sidebar-tabs">
 
 										<ul class="tab-nav">
+										<?if($session->get('login-status') == "signing-in"){?>
 											<li><a href="#tabs-1">最近瀏覽の文章</a></li>
+										<?}?>
 											<li><a href="#tabs-2">熱門の文章</a></li>
 										</ul>
 
 										<div class="tab-container">
-
+										<?if($session->get('login-status') == "signing-in"){?>
 											<div class="tab-content right_cont align_j" id="tabs-1">
 												<div class="posts-sm row" id="popular-post-list-sidebar">
+													<?
+													$sql = "select * from didipick_article_record where identity='$userid' order by insert_time desc";
+													$result = $mysql->query($sql);
+													$size = $result->size();
+													for($i=1;$i<=$size;$i++){
+														$row = $result->fetch();
+														$arid = $row['arid'];
+														$sql1 = "select * from didipick_master where id='$arid'";
+														$result1 = $mysql->query($sql1);
+														$row1 = $result1->fetch();
+														if($row1['type']==1){
+															$type = 'master';
+														}else{
+															$type = 'feedback';
+														}
+													?>
 													<div class="entry col-12">
 														<div class="grid-inner row no-gutters">
 																<div class="entry-title">
-																	<h4><a href="#">[約會必勝]一秒化身日本好感系女孩！嚴選單品推薦</a></h4>
+																	<h4><a href="<?=$type?>_info.php?id=<?=$row1['id']?>"><?=$row1['title']?></a></h4>
 																</div>
 														</div>
 													</div>
-													<div class="entry col-12">
+													<?}?>
+													<!--<div class="entry col-12">
 														<div class="grid-inner row no-gutters">
 																<div class="entry-title">
 																	<h4><a href="#">[編輯特蒐]旅行必備藥品！出門不能少了它</a></h4>
@@ -559,13 +534,33 @@
 																	<h4><a href="#">[約會必勝]一秒化身日本好感系女孩！嚴選單品推薦</a></h4>
 																</div>
 														</div>
-													</div>
+													</div>-->
 												</div>
 											</div>
-
+											<?}?>
 											<div class="tab-content right_cont align_j" id="tabs-2">
 												<div class="posts-sm row" id="recent-post-list-sidebar">
+													<?
+													$sql = "select * from didipick_master order by views desc limit 5";
+													$result = $mysql->query($sql);
+													$size = $result->size();
+													for($i=1;$i<=$size;$i++){
+														$row = $result->fetch();
+														if($row['type'] == 1){
+															$type='master';
+														}else{
+															$type='feedback';
+														}
+													?>
 													<div class="entry col-12">
+														<div class="grid-inner row no-gutters">
+																<div class="entry-title">
+																	<h4><a href="<?=$type?>_info.php?id=<?=$row['id']?>"><?=$row['title']?></a></h4>
+																</div>
+														</div>
+													</div>
+													<?}?>
+													<!--<div class="entry col-12">
 														<div class="grid-inner row no-gutters">
 																<div class="entry-title">
 																	<h4><a href="#">[編輯特蒐]旅行必備藥品！出門不能少了它</a></h4>
@@ -599,7 +594,7 @@
 																	<h4><a href="#">[編輯特蒐]旅行必備藥品！出門不能少了它</a></h4>
 																</div>
 														</div>
-													</div>
+													</div>-->
 												</div>
 											</div>
 				
@@ -614,9 +609,15 @@
 
 									<h4>熱門關鍵字</h4>
 									<div class="tagcloud">
-										<a href="#">美容覺</a>
-										<a href="#">偽素顏</a>
-										<a href="#">素顏肌養成術</a>
+										<?
+											$sql = "select * from didipick_master_label order by views desc limit 3";
+											$result = $mysql->query($sql);
+											$size = $result->size();
+											for($i=1;$i<=$size;$i++){
+												$row = $result->fetch();
+										?>
+											<a href="master.php?label=<?=$row['name']?>"><?=$row['name']?></a>
+										<?}?>
 									</div>
 
 								</div>
@@ -629,105 +630,7 @@
 			</div>
 		</section>
 		
-		<footer id="footer" class="bg-transparent border-0">
-
-			<div class="container">
-				<div class="footer-widgets-wrap pb-3 ">
-
-					<div class="row">
-
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">購物體驗</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="cart.html">購物車</a></li>
-									<li><a href="qa.html">常見問題</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">會員中心</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="login.html">登入/註冊</a></li>
-									<li><a href="member_password.html">忘記密碼</a></li>
-									<li><a href="notice.html">通知總覽</a></li>
-									<li><a href="order_info.html">訂單查詢</a></li>
-									<li><a href="product_desire.html">我的收藏</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">關於直直買</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="about.html">關於我們</a></li>
-									<li><a href="shoppingprocess.html">購物流程</a></li>
-									<li><a href="about.html">服務條款</a></li>
-									<li><a href="about.html">隱私權政策</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget">
-
-								<h4 class="ls0 mb-2 nott">直購商品</h4>
-
-								<ul class="list-unstyled iconlist ml-0">
-									<li><a href="master.html">達人勸敗</a></li>
-									<li><a href="feedback.html">好評推薦</a></li>
-								</ul>
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-8 center">
-							<div class="widget footcenter">
-
-								<div class="footlogo">
-									<img src="images/footerlogo.png" alt="直直買 didipik">
-								</div>
-								<div class="widget subscribe-widget mt-2">
-									<ul class="list-unstyled iconlist ml-0">
-										<li>客服信箱：<a href="#">info@didipick.com</a></li>
-									</ul>
-
-									<ul class="list-unstyled socialiconlist ml-0">
-										<li><a href="#"><img src="images/socialicon_fb.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_ig.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_yt.png" alt=""></a></li>
-										<li><a href="#"><img src="images/socialicon_line.png" alt=""></a></li>
-									</ul>
-
-									
-								</div>
-
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			
-			<div id="copyrights" class="bg-transparent center">
-
-				<div class="container">
-					<p>copyright © 2021 直直買 日本好物直購平台 All Rights Reserved.</p>
-				</div>
-
-			</div>
-		</footer>
+		<?require_once "include_php/footer_inc.php";?>
 
 	</div>
 
@@ -739,6 +642,37 @@
 
 	<script src="js/functions.js"></script>
 
-
+	<script type="text/javascript">
+    $('.liked,.keep,.s-keep').click(function(){
+      $(this).toggleClass('clicked');
+    });
+    function addstar(no){
+    	name = $("#ar_id"+no).val();
+    	$.ajax({
+			type:"POST",
+			url:"cart_or_favory.php",
+			data:{type:"favoryarticle",name:name},
+			success:function(resp){
+				$("#star"+no).removeAttr("onclick");
+				$("#star"+no).attr("onclick", "cancelstar("+no+")");
+			}
+		});
+    }
+    function cancelstar(no){
+    	name = $("#ar_id"+no).val();
+    	$.ajax({
+			type:"POST",
+			url:"cart_or_favory.php",
+			data:{type:"cancelfavoryarticle",name:name},
+			success:function(resp){
+				$("#star"+no).removeAttr("onclick");
+				$("#star"+no).attr("onclick", "addstar("+no+")");
+			}
+		});
+    }
+    $("#submit-button").click(function(){
+    	$("#submit-button").hide();
+    });
+  </script>
 </body>
 </html>

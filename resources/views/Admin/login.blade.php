@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script src="jquery.min.js"></script>
+<script src="/js/jquery.min.js"></script>
 <title>無標題文件</title>
 <style type="text/css">
 <!--

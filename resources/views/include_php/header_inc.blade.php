@@ -1,12 +1,24 @@
-
+<div id="shopify-section-announcement" class="shopify-section">
+      <section id="section-announcement" data-section-id="announcement" data-section-type="announcement-bar">
+        <div class="AnnouncementBar">
+          <div class="AnnouncementBar__Wrapper">
+            <div class="announcement-marquee">
+            
+            <div class="am-scroller am-scroller1"><a href="news.php" target="_blank">Test</a></div>
+            <div class="am-scroller am-scroller2"><a href="news.php" target="_blank">10/9~10/11 國慶連假服務調整</a></div>
+            <div class="am-scroller am-scroller3"><a href="news.php" target="_blank">10/1~10/4 中秋節連假服務狀況公告</a></div>
+          </div>
+	      </div>
+      </section>
+    </div>	
 <header id="header" class="full-header header-size-lg">
 			<div id="header-wrap">
 				<div class="container">
 					<div class="header-row justify-content-lg-between">
 
 						<div id="logo" class="PCOnly mx-lg-auto col-auto flex-column order-lg-2 px-0">
-							<a href="/" class="standard-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
-							<a href="/" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a>
+							<a href="/" class="standard-logo"><img src="/images/logo.png" alt="直直買 didipik"></a>
+							<a href="/" class="retina-logo"><img src="/images/logo.png" alt="直直買 didipik"></a>
 						</div>
 
 						<div class="col-auto col-lg-3 order-lg-1 d-none d-md-flex px-0">
@@ -27,13 +39,13 @@
 						</div>
 						
 						<div class="header-misc col-auto col-lg-3 justify-content-lg-end ml-0 ml-sm-3 px-0">
-							@if($login == '1')
-							<span class="MobileOnly mlogo"><a href="/" class="retina-logo"><img src="images/logo.png" alt="直直買 didipik"></a></span>
+							@if(Session::has('didipick_login'))
+							<span class="MobileOnly mlogo"><a href="/" class="retina-logo"><img src="/images/logo.png" alt="直直買 didipik"></a></span>
 
 							<div id="top-heart">
 								<!-- 加入前 -->
 								<a href="product_desire.html">
-									<img src="images/topicon_heart.svg" alt="">
+									<img src="/images/topicon_heart.svg" alt="">
 								</a>
 								
 								<!-- 加入後 -->
@@ -41,13 +53,16 @@
 							</div>
 
 							<div id="top-account">
-								<a href="cart.html" >
-									<img src="images/topicon_cart.svg" alt=""><span class="top-cart-number">{{$data[1]}}</span>
+								<a href="/didipick_cart" >
+									<img src="/images/topicon_cart.svg" alt="">
+									@if($data[1] != 0)
+										<span class="top-cart-number" id="cartquantity">{{$data[1]}}</span>
+									@endif
 								</a>
 							</div>
 							
 							<div id="top-cart" class=" header-misc-icon">
-								<a href="#" id="top-cart-trigger"><img src="images/topicon_user.svg" alt=""></a>
+								<a href="#" id="top-cart-trigger"><img src="/images/topicon_user.svg" alt=""></a>
 								
 								<div class="top-cart-content">
 									<div class="top-cart-ul center">
@@ -57,29 +72,28 @@
 											<li><a href="#" title="主題活動">主題活動</a></li>
 											<li><a href="#" title="訊息公告">訊息公告</a></li>
 											<li><a href="product_desire.html" title="慾望清單">慾望清單</a></li>
-											<li><a href="favorite.html" title="最愛文章">最愛文章</a></li>
+											<li><a href="/didipick_favorite" title="最愛文章">最愛文章</a></li>
 										</ul>
 									</div>
 									
 									<div class="top-cart-action center">
 										<a href="order_addvalue.html" class="button button-border button-rounded button-green">儲值</a>
-										<a href="#" class="button button-rounded">登出</a>
+										<a href="/didipick_logout" class="button button-rounded">登出</a>
 									</div>
 								</div>
 							</div>
-							@endif
-							@if($login == 0)
+							@else
 							 <div id="top-login">
-								<a href="/login" class="button button-border button-rounded button-green">登入</a>
+								<a href="/didipick_login" class="button button-border button-rounded button-green">登入</a>
 							</div>
 
 							<div id="top-signup">
 								<a href="signup.html" class="button button-rounded">註冊</a>
 							</div>
 							@endif
-							<!-- <div id="top-search" class="header-misc-icon">
+							<div id="top-search" class="header-misc-icon">
 								<a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
-							</div> -->
+							</div>
 						</div>
 
 						<div id="primary-menu-trigger">
@@ -93,10 +107,10 @@
 
 								<ul class="menu-container justify-content-between">
 									<li class="menu-item mega-menu-one">
-										<a class="menu-link" href="master.html"><div>達人勸敗</div></a>
+										<a class="menu-link" href="/didipick_master"><div>達人勸敗</div></a>
 										<ul class="sub-menu-container">
 											<li class="card p-0 bg-transparent border-0">
-												<a href="master_info.html"><img class="card-img-top" src="images/navimg_2.jpg" alt=""></a>
+												<a href="master_info.html"><img class="card-img-top" src="/images/navimg_2.jpg" alt=""></a>
 											</li>
 											<li class="menu-item">
 												<a class="menu-link" href="master_info.html"><div>水水約會提案｜30秒擺脫扁塌頭！<small>NEW</small></div></a>
@@ -110,7 +124,7 @@
 										</ul>
 									</li>
 
-									<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="/product"><div>所有分類</div></a>
+									<li class="menu-item mega-menu mega-menu-small"><a class="menu-link" href="/didipick_product"><div>所有分類</div></a>
 										<div class="mega-menu-content mega-menu-style-2">
 											<div class="container">
 												<div class="row">
@@ -118,19 +132,17 @@
 														<ul class="sub-menu-container">
 															
 															@foreach($data[2] as $k=>$v)
-																<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_{{$ary[$k]}}.svg" alt=""> {{$v->name}}</div></a></li>
+																@if($v->name == '全部商品')
+																	<li class="menu-item mega-menu-title"><a class="menu-link" href="/didipick_product"><div><img src="/storage/{{$v->icon}}" alt=""> {{$v->name}}</div></a></li>
+																@else
+																	<li class="menu-item mega-menu-title"><a class="menu-link" href="/category_search/{{$v->sno}}"><div><img src="/storage/{{$v->icon}}" alt=""> {{$v->name}}</div></a></li>
+																@endif
 															@endforeach
-															<!--<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_all.svg" alt=""> 全部商品</div></a></li>
-															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_medicine.svg" alt=""> 保健品</div></a></li>
-															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_makeups.svg" alt=""> 美妝</div></a></li>
-															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_maintenance.svg" alt=""> 保養</div></a></li>
-															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_hair.svg" alt=""> 美髮</div></a></li>
-															<li class="menu-item mega-menu-title"><a class="menu-link" href="product.html"><div><img src="images/product_l_icon/product_l_life.svg" alt=""> 生活雜貨</div></a></li>-->
 														</ul>
 													</ul>
 													<ul class="sub-menu-container mega-menu-column col-lg-6">
 														<li class="card p-0 bg-transparent border-0">
-															<a href="#"><img class="card-img-top" src="images/navimg_1.jpg" alt=""></a>
+															<a href="#"><img class="card-img-top" src="/images/navimg_1.jpg" alt=""></a>
 														</li>
 													</ul>
 													
@@ -138,9 +150,9 @@
 											</div>
 										</div>
 									</li>
-									<li class="menu-item"><a class="menu-link" href="product_top20.html"><div>熱銷排行</div></a></li>
-									<li class="menu-item"><a class="menu-link" href="feedback.html"><div>好評推薦</div></a></li>
-									<li class="menu-item"><a class="menu-link" href="qa.html"><div>常見問題</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="/didipick_product_top20"><div>熱銷排行</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="/didipick_feedback"><div>好評推薦</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="/didipick_qa"><div>常見問題</div></a></li>
 								</ul>
 
 							</nav>

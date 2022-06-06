@@ -88,7 +88,7 @@ jQuery(document).ready(function($)
 		  </tr>
 		  <tr>
 		    <td width="18%" bgcolor="#C0C0C0" align="center"><font size="2">瀏覽數</font></td>
-		    <td width="82%"><input type="text" size="42" name="view" id="view" value=""></td>
+		    <td width="82%"><input type="text" size="42" name="view" id="view" value="0"></td>
 		  </tr>
 		  <tr>
 		    <td width="100%" colspan="2">
